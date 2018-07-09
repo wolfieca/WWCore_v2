@@ -94,7 +94,7 @@ public class System {
         sysMessageQueue = messageQueue;        
     }
     
-        public System(WWSocket srvSocket, WWPeer[] peers, SysLogger log, 
+    public System(WWSocket srvSocket, WWPeer[] peers, SysLogger log, 
             MessageQueue messageQueue, Company sysCompany) {
         serverSocket = srvSocket;
         peerList = peers;
@@ -106,4 +106,6 @@ public class System {
         sysIsShutdown = false;
         sysMessageQueue = messageQueue;        
     }
+    
+    
 }
