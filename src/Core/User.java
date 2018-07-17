@@ -17,9 +17,9 @@
 package Core;
 
 /**
- *
+ * A system user. A user is a 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class User {
+public class User extends Actor{
     
 }

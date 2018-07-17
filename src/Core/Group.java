@@ -17,9 +17,11 @@
 package Core;
 
 /**
- *
+ * A system Group. A group is roughly equivalent to a role and is made up
+ * of one or more Users or Groups. A User need be a member of any group, or
+ * may be a member of multiple groups
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Group {
+public class Group extends Actor{
     
 }
