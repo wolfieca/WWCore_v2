@@ -322,4 +322,479 @@ public class Rights {
         // hour of the day).
         loginHours = new HashMap(source.loginHours);
     }
+    
+        /**
+     *
+     * @return
+     */
+    protected int getLastPosition() {
+        return lastPosition;
+    }
+
+    /**
+     *
+     * @param lastPosition
+     */
+    protected void setLastPosition(int lastPosition) {
+        this.lastPosition = lastPosition;
+    }
+    
+    /**
+     * Creates a new Right in the system
+     * @param module
+     * @param right
+     * @return
+     */
+    public boolean addRight(String module, String right) {
+         String rightName = module+"."+right;
+         if ( rightNames.containsKey(rightName))
+             return false;
+         else {
+             if ( rightNames.put(rightName, lastPosition) != null) {
+                 lastPosition++;
+                 return true;
+             } else
+                 return false;
+         }
+         //rightNames.put(rightName, rightNames.size()+1);
+         //return true;
+     }
+
+    /**
+     *
+     * @param module
+     * @param right
+     * @param position
+     * @return
+     */
+    public boolean addRight(String module, String right, int position){
+         if ( rightNames.putIfAbsent(module+"."+right, position) == null){
+             if ( lastPosition < position ) 
+                lastPosition = position+1;
+             return true;
+         } else {
+             return false;
+         }
+         //return rightNames.putIfAbsent(module+"."+right, position) != null;
+     }
+
+    /**
+     *
+     * @param module
+     * @param right
+     */
+    public void allow(String module, String right){
+         if ( rightNames.get(module+"."+right) != null ){
+             if(rightNames.get(module+"."+right) <= 63)
+                rightSet1 |= 1 << (rightNames.get(module+"."+right));
+             else if (rightNames.get(module+"."+right) <= 127)
+                 rightSet2 |= 1 << (rightNames.get(module+"."+right));
+             else if (rightNames.get(module+"."+right) <= 191)
+                 rightSet3 |= 1 << (rightNames.get(module+"."+right));
+             else if (rightNames.get(module+"."+right) <= 255)
+                 rightSet4 |= 1 << (rightNames.get(module+"."+right));
+         }
+     }
+
+    /**
+     *
+     * @param module
+     * @param right
+     */
+    public void deny(String module, String right){
+         if ( rightNames.get(module+"."+right) != null ){
+             if(rightNames.get(module+"."+right) <= 63)
+                rightSet1 &= 0 << (rightNames.get(module+"."+right));
+             else if (rightNames.get(module+"."+right) <= 127)
+                 rightSet2 &= 0 << (rightNames.get(module+"."+right));
+             else if (rightNames.get(module+"."+right) <= 191)
+                 rightSet3 &= 0 << (rightNames.get(module+"."+right));
+             else if (rightNames.get(module+"."+right) <= 255)
+                 rightSet4 &= 0 << (rightNames.get(module+"."+right));
+         }
+     }
+
+
+    
+    /**
+     *
+     * @param day
+     * @return
+     */
+    public Integer getHours(String day){
+         return loginHours.get(day);
+     }
+
+    /**
+     *
+     * @param day
+     * @param hours
+     */
+    public void setHours(String day, Integer hours){
+         loginHours.put(day, hours);
+     }
+
+    /**
+     *
+     * @param day
+     */
+    public void clearHours(String day){
+         loginHours.put(day,0);
+     }
+
+    /**
+     *
+     * @param day
+     * @param hour
+     */
+    public void setHour(String day, int hour){
+         loginHours.get(day);
+     }
+
+    /**
+     *
+     * @param day
+     * @param hour
+     * @return
+     */
+    public boolean getHour(String day, int hour){
+         return true;
+     }
+
+    /**
+     * @return the localLogin
+     */
+    public boolean allowLocalLogin() {
+        return localLogin;
+    }
+
+    /**
+     * @return the backup
+     */
+    public boolean canBackup() {
+        return backup;
+    }
+
+    /**
+     * @return the remoteLogin
+     */
+    public boolean canRemoteLogin() {
+        return remoteLogin;
+    }
+
+    /**
+     * @return the shutdown
+     */
+    public boolean canShutdown() {
+        return shutdown;
+    }
+
+    /**
+     * @return the monitor
+     */
+    public boolean canMonitor() {
+        return monitor;
+    }
+
+    /**
+     * @return the grantAccess
+     */
+    public boolean canGrantAccess() {
+        return grantAccess;
+    }
+
+    /**
+     * @return the revokeAccess
+     */
+    public boolean canRevokeAccess() {
+        return revokeAccess;
+    }
+
+    /**
+     * @return the takeOwnership
+     */
+    public boolean canTakeOwnership() {
+        return takeOwnership;
+    }
+
+    /**
+     * @return the startServices
+     */
+    public boolean canStartServices() {
+        return startServices;
+    }
+
+    /**
+     * @return the stopServices
+     */
+    public boolean canStopServices() {
+        return stopServices;
+    }
+
+    /**
+     * @return the createUsers
+     */
+    public boolean canCreateUsers() {
+        return createUsers;
+    }
+
+    /**
+     * @return the deleteUsers
+     */
+    public boolean canDeleteUsers() {
+        return deleteUsers;
+    }
+
+    /**
+     * @return the registerModules
+     */
+    public boolean canRegisterModules() {
+        return registerModules;
+    }
+
+    /**
+     * @return the unregisterModules
+     */
+    public boolean canUnregisterModules() {
+        return unregisterModules;
+    }
+
+    /**
+     * @return the print
+     */
+    public boolean canPrint() {
+        return print;
+    }
+
+    /**
+     * @return the documentRequest
+     */
+    public boolean canDocumentRequest() {
+        return documentRequest;
+    }
+
+    /**
+     * @return the eventListener
+     */
+    public boolean canEventListener() {
+        return eventListener;
+    }
+
+    /**
+     * @return the reassignThreads
+     */
+    public boolean canReassignThreads() {
+        return reassignThreads;
+    }
+
+    /**
+     * @return the impersonateUser
+     */
+    public boolean canImpersonateUser() {
+        return impersonateUser;
+    }
+
+    /**
+     * @return the viewPHI
+     */
+    public boolean canViewPHI() {
+        return viewPHI;
+    }
+
+    /**
+     * @return the updatePHI
+     */
+    public boolean canUpdatePHI() {
+        return updatePHI;
+    }
+
+    /**
+     * @return the addSupplementalCategory
+     */
+    public boolean canAddSupplementalCategory() {
+        return addSupplementalCategory;
+    }
+
+    /**
+     * @return the deleteSupplementalCategory
+     */
+    public boolean canDeleteSupplementalCategory() {
+        return deleteSupplementalCategory;
+    }
+
+    /**
+     * @return the alterSupplementalCategory
+     */
+    public boolean canAlterSupplementalCategory() {
+        return alterSupplementalCategory;
+    }
+
+    /**
+     * @param localLogin the localLogin to set
+     */
+    protected void allowLocalLogin(boolean localLogin) {
+        this.localLogin = localLogin;
+    }
+
+    /**
+     * @param backup the backup to set
+     */
+    protected void allowBackup(boolean backup) {
+        this.backup = backup;
+    }
+
+    /**
+     * @param remoteLogin the remoteLogin to set
+     */
+    protected void allowRemoteLogin(boolean remoteLogin) {
+        this.remoteLogin = remoteLogin;
+    }
+
+    /**
+     * @param shutdown the shutdown to set
+     */
+    protected void allowShutdown(boolean shutdown) {
+        this.shutdown = shutdown;
+    }
+
+    /**
+     * @param monitor the monitor to set
+     */
+    protected void allowMonitor(boolean monitor) {
+        this.monitor = monitor;
+    }
+
+    /**
+     * @param grantAccess the grantAccess to set
+     */
+    protected void allowGrantAccess(boolean grantAccess) {
+        this.grantAccess = grantAccess;
+    }
+
+    /**
+     * @param revokeAccess the revokeAccess to set
+     */
+    protected void allowRevokeAccess(boolean revokeAccess) {
+        this.revokeAccess = revokeAccess;
+    }
+
+    /**
+     * @param takeOwnership the takeOwnership to set
+     */
+    protected void allowTakeOwnership(boolean takeOwnership) {
+        this.takeOwnership = takeOwnership;
+    }
+
+    /**
+     * @param startServices the startServices to set
+     */
+    protected void allowStartServices(boolean startServices) {
+        this.startServices = startServices;
+    }
+
+    /**
+     * @param stopServices the stopServices to set
+     */
+    protected void allowStopServices(boolean stopServices) {
+        this.stopServices = stopServices;
+    }
+
+    /**
+     * @param createUsers the createUsers to set
+     */
+    protected void allowCreateUsers(boolean createUsers) {
+        this.createUsers = createUsers;
+    }
+
+    /**
+     * @param deleteUsers the deleteUsers to set
+     */
+    protected void allowDeleteUsers(boolean deleteUsers) {
+        this.deleteUsers = deleteUsers;
+    }
+
+    /**
+     * @param registerModules the registerModules to set
+     */
+    protected void allowRegisterModules(boolean registerModules) {
+        this.registerModules = registerModules;
+    }
+
+    /**
+     * @param unregisterModules the unregisterModules to set
+     */
+    protected void allowUnregisterModules(boolean unregisterModules) {
+        this.unregisterModules = unregisterModules;
+    }
+
+    /**
+     * @param print the print to set
+     */
+    protected void allowPrint(boolean print) {
+        this.print = print;
+    }
+
+    /**
+     * @param documentRequest the documentRequest to set
+     */
+    protected void allowDocumentRequest(boolean documentRequest) {
+        this.documentRequest = documentRequest;
+    }
+
+    /**
+     * @param eventListener the eventListener to set
+     */
+    protected void allowEventListener(boolean eventListener) {
+        this.eventListener = eventListener;
+    }
+
+    /**
+     * @param reassignThreads the reassignThreads to set
+     */
+    protected void allowReassignThreads(boolean reassignThreads) {
+        this.reassignThreads = reassignThreads;
+    }
+
+    /**
+     * @param impersonateUser the impersonateUser to set
+     */
+    protected void allowImpersonateUser(boolean impersonateUser) {
+        this.impersonateUser = impersonateUser;
+    }
+
+    /**
+     * @param viewPHI the viewPHI to set
+     */
+    protected void allowViewPHI(boolean viewPHI) {
+        this.viewPHI = viewPHI;
+    }
+
+    /**
+     * @param updatePHI the updatePHI to set
+     */
+    protected void allowUpdatePHI(boolean updatePHI) {
+        this.updatePHI = updatePHI;
+    }
+
+    /**
+     * @param addSupplementalCategory the addSupplementalCategory to set
+     */
+    protected void allowAddSupplementalCategory(boolean addSupplementalCategory) {
+        this.addSupplementalCategory = addSupplementalCategory;
+    }
+
+    /**
+     * @param deleteSupplementalCategory the deleteSupplementalCategory to set
+     */
+    protected void allowDeleteSupplementalCategory(boolean deleteSupplementalCategory) {
+        this.deleteSupplementalCategory = deleteSupplementalCategory;
+    }
+
+    /**
+     * @param alterSupplementalCategory the alterSupplementalCategory to set
+     */
+    protected void allowAlterSupplementalCategory(boolean alterSupplementalCategory) {
+        this.alterSupplementalCategory = alterSupplementalCategory;
+    }
+
 }

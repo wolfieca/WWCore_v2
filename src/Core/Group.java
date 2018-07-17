@@ -17,11 +17,44 @@
 package Core;
 
 /**
- * A system Group. A group is roughly equivalent to a role and is made up
- * of one or more Users or Groups. A User need be a member of any group, or
- * may be a member of multiple groups
+ * A security group. A group is like a user in many ways. A user can be a member
+ * of one or more groups.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Group extends Actor{
+
+
+public class Group extends Actor {
+    private String groupName;
+    private String groupID;
+
+    /**
+     * @return the groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    /**
+     * @return the groupID
+     */
+    public String getGroupID() {
+        return groupID;
+    }
+
+    /**
+     * @param groupName the groupName to set
+     */
+    protected void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    /**
+     * @param groupID the groupID to set
+     */
+    protected void setGroupID(String groupID) {
+        this.groupID = groupID;
+    }
+    
     
 }
+
