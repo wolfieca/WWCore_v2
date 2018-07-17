@@ -26,9 +26,11 @@ import java.io.*;
 public class WWClient {
     Socket speaker;
     Long written;
+    User user;
     
     public WWClient(){
         speaker = new Socket();
+        user=null;
     }
     
     public WWClient(short portNum) throws UnknownHostException, IOException{

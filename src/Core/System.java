@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.HashMap;
+
 /**
  * Server represents a server process for WolffeWare. It works as a holder
  * for the various base core objects, especially the communications and security
@@ -24,7 +26,7 @@ package Core;
  */
 public class System {
     WWSocket serverSocket;
-    WWPeer[] peerList;
+    HashMap<String, WWPeer> peerList;
     Company company;
     SysLogger sysLog;
     Boolean sysIsLaunching;
@@ -32,6 +34,7 @@ public class System {
     Boolean sysIsLaunched;
     Boolean sysIsShutdown;
     MessageQueue sysMessageQueue;
+    private static String BUILD="0.01";
     
     public System(){
         serverSocket = new WWSocket();
@@ -57,7 +60,7 @@ public class System {
         sysMessageQueue = new MessageQueue();
     }
     
-    public System(WWSocket srvSocket, WWPeer[] peers){
+    public System(WWSocket srvSocket, HashMap<String,WWPeer> peers){
         serverSocket = srvSocket;
         peerList = peers;
         company = new Company();
@@ -69,7 +72,7 @@ public class System {
         sysMessageQueue = new MessageQueue();        
     }
     
-    public System(WWSocket srvSocket, WWPeer[] peers, SysLogger log){
+    public System(WWSocket srvSocket, HashMap<String,WWPeer>peers, SysLogger log){
         serverSocket = srvSocket;
         peerList = peers;
         company = new Company();
@@ -81,7 +84,7 @@ public class System {
         sysMessageQueue = new MessageQueue();        
     }
     
-    public System(WWSocket srvSocket, WWPeer[] peers, SysLogger log, 
+    public System(WWSocket srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
             MessageQueue messageQueue) {
         serverSocket = srvSocket;
         peerList = peers;
@@ -94,7 +97,7 @@ public class System {
         sysMessageQueue = messageQueue;        
     }
     
-    public System(WWSocket srvSocket, WWPeer[] peers, SysLogger log, 
+    public System(WWSocket srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
             MessageQueue messageQueue, Company sysCompany) {
         serverSocket = srvSocket;
         peerList = peers;

@@ -30,7 +30,11 @@ public class User  extends Actor{
     private String userID;
     private Group primaryGroup;
     private ArrayList<Group> supplementaryGroups;
-    private Rights userRights;    
+    private Rights userRights;   
+    private User effUser;    // Used by System Administrators to act as if they
+                            // were another user. Programs may choose to ignore
+                            // this security context and operator only as the 
+                            // actual user, at their own discretion.
 
     private boolean canWorkOffHours;
     private HashMap<String, Boolean> moduleAccess; 
