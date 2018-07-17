@@ -34,7 +34,8 @@ public class System {
     Boolean sysIsLaunched;
     Boolean sysIsShutdown;
     MessageQueue sysMessageQueue;
-    private static String BUILD="0.01";
+    public static String BUILD="0.01";
+    
     
     public System(){
         serverSocket = new WWSocket();
