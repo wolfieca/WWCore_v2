@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package wolffewarecore_v2;
+import Core.*;
 
 /**
  * WolffeWareCore server application and libraries

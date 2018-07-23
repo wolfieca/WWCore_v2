@@ -20,6 +20,6 @@ package Core;
  *
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class DemographicField {
+public class DemographicField<T> {
     
 }
