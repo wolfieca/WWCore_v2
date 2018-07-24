@@ -52,7 +52,7 @@ public class System {
     public System(WWSocket srvSocket){
         serverSocket = srvSocket;
         peerList = null;
-        company = Company.create();
+        company = new Company();
         sysLog = new SysLogger();
         sysIsLaunching = false;
         sysIsShuttingDown = false;
@@ -64,7 +64,7 @@ public class System {
     public System(WWSocket srvSocket, HashMap<String,WWPeer> peers){
         serverSocket = srvSocket;
         peerList = peers;
-        company = Company.create();
+        company = new Company();
         sysLog = new SysLogger();
         sysIsLaunching = false;
         sysIsShuttingDown = false;
@@ -76,7 +76,7 @@ public class System {
     public System(WWSocket srvSocket, HashMap<String,WWPeer>peers, SysLogger log){
         serverSocket = srvSocket;
         peerList = peers;
-        company = Company.create();
+        company = new Company();
         sysLog = log;
         sysIsLaunching = false;
         sysIsShuttingDown = false;
@@ -89,7 +89,7 @@ public class System {
             MessageQueue messageQueue) {
         serverSocket = srvSocket;
         peerList = peers;
-        company = Company.create();
+        company = new Company();
         sysLog = log;
         sysIsLaunching = false;
         sysIsShuttingDown = false;
