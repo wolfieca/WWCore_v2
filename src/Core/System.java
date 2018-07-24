@@ -40,7 +40,7 @@ public class System {
     public System(){
         serverSocket = new WWSocket();
         peerList = null;
-        company = Company.create();
+        company = new Company();
         sysLog = new SysLogger();
         sysIsLaunching = false;
         sysIsShuttingDown = false;
