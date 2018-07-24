@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,11 +16,12 @@
  */
 package Core;
 
+import java.util.HashMap;
+
 /**
- * A single bit of demographic data.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * Demographic Data
+ * @author Robert
  */
-public class DemographicField<T> {
-    T fieldValue;
-    boolean isPHI;
+public class Demographics {
+    HashMap <String, DemographicField> fields;
 }
