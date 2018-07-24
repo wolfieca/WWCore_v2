@@ -219,155 +219,157 @@ public class Company {
     /**
      * @param moneyNames the moneyNames to set
      */
-    protected void setMoneyNames(TreeSet<String> moneyNames) {
+    private void setMoneyNames(TreeSet<String> moneyNames) {
         this.moneyNames = moneyNames;
     }
 
     /**
      * @param simpleInterest the simpleInterest to set
      */
-    protected void setSimpleInterest(HashMap<String,Boolean> simpleInterest) {
+    private void setSimpleInterest(HashMap<String,Boolean> simpleInterest) {
         this.simpleInterest = simpleInterest;
     }
 
     /**
      * @param compoundInterest the compoundInterest to set
      */
-    protected void setCompoundInterest(HashMap<String,Boolean> compoundInterest) {
+    private void setCompoundInterest(HashMap<String,Boolean> compoundInterest) {
         this.compoundInterest = compoundInterest;
     }
 
     /**
      * @param collectionCharge the collectionCharge to set
      */
-    protected void setCollectionCharge(int collectionCharge) {
+    private void setCollectionCharge(int collectionCharge) {
         this.collectionCharge = collectionCharge;
     }
 
     /**
      * @param accumulatedInterest the accumulatedInterest to set
      */
-    protected void setAccumulatedInterest(int accumulatedInterest) {
+    private void setAccumulatedInterest(int accumulatedInterest) {
         this.accumulatedInterest = accumulatedInterest;
     }
 
     /**
      * @param billableCourtCosts the billableCourtCosts to set
      */
-    protected void setBillableCourtCosts(int billableCourtCosts) {
+    private void setBillableCourtCosts(int billableCourtCosts) {
         this.billableCourtCosts = billableCourtCosts;
     }
 
     /**
      * @param internalCourtCosts the internalCourtCosts to set
      */
-    protected void setInternalCourtCosts(int internalCourtCosts) {
+    private void setInternalCourtCosts(int internalCourtCosts) {
         this.internalCourtCosts = internalCourtCosts;
     }
 
     /**
      * @param closedAccountInterest the closedAccountInterest to set
      */
-    protected void setClosedAccountInterest(boolean closedAccountInterest) {
+    private void setClosedAccountInterest(boolean closedAccountInterest) {
         this.closedAccountInterest = closedAccountInterest;
     }
 
     /**
      * @param fiscalMonth the fiscalMonth to set
      */
-    protected void setFiscalMonth(GregorianCalendar fiscalMonth) {
+    private void setFiscalMonth(GregorianCalendar fiscalMonth) {
         this.fiscalMonth = fiscalMonth;
     }
 
     /**
      * @param lastDebtorNumber the lastDebtorNumber to set
      */
-    protected void setLastDebtorNumber(Long lastDebtorNumber) {
+    private void setLastDebtorNumber(Long lastDebtorNumber) {
         this.lastDebtorNumber = lastDebtorNumber;
     }
 
     /**
      * @param lastInvoiceNumber the lastInvoiceNumber to set
      */
-    protected void setLastInvoiceNumber(Long lastInvoiceNumber) {
+    private void setLastInvoiceNumber(Long lastInvoiceNumber) {
         this.lastInvoiceNumber = lastInvoiceNumber;
     }
 
     /**
      * @param lastInternalBatchNumber the lastInternalBatchNumber to set
      */
-    protected void setLastInternalBatchNumber(Long lastInternalBatchNumber) {
+    private void setLastInternalBatchNumber(Long lastInternalBatchNumber) {
         this.lastInternalBatchNumber = lastInternalBatchNumber;
     }
 
     /**
      * @param validInvoiceCycles the validInvoiceCycles to set
      */
-    protected void setValidInvoiceCycles(String validInvoiceCycles) {
+    private void setValidInvoiceCycles(String validInvoiceCycles) {
         this.validInvoiceCycles = validInvoiceCycles;
     }
 
     /**
      * @param collectorQuotaBase the collectorQuotaBase to set
      */
-    protected void setCollectorQuotaBase(QuotaBase collectorQuotaBase) {
+    private void setCollectorQuotaBase(QuotaBase collectorQuotaBase) {
         this.collectorQuotaBase = collectorQuotaBase;
     }
 
     /**
      * @param reorderDebtsOnMerge the reorderDebtsOnMerge to set
      */
-    protected void setReorderDebtsOnMerge(boolean reorderDebtsOnMerge) {
+    private void setReorderDebtsOnMerge(boolean reorderDebtsOnMerge) {
         this.reorderDebtsOnMerge = reorderDebtsOnMerge;
     }
 
     /**
      * @param keptMinPerc the keptMinPerc to set
      */
-    protected void setKeptMinPerc(int keptMinPerc) {
+    private void setKeptMinPerc(int keptMinPerc) {
         this.keptMinPerc = keptMinPerc;
     }
 
     /**
      * @param inhibitMultiRoll the inhibitMultiRoll to set
      */
-    protected void setInhibitMultiRoll(boolean inhibitMultiRoll) {
+    private void setInhibitMultiRoll(boolean inhibitMultiRoll) {
         this.inhibitMultiRoll = inhibitMultiRoll;
     }
 
     /**
      * @param reminderLetterDays the reminderLetterDays to set
      */
-    protected void setReminderLetterDays(int reminderLetterDays) {
+    private void setReminderLetterDays(int reminderLetterDays) {
         this.reminderLetterDays = reminderLetterDays;
     }
 
     /**
      * @param reminderNSF the reminderNSF to set
      */
-    protected void setReminderNSF(boolean reminderNSF) {
+    private void setReminderNSF(boolean reminderNSF) {
         this.reminderNSF = reminderNSF;
     }
 
     /**
      * @param restrictedStates the restrictedStates to set
      */
-    protected void setRestrictedStates(TreeSet<String> restrictedStates) {
+    private void setRestrictedStates(TreeSet<String> restrictedStates) {
         this.restrictedStates = restrictedStates;
     }
 
     /**
      * @param statements the statements to set
      */
-    protected void setStatements(Forms statements) {
+    private void setStatements(Forms statements) {
         this.statements = statements;
     }
 
     /**
      * @param invoices the invoices to set
      */
-    protected void setInvoices(Forms invoices) {
+    private void setInvoices(Forms invoices) {
         this.invoices = invoices;
     }
+    
+    
     
 }
