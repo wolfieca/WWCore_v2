@@ -19,6 +19,7 @@ package Core;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Company-specific information. This was formerly a part of the System record.
@@ -28,7 +29,7 @@ import java.util.Set;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Company {
-    private Set<String> moneyNames;
+    private TreeSet<String> moneyNames;
     private HashMap<String,Boolean> simpleInterest;
     private HashMap<String,Boolean> compoundInterest;
     private int collectionCharge;
@@ -51,7 +52,7 @@ public class Company {
     private boolean inhibitMultiRoll;
     private int reminderLetterDays;
     private boolean reminderNSF;
-    private Set<String> restrictedStates;
+    private TreeSet<String> restrictedStates;
     public enum Forms{
         WIDE,
         NARROW,
@@ -60,171 +61,311 @@ public class Company {
     }
     private Forms statements;
     private Forms invoices;
-    
-    public Set<String> getMoneyNames(){
-        return moneyNames;
-    }
-    public HashMap<String,Boolean> getSimpleInterest(){
-        return simpleInterest;
-    }
-    public Boolean getSimpleInterest(String moneyName){
-        return simpleInterest.get(moneyName);
-    }
-    public HashMap<String,Boolean> getCompoundInterest(){
-        return compoundInterest;
-    }
-    public Boolean getCompoundInterest(String moneyName){
-        return compoundInterest.get(moneyName);
+
+    /**
+     * @return the moneyNames
+     */
+    public Set<String> getMoneyNames() {
+        return new TreeSet<>(moneyNames);
     }
 
+    /**
+     * @return the simpleInterest
+     */
+    public HashMap<String,Boolean> getSimpleInterest() {
+        return new HashMap<>(simpleInterest);
+    }
+
+    /**
+     * @return the compoundInterest
+     */
+    public HashMap<String,Boolean> getCompoundInterest() {
+        return new HashMap<>(compoundInterest);
+    }
+
+    /**
+     * @return the collectionCharge
+     */
     public int getCollectionCharge() {
         return collectionCharge;
     }
 
-    protected void setCollectionCharge(int collectionCharge) {
-        this.collectionCharge = collectionCharge;
-    }
-
+    /**
+     * @return the accumulatedInterest
+     */
     public int getAccumulatedInterest() {
         return accumulatedInterest;
     }
 
-    protected void setAccumulatedInterest(int accumulatedInterest) {
-        this.accumulatedInterest = accumulatedInterest;
-    }
-
+    /**
+     * @return the billableCourtCosts
+     */
     public int getBillableCourtCosts() {
         return billableCourtCosts;
     }
 
-    protected void setBillableCourtCosts(int billableCourtCosts) {
-        this.billableCourtCosts = billableCourtCosts;
-    }
-
+    /**
+     * @return the internalCourtCosts
+     */
     public int getInternalCourtCosts() {
         return internalCourtCosts;
     }
 
-    protected void setInternalCourtCosts(int internalCourtCosts) {
-        this.internalCourtCosts = internalCourtCosts;
-    }
-
+    /**
+     * @return the closedAccountInterest
+     */
     public boolean isClosedAccountInterest() {
         return closedAccountInterest;
     }
 
-    protected void setClosedAccountInterest(boolean closedAccountInterest) {
-        this.closedAccountInterest = closedAccountInterest;
-    }
-
+    /**
+     * @return the fiscalMonth
+     */
     public GregorianCalendar getFiscalMonth() {
-        return fiscalMonth;
+        return (GregorianCalendar)fiscalMonth.clone();
     }
 
-    protected void setFiscalMonth(GregorianCalendar fiscalMonth) {
-        this.fiscalMonth = fiscalMonth;
-    }
-
+    /**
+     * @return the lastDebtorNumber
+     */
     public Long getLastDebtorNumber() {
-        return lastDebtorNumber;
+        return new Long(lastDebtorNumber);
     }
 
-    protected void setLastDebtorNumber(Long lastDebtorNumber) {
-        this.lastDebtorNumber = lastDebtorNumber;
-    }
-
+    /**
+     * @return the lastInvoiceNumber
+     */
     public Long getLastInvoiceNumber() {
-        return lastInvoiceNumber;
+        return new Long(lastInvoiceNumber);
     }
 
-    protected void setLastInvoiceNumber(Long lastInvoiceNumber) {
-        this.lastInvoiceNumber = lastInvoiceNumber;
-    }
-
+    /**
+     * @return the lastInternalBatchNumber
+     */
     public Long getLastInternalBatchNumber() {
-        return lastInternalBatchNumber;
+        return new Long(lastInternalBatchNumber);
     }
 
-    protected void setLastInternalBatchNumber(Long lastInternalBatchNumber) {
-        this.lastInternalBatchNumber = lastInternalBatchNumber;
-    }
-
+    /**
+     * @return the validInvoiceCycles
+     */
     public String getValidInvoiceCycles() {
-        return validInvoiceCycles;
+        return new String(validInvoiceCycles);
     }
 
-    protected void setValidInvoiceCycles(String validInvoiceCycles) {
-        this.validInvoiceCycles = validInvoiceCycles;
-    }
-
+    /**
+     * @return the collectorQuotaBase
+     */
     public QuotaBase getCollectorQuotaBase() {
         return collectorQuotaBase;
     }
 
-    protected void setCollectorQuotaBase(QuotaBase collectorQuotaBase) {
-        this.collectorQuotaBase = collectorQuotaBase;
-    }
-
+    /**
+     * @return the reorderDebtsOnMerge
+     */
     public boolean isReorderDebtsOnMerge() {
         return reorderDebtsOnMerge;
     }
 
-    protected void setReorderDebtsOnMerge(boolean reorderDebtsOnMerge) {
-        this.reorderDebtsOnMerge = reorderDebtsOnMerge;
-    }
-
+    /**
+     * @return the keptMinPerc
+     */
     public int getKeptMinPerc() {
         return keptMinPerc;
     }
 
-    protected void setKeptMinPerc(int keptMinPerc) {
-        this.keptMinPerc = keptMinPerc;
-    }
-
+    /**
+     * @return the inhibitMultiRoll
+     */
     public boolean isInhibitMultiRoll() {
         return inhibitMultiRoll;
     }
 
-    protected void setInhibitMultiRoll(boolean inhibitMultiRoll) {
-        this.inhibitMultiRoll = inhibitMultiRoll;
-    }
-
+    /**
+     * @return the reminderLetterDays
+     */
     public int getReminderLetterDays() {
         return reminderLetterDays;
     }
 
-    protected void setReminderLetterDays(int reminderLetterDays) {
-        this.reminderLetterDays = reminderLetterDays;
-    }
-
+    /**
+     * @return the reminderNSF
+     */
     public boolean isReminderNSF() {
         return reminderNSF;
     }
 
-    protected void setReminderNSF(boolean reminderNSF) {
-        this.reminderNSF = reminderNSF;
+    /**
+     * @return the restrictedStates
+     */
+    public TreeSet<String> getRestrictedStates() {
+        return new TreeSet<>(restrictedStates);
     }
 
-    public Set<String> getRestrictedStates() {
-        return restrictedStates;
-    }
-
-    protected void setRestrictedStates(Set<String> restrictedStates) {
-        this.restrictedStates = restrictedStates;
-    }
-
+    /**
+     * @return the statements
+     */
     public Forms getStatements() {
         return statements;
     }
 
-    protected void setStatements(Forms statements) {
-        this.statements = statements;
-    }
-
+    /**
+     * @return the invoices
+     */
     public Forms getInvoices() {
         return invoices;
     }
 
+    /**
+     * @param moneyNames the moneyNames to set
+     */
+    protected void setMoneyNames(TreeSet<String> moneyNames) {
+        this.moneyNames = moneyNames;
+    }
+
+    /**
+     * @param simpleInterest the simpleInterest to set
+     */
+    protected void setSimpleInterest(HashMap<String,Boolean> simpleInterest) {
+        this.simpleInterest = simpleInterest;
+    }
+
+    /**
+     * @param compoundInterest the compoundInterest to set
+     */
+    protected void setCompoundInterest(HashMap<String,Boolean> compoundInterest) {
+        this.compoundInterest = compoundInterest;
+    }
+
+    /**
+     * @param collectionCharge the collectionCharge to set
+     */
+    protected void setCollectionCharge(int collectionCharge) {
+        this.collectionCharge = collectionCharge;
+    }
+
+    /**
+     * @param accumulatedInterest the accumulatedInterest to set
+     */
+    protected void setAccumulatedInterest(int accumulatedInterest) {
+        this.accumulatedInterest = accumulatedInterest;
+    }
+
+    /**
+     * @param billableCourtCosts the billableCourtCosts to set
+     */
+    protected void setBillableCourtCosts(int billableCourtCosts) {
+        this.billableCourtCosts = billableCourtCosts;
+    }
+
+    /**
+     * @param internalCourtCosts the internalCourtCosts to set
+     */
+    protected void setInternalCourtCosts(int internalCourtCosts) {
+        this.internalCourtCosts = internalCourtCosts;
+    }
+
+    /**
+     * @param closedAccountInterest the closedAccountInterest to set
+     */
+    protected void setClosedAccountInterest(boolean closedAccountInterest) {
+        this.closedAccountInterest = closedAccountInterest;
+    }
+
+    /**
+     * @param fiscalMonth the fiscalMonth to set
+     */
+    protected void setFiscalMonth(GregorianCalendar fiscalMonth) {
+        this.fiscalMonth = fiscalMonth;
+    }
+
+    /**
+     * @param lastDebtorNumber the lastDebtorNumber to set
+     */
+    protected void setLastDebtorNumber(Long lastDebtorNumber) {
+        this.lastDebtorNumber = lastDebtorNumber;
+    }
+
+    /**
+     * @param lastInvoiceNumber the lastInvoiceNumber to set
+     */
+    protected void setLastInvoiceNumber(Long lastInvoiceNumber) {
+        this.lastInvoiceNumber = lastInvoiceNumber;
+    }
+
+    /**
+     * @param lastInternalBatchNumber the lastInternalBatchNumber to set
+     */
+    protected void setLastInternalBatchNumber(Long lastInternalBatchNumber) {
+        this.lastInternalBatchNumber = lastInternalBatchNumber;
+    }
+
+    /**
+     * @param validInvoiceCycles the validInvoiceCycles to set
+     */
+    protected void setValidInvoiceCycles(String validInvoiceCycles) {
+        this.validInvoiceCycles = validInvoiceCycles;
+    }
+
+    /**
+     * @param collectorQuotaBase the collectorQuotaBase to set
+     */
+    protected void setCollectorQuotaBase(QuotaBase collectorQuotaBase) {
+        this.collectorQuotaBase = collectorQuotaBase;
+    }
+
+    /**
+     * @param reorderDebtsOnMerge the reorderDebtsOnMerge to set
+     */
+    protected void setReorderDebtsOnMerge(boolean reorderDebtsOnMerge) {
+        this.reorderDebtsOnMerge = reorderDebtsOnMerge;
+    }
+
+    /**
+     * @param keptMinPerc the keptMinPerc to set
+     */
+    protected void setKeptMinPerc(int keptMinPerc) {
+        this.keptMinPerc = keptMinPerc;
+    }
+
+    /**
+     * @param inhibitMultiRoll the inhibitMultiRoll to set
+     */
+    protected void setInhibitMultiRoll(boolean inhibitMultiRoll) {
+        this.inhibitMultiRoll = inhibitMultiRoll;
+    }
+
+    /**
+     * @param reminderLetterDays the reminderLetterDays to set
+     */
+    protected void setReminderLetterDays(int reminderLetterDays) {
+        this.reminderLetterDays = reminderLetterDays;
+    }
+
+    /**
+     * @param reminderNSF the reminderNSF to set
+     */
+    protected void setReminderNSF(boolean reminderNSF) {
+        this.reminderNSF = reminderNSF;
+    }
+
+    /**
+     * @param restrictedStates the restrictedStates to set
+     */
+    protected void setRestrictedStates(TreeSet<String> restrictedStates) {
+        this.restrictedStates = restrictedStates;
+    }
+
+    /**
+     * @param statements the statements to set
+     */
+    protected void setStatements(Forms statements) {
+        this.statements = statements;
+    }
+
+    /**
+     * @param invoices the invoices to set
+     */
     protected void setInvoices(Forms invoices) {
         this.invoices = invoices;
     }
