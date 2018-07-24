@@ -29,8 +29,8 @@ package Core;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class AccessControlEntry {
-    private Actor refActor;
-    private Permission permissions;
+    private final Actor refActor;
+    private final Permission permissions;
     
     public AccessControlEntry(){
         refActor = null;
