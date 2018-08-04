@@ -81,7 +81,7 @@ public class Debtor {
     // Locked debtors can't be changed outside of those changes needed for
     // payment processing.
     private boolean locked;
-    private HashMap<String, DemographicField> demoFields;
+    private Demographics demographics;
     // Begin PHI data fields...
     // The level of access to the PHI fields is controlled by the 
     // Account.PHI.Read and Account.PHI.Write rights. If the requestor doesn't
@@ -92,8 +92,8 @@ public class Debtor {
     private DemographicField<String> firstName;
     private DemographicField<String> middleName;
     private DemographicField<String> suffix;
-
     private DemographicField<String> title;
+    
     private DemographicField<String> phone;
     // Wizard does not put SSN or birthdate in the MASTER data, and we have to
     // put it in the NI window, even though it is always pertinent
