@@ -96,5 +96,11 @@ public class Debtor {
         
     }
     
+    public void addDebt(Debt debt){    
+    }
+    
+    public void addHistoryItem(HistoryItem item){
+        
+    }
     
 }
