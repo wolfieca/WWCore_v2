@@ -16,6 +16,7 @@
  */
 package Core;
 
+import java.sql.Connection;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -81,7 +82,8 @@ public class Debtor {
     //private HashMap<String,SupplementalData> ancil;
     private Debts debts;
     private History history;
-    private Payments payment;
+    private Payments payments;
+    private Promise promise;
     private LegalActions legal;
     private MessageQueue activity;
     private Strategy strategy;
@@ -96,11 +98,49 @@ public class Debtor {
         
     }
     
-    public void addDebt(Debt debt){    
-    }
-    
-    public void addHistoryItem(HistoryItem item){
+    public Debtor(Long debtor, Connection sqlConnection){
         
     }
     
+    public Debtor(HashMap<String, Object> setup){
+        
+    }
+    
+    //Methods
+    
+    public void addDebt(Debt debt){   
+        
+    }
+    
+    public void addContact(HistoryItem item){
+        
+    }
+    
+    public void addPayment(Payment payment){
+        
+    }
+    
+    public void addLegalAction (Legal action){
+        
+    }
+    
+    public void updateDemographics(DemographicField demographic){
+        
+    }
+    
+    public void lock(){
+        
+    }
+    
+    public void unlock(){
+        
+    }
+    
+    public Client primaryClient(){
+        return this.primaryClient;
+    }
+    
+    public GregorianCalendar nextActivity(){
+        return null;
+    }
 }
