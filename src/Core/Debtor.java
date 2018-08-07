@@ -27,6 +27,7 @@ import java.util.HashMap;
  */
 public class Debtor {
     private Long debtor;
+    private AccessControlList ACL;
     private Client primaryClient;
     //private HashMap<Client,Integer> clients;
     //private Actor collector;
