@@ -28,7 +28,7 @@ import java.util.HashMap;
 public class Debtor {
     private Long debtor;
     private AccessControlList ACL;
-    private Client primaryClient;
+    //private Client primaryClient; //obsolete
     //private HashMap<Client,Integer> clients;
     //private Actor collector;
     private CollectionUnit unit;
@@ -160,7 +160,7 @@ public class Debtor {
             mergeable = true;
     }
     public Client primaryClient(){
-        return this.primaryClient;
+        return null;
     }
     
     public GregorianCalendar nextActivity(){

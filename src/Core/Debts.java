@@ -16,10 +16,16 @@
  */
 package Core;
 
+import java.util.HashMap;
+
 /**
- *
+ * A container for debts
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Debts {
+    private HashMap<Integer, Client> debts;
     
+    public Client primaryClient(){
+        return null;
+    }
 }
