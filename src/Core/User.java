@@ -299,5 +299,7 @@ public class User  extends Actor{
         return 0;
     }
     
-    
+    public Boolean hasRight(String rightName){
+        return userRights.hasRight(rightName);
+    }
 }

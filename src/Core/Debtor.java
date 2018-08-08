@@ -109,34 +109,56 @@ public class Debtor {
     
     //Methods
     
-    public void addDebt(Debt debt){   
+    public void addDebt(Debt debt, User user){   
         
     }
     
-    public void addContact(HistoryItem item){
+    public void addContact(HistoryItem item, User user){
         
     }
     
-    public void addPayment(Payment payment){
+    public void addPayment(Payment payment, User user){
         
     }
     
-    public void addLegalAction (Legal action){
+    public void addLegalAction (Legal action, User user){
         
     }
     
-    public void updateDemographics(DemographicField demographic){
+    public void updateDemographics(DemographicField demographic, User user){
         
     }
     
-    public void lock(){
-        
+    public void lock(User user){
+        if ( user.hasRight("Debtor.Lock") )
+            locked = true;
     }
     
-    public void unlock(){
-        
+    public void unlock(User user){
+        if ( user.hasRight("Debtor.Lock") )
+            locked = false;
     }
     
+    // For simplicity sake
+    public void allowMatch(User user){
+        if ( user.hasRight("Debtor.Lock") )
+            matchable = true;
+    }
+    
+    public void denyMatch(User user){
+        if ( user.hasRight("Debtor.Lock") )
+            matchable = false;
+    }
+    
+    public void allowMerge(User user) {
+        if ( user.hasRight("Debtor.Lock") )
+            mergeable = true;
+    }
+    
+    public void denyMerge(User user) {
+        if ( user.hasRight("Debtor.Lock") )
+            mergeable = true;
+    }
     public Client primaryClient(){
         return this.primaryClient;
     }

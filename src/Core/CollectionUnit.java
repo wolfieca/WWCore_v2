@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * CollectionUnit reflects a single Collection Unit
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class CollectionUnit {

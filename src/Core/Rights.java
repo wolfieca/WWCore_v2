@@ -103,8 +103,8 @@ public class Rights {
         rightSet.put("Debtor.Delete", false);
         rightSet.put("Debtor.PHI.Read", false);
         rightSet.put("Debtor.PHI.Write", false);
-        rightSet.put("Debtor.Supp.Read", false);
-        rightSet.put("Debtor.Supp.Write", false);
+        rightSet.put("Debtor.Demographics.Read", false);
+        rightSet.put("Debtor.Demographics.Write", false);
         rightSet.put("Debtor.Lookup.ByHistory", false);
         rightSet.put("Debtor.Lookup.ByQueue", false);
         rightSet.put("Debtor.Lookup.ByGeneral", false);
@@ -121,6 +121,7 @@ public class Rights {
         rightSet.put("Debtor.Update.LettersLeft", false);
         rightSet.put("Debtor.Update.Indicators", false);
         rightSet.put("Debtor.Update.LegalScreen",false);
+        rightSet.put("Debtor.Lock", false);
         rightSet.put("Debt.Read", false);
         rightSet.put("Debt.Write", false);
         rightSet.put("Debt.CRStatus.Write", false);
@@ -151,7 +152,7 @@ public class Rights {
         rightSet.put("LetterSeries.Read", false);
         rightSet.put("LetterSeries.Write", false);
         rightSet.put("Match.Setup.Read", false);
-        rightSet.put("Match.Match.Setup.Write", false);
+        rightSet.put("Match.Setup.Write", false);
         rightSet.put("Misc.Read", false);
         rightSet.put("Misc.Write", false);
         rightSet.put("Newbiz.Read", false);
@@ -797,4 +798,7 @@ public class Rights {
         this.alterSupplementalCategory = alterSupplementalCategory;
     }
 
+    public Boolean hasRight(String requestedRight){
+        return rightSet.get(requestedRight);
+    }
 }
