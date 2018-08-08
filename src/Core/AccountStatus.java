@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A single Account Status, including all the attributes and actions applied to
+ * accounts that are set to this status.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class AccountStatus {

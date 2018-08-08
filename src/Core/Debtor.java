@@ -64,6 +64,7 @@ public class Debtor {
     private Integer collectorRetrySendDays;
     private Integer lettersLeft;
     private Priority priority;
+    private Office debtorOffice;
     private CollectionUnit priorCollector;
     private Promise paymentPromise;
     private AccountStatus status;
