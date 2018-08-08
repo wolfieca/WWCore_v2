@@ -31,11 +31,10 @@ public class Debtor {
     //private Client primaryClient; //obsolete
     //private HashMap<Client,Integer> clients;
     //private Actor collector;
-    private CollectionUnit unit;
+    private CollectionUnit collector;
     private Boolean mailReturn;
     private Boolean paidInFull;
     private Boolean workedSinceLastNewbiz;
-    private Boolean hasAssetWindow;
     private Boolean withAttorney;
     private Boolean withForward;
     private Boolean hasRestrictionsWindow;
@@ -104,7 +103,7 @@ public class Debtor {
         
     }
     
-    public Debtor(HashMap<String, Object> setup){
+    protected Debtor(HashMap<String, Object> setup){
         
     }
     
@@ -167,4 +166,14 @@ public class Debtor {
     public GregorianCalendar nextActivity(){
         return null;
     }
+    
+    public void createPromise(Promise promise){
+        
+    }
+    
+    public void changeCollector(CollectionUnit newCollector){
+        
+    }
+    
+    
 }
