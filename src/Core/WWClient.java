@@ -28,15 +28,31 @@ public class WWClient {
     Long written;
     User user;
     
+    /**
+     *
+     */
     public WWClient(){
         speaker = new Socket();
         user=null;
     }
     
+    /**
+     *
+     * @param portNum
+     * @throws UnknownHostException
+     * @throws IOException
+     */
     public WWClient(short portNum) throws UnknownHostException, IOException{
         speaker = new Socket("localhost", portNum);
     }
     
+    /**
+     *
+     * @param hostName
+     * @param portNum
+     * @throws UnknownHostException
+     * @throws IOException
+     */
     public WWClient(String hostName, short portNum) throws UnknownHostException,
             IOException {
         speaker = new Socket(hostName, portNum);

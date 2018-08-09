@@ -43,8 +43,20 @@ public class Company {
     private Long lastInvoiceNumber;
     private Long lastInternalBatchNumber;
     private String validInvoiceCycles;
+
+    /**
+     *
+     */
     public enum QuotaBase{
+
+        /**
+         *
+         */
         GROSS,
+
+        /**
+         *
+         */
         NET
     };
     private QuotaBase collectorQuotaBase;
@@ -54,19 +66,66 @@ public class Company {
     private int reminderLetterDays;
     private boolean reminderNSF;
     private TreeSet<String> restrictedStates;
+
+    /**
+     *
+     */
     public enum Forms{
+
+        /**
+         *
+         */
         WIDE,
+
+        /**
+         *
+         */
         NARROW,
+
+        /**
+         *
+         */
         OTHER,
+
+        /**
+         *
+         */
         LASER
     }
     private Forms statements;
     private Forms invoices;
 
+    /**
+     *
+     */
     public Company() {
     }
 
-    
+    /**
+     *
+     * @param moneyNames
+     * @param simpleInterest
+     * @param compoundInterest
+     * @param collectionCharge
+     * @param accumulatedInterest
+     * @param billableCourtCosts
+     * @param internalCourtCosts
+     * @param closedAccountInterest
+     * @param fiscalMonth
+     * @param lastDebtorNumber
+     * @param lastInvoiceNumber
+     * @param lastInternalBatchNumber
+     * @param validInvoiceCycles
+     * @param collectorQuotaBase
+     * @param reorderDebtsOnMerge
+     * @param keptMinPerc
+     * @param inhibitMultiRoll
+     * @param reminderLetterDays
+     * @param reminderNSF
+     * @param restrictedStates
+     * @param statements
+     * @param invoices
+     */
     public Company(TreeSet<String> moneyNames, HashMap<String, Boolean> 
             simpleInterest, HashMap<String, Boolean> compoundInterest, 
             int collectionCharge, int accumulatedInterest, int billableCourtCosts, 
@@ -411,9 +470,19 @@ public class Company {
     }
     
     // Utility methods
+
+    /**
+     *
+     * @param theState
+     */
     public void addRestrictedState(String theState){
         
     }
+
+    /**
+     *
+     * @param theState
+     */
     public void delRestrictedState(String theState){
         
     }

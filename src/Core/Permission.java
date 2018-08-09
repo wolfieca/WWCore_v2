@@ -38,6 +38,11 @@ public class Permission {
     static final int TAKE_OWNERSHIP = 0x80;
     static final int WRITE_ACCESS = WRITE+MODIFY+DELETE;
 
+    /**
+     *
+     * @param deny
+     * @param permissions
+     */
     public Permission(boolean deny, int permissions) {
         //if ( comparePermissions(allowPermissions,denyPermissions) != 0)
         //    throw new InvalidPermissionCombinationException();

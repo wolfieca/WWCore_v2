@@ -34,9 +34,15 @@ public class System {
     Boolean sysIsLaunched;
     Boolean sysIsShutdown;
     MessageQueue sysMessageQueue;
+
+    /**
+     *
+     */
     public static String BUILD="0.01";
     
-    
+    /**
+     *
+     */
     public System(){
         serverSocket = new WWSocket();
         peerList = null;
@@ -49,6 +55,10 @@ public class System {
         sysMessageQueue = new MessageQueue();
     }
     
+    /**
+     *
+     * @param srvSocket
+     */
     public System(WWSocket srvSocket){
         serverSocket = srvSocket;
         peerList = null;
@@ -61,6 +71,11 @@ public class System {
         sysMessageQueue = new MessageQueue();
     }
     
+    /**
+     *
+     * @param srvSocket
+     * @param peers
+     */
     public System(WWSocket srvSocket, HashMap<String,WWPeer> peers){
         serverSocket = srvSocket;
         peerList = peers;
@@ -73,6 +88,12 @@ public class System {
         sysMessageQueue = new MessageQueue();        
     }
     
+    /**
+     *
+     * @param srvSocket
+     * @param peers
+     * @param log
+     */
     public System(WWSocket srvSocket, HashMap<String,WWPeer>peers, SysLogger log){
         serverSocket = srvSocket;
         peerList = peers;
@@ -85,6 +106,13 @@ public class System {
         sysMessageQueue = new MessageQueue();        
     }
     
+    /**
+     *
+     * @param srvSocket
+     * @param peers
+     * @param log
+     * @param messageQueue
+     */
     public System(WWSocket srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
             MessageQueue messageQueue) {
         serverSocket = srvSocket;
@@ -98,6 +126,14 @@ public class System {
         sysMessageQueue = messageQueue;        
     }
     
+    /**
+     *
+     * @param srvSocket
+     * @param peers
+     * @param log
+     * @param messageQueue
+     * @param sysCompany
+     */
     public System(WWSocket srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
             MessageQueue messageQueue, Company sysCompany) {
         serverSocket = srvSocket;

@@ -19,6 +19,7 @@ package Core;
 /**
  * A single bit of demographic data.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @param <T>
  */
 public class DemographicField<T> {
     T fieldValue;

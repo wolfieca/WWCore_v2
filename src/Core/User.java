@@ -299,6 +299,11 @@ public class User  extends Actor{
         return 0;
     }
     
+    /**
+     *
+     * @param rightName
+     * @return
+     */
     public Boolean hasRight(String rightName){
         return userRights.hasRight(rightName);
     }

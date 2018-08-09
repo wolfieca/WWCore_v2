@@ -32,11 +32,19 @@ public class AccessControlEntry {
     private final Actor refActor;
     private final Permission permissions;
     
+    /**
+     *
+     */
     public AccessControlEntry(){
         refActor = null;
         permissions = null;
     }
     
+    /**
+     *
+     * @param actor
+     * @param permissions
+     */
     public AccessControlEntry(Actor actor, Permission permissions){
         refActor = actor;
         this.permissions = permissions;

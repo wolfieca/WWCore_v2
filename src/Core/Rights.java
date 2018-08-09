@@ -798,6 +798,11 @@ public class Rights {
         this.alterSupplementalCategory = alterSupplementalCategory;
     }
 
+    /**
+     *
+     * @param requestedRight
+     * @return
+     */
     public Boolean hasRight(String requestedRight){
         return rightSet.get(requestedRight);
     }

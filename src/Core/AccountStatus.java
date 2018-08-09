@@ -27,9 +27,25 @@ public class AccountStatus {
     private AccountStatusType type;
     private AccountStatusGroup group;
     private Boolean bankrupt;
+
+    /**
+     *
+     */
     public enum BankruptcyChapter {
+
+        /**
+         *
+         */
         CHAPTER07,
+
+        /**
+         *
+         */
         CHAPTER11,
+
+        /**
+         *
+         */
         CHAPTER13
     }
     private BankruptcyChapter bankruptcyType;

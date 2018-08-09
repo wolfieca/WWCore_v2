@@ -19,6 +19,7 @@ package Core;
 import java.sql.Connection;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Debtor represents a single debtor on the system. This includes individual
@@ -89,91 +90,252 @@ public class Debtor {
     private MessageQueue activity;
     private Strategy strategy;
     private Status currentStatus;
+    private Set<User> readers;
+    private User writer;
     
     //Constructors
+
+    /**
+     *
+     */
     
     public Debtor() {
     }
     
+    /**
+     *
+     * @param debtor
+     */
     public Debtor(Long debtor){
         
     }
     
+    /**
+     *
+     * @param debtor
+     * @param sqlConnection
+     */
     public Debtor(Long debtor, Connection sqlConnection){
         
     }
     
+    /**
+     *
+     * @param setup
+     */
     protected Debtor(HashMap<String, Object> setup){
         
     }
     
     //Methods
+
+    /**
+     *
+     * @param debt
+     * @param user
+     */
     
     public void addDebt(Debt debt, User user){   
         
     }
     
+    /**
+     *
+     * @param item
+     * @param user
+     */
     public void addContact(HistoryItem item, User user){
         
     }
     
+    /**
+     *
+     * @param payment
+     * @param user
+     */
     public void addPayment(Payment payment, User user){
         
     }
     
+    /**
+     *
+     * @param action
+     * @param user
+     */
     public void addLegalAction (Legal action, User user){
         
     }
     
+    /**
+     *
+     * @param demographic
+     * @param user
+     */
     public void updateDemographics(DemographicField demographic, User user){
         
     }
     
+    /**
+     *
+     * @param user
+     */
     public void lock(User user){
         if ( user.hasRight("Debtor.Lock") )
             locked = true;
     }
     
+    /**
+     *
+     * @param user
+     */
     public void unlock(User user){
         if ( user.hasRight("Debtor.Lock") )
             locked = false;
     }
     
     // For simplicity sake
+
+    /**
+     *
+     * @param user
+     */
     public void allowMatch(User user){
         if ( user.hasRight("Debtor.Lock") )
             matchable = true;
     }
     
+    /**
+     *
+     * @param user
+     */
     public void denyMatch(User user){
         if ( user.hasRight("Debtor.Lock") )
             matchable = false;
     }
     
+    /**
+     *
+     * @param user
+     */
     public void allowMerge(User user) {
         if ( user.hasRight("Debtor.Lock") )
             mergeable = true;
     }
     
+    /**
+     *
+     * @param user
+     */
     public void denyMerge(User user) {
         if ( user.hasRight("Debtor.Lock") )
             mergeable = true;
     }
-    public Client primaryClient(){
+
+    /**
+     *
+     * @param user
+     * @return
+     */
+    public Client primaryClient(User user){
         return null;
     }
     
-    public GregorianCalendar nextActivity(){
+    /**
+     *
+     * @param user
+     * @return
+     */
+    public GregorianCalendar nextActivity(User user){
         return null;
     }
     
-    public void createPromise(Promise promise){
+    /**
+     *
+     * @param promise
+     * @param user
+     */
+    public void createPromise(Promise promise, User user){
         
     }
     
-    public void changeCollector(CollectionUnit newCollector){
+    /**
+     *
+     * @param newCollector
+     * @param user
+     */
+    public void changeCollector(CollectionUnit newCollector, User user){
         
     }
     
+    /**
+     *
+     * @param debtorToMerge
+     * @return
+     */
+    public Debtor merge (Debtor debtorToMerge){
+        return null;
+    }
     
+    /**
+     *
+     * @param debtsToSplit
+     * @return
+     */
+    public Debtor split (Integer[] debtsToSplit){
+        return null;
+    }
+    
+    /**
+     *
+     * @param debtsToMerge
+     * @return
+     */
+    public Debtor merge(Debts[] debtsToMerge){
+        return null;
+    }
+    
+    /**
+     *
+     * @param toForwarder
+     */
+    public void forward(AttorneyForwarder toForwarder){
+        
+    }
+    
+    /**
+     *
+     * @param letter
+     */
+    public void requestLetter(Letter letter){
+        
+    }
+    
+    /**
+     *
+     * @param testDebtor
+     */
+    public void match(Debtor testDebtor){
+        
+    }
+    
+    /**
+     *
+     */
+    public static void findMatches(){
+        
+    }
+    
+    /**
+     *
+     */
+    public void view(){
+        
+    }
+    
+    /**
+     *
+     */
+    public void edit(){
+        
+    }
 }

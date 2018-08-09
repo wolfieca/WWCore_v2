@@ -25,6 +25,10 @@ import java.util.HashMap;
 public class Debts {
     private HashMap<Integer, Client> debts;
     
+    /**
+     *
+     * @return
+     */
     public Client primaryClient(){
         return null;
     }
