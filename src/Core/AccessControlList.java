@@ -77,13 +77,13 @@ public class AccessControlList {
      * permissions on world are ignored.
      */
 
-    public int requestAccess(Actor requestor, int request){
+    public boolean requestAccess(Actor requestor, int request){
         if ( requestor.equals(admin) ) {
-            return adminPerms.checkAccess(request);
+            return adminPerms.checkAccess(request) == request;
         } else if ( requestor.equals(owner) ) {
-            return ownerPerms.checkAccess(request);
+            return ownerPerms.checkAccess(request) == request;
         }else if ( requestor.equals(group) ){
-            return groupPerms.checkAccess(request);
+            return groupPerms.checkAccess(request) == request;
         }/* else if ( requestor.PrimaryGroup() != null ) {
             if ( requestor.PrimaryGroup() != group.PrimaryGroup()) {
                 
@@ -91,9 +91,9 @@ public class AccessControlList {
             }
         }*/
         if ( ACL.get(requestor) != null )
-            return ACL.get(requestor).checkAccess(request);
+            return ACL.get(requestor).checkAccess(request) == request;
         else
-            return worldPerms.checkAccess(request);
+            return worldPerms.checkAccess(request) == request;
     }
     
     /**
