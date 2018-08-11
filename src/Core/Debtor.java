@@ -290,7 +290,7 @@ public class Debtor {
      * @param debtsToMerge
      * @return
      */
-    public Debtor merge(Debts[] debtsToMerge){
+    public Debtor merge(Debt[] debtsToMerge){
         return null;
     }
     
@@ -323,6 +323,15 @@ public class Debtor {
      */
     public static void findMatches(){
         
+    }
+    
+    /**
+     * 
+     * @param debtorNumber
+     * @return 
+     */
+    public static Debtor getDebtor(Long debtorNumber){
+        return null;
     }
     
     /**
