@@ -19,10 +19,22 @@ package Core;
 import java.util.HashMap;
 
 /**
- * 
+ * ActivityQueues is a manager object for the System Message Queues.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ActivityQueues {
-    private HashMap<String,MessageQueue> activities;
+    private AccessControlList ACL;
+    private HashMap<String,MessageQueue> queues;
     
+    public ActivityQueues(){
+        
+    }
+    
+    public static void initialize(){
+        
+    }
+    
+    public void initQueue(String queueName){
+        
+    }
 }
