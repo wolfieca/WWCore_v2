@@ -28,6 +28,8 @@ public class MessageQueue {
     private String queueName;
     private GregorianCalendar nextActivity;
     private PriorityQueue<Message> messageQueue;
+    private Integer maxAgeBeforeRequeue;    
+    private Boolean waiting;
     
     /**
      *
@@ -36,6 +38,8 @@ public class MessageQueue {
         queueName = "";
         nextActivity = new GregorianCalendar();
         messageQueue = new PriorityQueue<>();
+        maxAgeBeforeRequeue=0;
+        waiting = false;
     }
     
     /**
@@ -46,10 +50,12 @@ public class MessageQueue {
         this.queueName = queueName;
         nextActivity = new GregorianCalendar();
         messageQueue = new PriorityQueue<>();
+        maxAgeBeforeRequeue = 0;
+        waiting = false;
     }
     
     /**
-     *
+     * 
      * @return
      */
     public GregorianCalendar nextMessageDate(){

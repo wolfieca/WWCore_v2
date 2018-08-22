@@ -25,7 +25,7 @@ import java.util.HashMap;
  */
 
 
-public class User  extends Actor{
+public class User  extends Actor {
     private String userName;
     private String userID;
     private Group primaryGroup;
@@ -33,7 +33,7 @@ public class User  extends Actor{
     private Rights userRights;   
     private User effUser;    // Used by System Administrators to act as if they
                             // were another user. Programs may choose to ignore
-                            // this security context and operator only as the 
+                            // this security context and operate only as the 
                             // actual user, at their own discretion.
 
     private boolean canWorkOffHours;

@@ -25,7 +25,7 @@ import java.util.Dictionary;
 public class AccessControlList {
     /**
      * The admin object is for maintenance of this object. It will usually be 
-     * a user on the system, normally a member of the Admin group. The acmin
+     * a user on the system, normally a member of the Admin group. The admin
      * object is capable of reassigning ownership of the object.
      */
     private Actor admin; 

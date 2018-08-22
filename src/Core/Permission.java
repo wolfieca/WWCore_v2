@@ -39,7 +39,7 @@ public class Permission {
     static final int WRITE_ACCESS = WRITE+MODIFY+DELETE;
 
     /**
-     *
+     * Create the specified permission object.
      * @param deny
      * @param permissions
      */
