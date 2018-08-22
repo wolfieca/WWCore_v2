@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * Supplemental Data is non-demographic data belonging to a debtor. This
+ * includes data like Insurance Carrier (which may, instead be considered 
+ * DemographicData), letters that have been sent to the debtor by the Company,
+ * notes on the Debtor, Itemized Statements, if available, AKAs (if applicable), 
+ * etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class SupplementalData {

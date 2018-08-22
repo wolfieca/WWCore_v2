@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * Legal data. This is structured somewhat like the Supplemental and Demographic
+ * Data classes. Legal data is not necessarily encumbered by PHI.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Legal {

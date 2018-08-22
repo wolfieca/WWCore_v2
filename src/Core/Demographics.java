@@ -19,7 +19,14 @@ package Core;
 import java.util.HashMap;
 
 /**
- * Demographic Data
+ * Demographic Data for a debtor. This is intended for core demographic fields,
+ * such as Dates of Birth, SSN (for companies operating in the United States), 
+ * name, address, etc. Other demographic fields may be specified by the Company,
+ * but data that goes too much further out than these should probably be placed 
+ * in the SupplementalData object. Because they are somewhat central characteristics
+ * of a Debtor, Demographic data have more access restrictions than do 
+ * SupplementalData (ie a SSN should rarely ever change, but a person's Insurance
+ * carrier can change relatively frequently).
  * @author Robert
  */
 public class Demographics {
