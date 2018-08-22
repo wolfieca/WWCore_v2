@@ -17,7 +17,13 @@
 package Core;
 
 /**
- *
+ * A Reminder is literally what its name implies. It's a reminder that is scheduled
+ * to be sent to a specific queue at a particular time in the future. Like a Hold,
+ * a Reminder gets placed in a queue at a relatively high priority, but it's set
+ * to send at a particular time in the future, rather than immediately. The primary
+ * target of a Reminder is a Collector or other User-related
+ * queue, whereas Holds mainly target Debtor queues, so the actions of either 
+ * can differ greatly in practice.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Reminder {

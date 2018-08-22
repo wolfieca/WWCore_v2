@@ -21,7 +21,8 @@ package Core;
  * includes data like Insurance Carrier (which may, instead be considered 
  * DemographicData), letters that have been sent to the debtor by the Company,
  * notes on the Debtor, Itemized Statements, if available, AKAs (if applicable), 
- * etc.
+ * etc. It can also be used for medical-record specific information (blood-type,
+ * etc), for Companies dealing with medical records.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class SupplementalData {
