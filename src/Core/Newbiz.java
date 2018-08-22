@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * Newbiz manager class. This class is responsible for maintaining the 
+ * NewbizProcessor objects, and providing the interface to the NewbizBatch objects
+ * so that new business can both be imported and manipulated by users.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Newbiz {

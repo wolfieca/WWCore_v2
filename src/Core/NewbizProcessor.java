@@ -17,7 +17,13 @@
 package Core;
 
 /**
- *
+ * A module designed to translate a supplied data file into one or more NewbizBatch
+ * objects. Each NewbizProcessor has zero or more clients that it can be explicitly
+ * attached to, or it can register some header layout patterns with the Newbiz
+ * object to hopefully allow for automatic detection of the correct one to call.
+ * The base NewbizProcessor is designed to allow a map file to be submitted to
+ * it as well as the data file to specify a generic means of translating the data
+ * file provided, for those cases where the client data is fairly well-behaved.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class NewbizProcessor {

@@ -17,7 +17,13 @@
 package Core;
 
 /**
- *
+ * A single batch of new business. Contrary to the Wizard implementation, the
+ * WolffeWare NewbizBatch is built as a parallel structure to normal newbiz. That
+ * is, there are Debtor, Debt, Demographic, etc tables in the database and any
+ * given entry in a NewbizBatch can be treated as a normal Debtor for the most
+ * part (the biggest exception is the lack of a local account number, and the lack
+ * of an independent message queue for the newbiz debtors, though the batch does
+ * have a message queue).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class NewbizBatch {

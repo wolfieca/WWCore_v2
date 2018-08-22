@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * A business office. This is an office where Company does business. Offices need
+ * not necessarily be physically separate from one another, they often differ only
+ * in what services are provided. A single office may also physically occupy more 
+ * than one location (KCS has Hanford and Clovis addresses serving Office 1, while
+ * Office 2 and 5 are both located within the Hanford Office).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Office {
