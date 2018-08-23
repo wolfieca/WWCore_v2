@@ -21,13 +21,25 @@ import java.util.PriorityQueue;
 
 /**
  * MessageQueue is a straightforward message queue. CollectorQueue is based
- * on the MessageQueue class.
+ * on the MessageQueue class. A MessageQueue is typically an unbounded queue (in
+ * contrast to CollectorQueue which can be bounded by size and/or type of message).
+ * The MessageQueue provides mechanisms to prevent messages from getting too old
+ * without being seen or operated on by a user. First, the queue will boost the
+ * priority of messages that have sat in the queue for priorityBoostInterval days.
+ * After that, the messages older than maxAgeBeforeRequeue will be requeued,
+ * either to another queue (if appropriate) or to the same queue but with a Hold
+ * priority so it must be looked at before the queue user can go any further in 
+ * their queue. Non-interactive queues or messages are excluded from these, since 
+ * neither needs to be acted upon in any way (for example, the user PunchBreak queue, 
+ * which is primarily just a channel to notify supervisors when people log in or
+ * out).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class MessageQueue {
     private String queueName;
     private GregorianCalendar nextActivity;
     private PriorityQueue<Message> messageQueue;
+    private Integer priorityBoostInterval;
     private Integer maxAgeBeforeRequeue;    
     private Boolean waiting;
     

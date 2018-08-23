@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * AccountStatusType represents the type of a status (generic characteristics 
+ * that are shared among the statuses of the same type).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class AccountStatusType {

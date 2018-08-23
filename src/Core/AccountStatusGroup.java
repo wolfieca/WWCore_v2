@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A general grouping for account statuses, beyond the AccountStatusType. This 
+ * is primarily a convenience grouping.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class AccountStatusGroup {

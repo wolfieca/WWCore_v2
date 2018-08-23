@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * An ActionMessage causes the system to perform some action.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ActionMessage {

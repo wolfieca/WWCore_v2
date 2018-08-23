@@ -17,9 +17,12 @@
 package Core;
 
 /**
- *
+ * The specified account is bankrupt (the Debtor has declared Bankruptcy,
+ * whether is has been discharged or not is a separate matter). These
+ * messages will cause the system to make sure that everything is marked 
+ * properly on these accounts.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Bankruptcy {
+public class Bankruptcy extends Message{
     
 }

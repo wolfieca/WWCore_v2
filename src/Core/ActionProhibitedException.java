@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * The requested action is not allowed in the current security context.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ActionProhibitedException extends Exception {

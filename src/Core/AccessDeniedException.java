@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * An AccessDeniedException gets thrown when inappropriate access to an object
+ * is requested.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class AccessDeniedException extends Exception {

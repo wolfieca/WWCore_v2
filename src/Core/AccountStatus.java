@@ -29,7 +29,7 @@ public class AccountStatus {
     private Boolean bankrupt;
 
     /**
-     *
+     * Enum representing the various types of bankruptcy.
      */
     public enum BankruptcyChapter {
 

@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * An attorney or forwarding agency. Basically an external agent to whom we send
+ * accounts either for legal processing or because we can't directly do anything
+ * with them (ie, the debtor is in a restricted state, so we can't communicate 
+ * with them).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class AttorneyForwarder {
