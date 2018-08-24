@@ -17,7 +17,13 @@
 package Core;
 
 /**
- *
+ * Employee has been terminated, includes date of termination, reasons, etc.
+ * Automatically locks user's account on the system. If employee has a queue 
+ * associated with them, or is a Collector, the queue may be distributed among
+ * other users, or it may just be made inactive, with all messages just staying
+ * in the queue until they expire or are set to requeue. New messages will not
+ * be place in the Employee's user queue, and will either be silently redirected
+ * to an active queue or produce an error message on the sender's end.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class TerminateRequest {
