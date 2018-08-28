@@ -17,9 +17,9 @@
 package Core;
 
 /**
- *
+ * Report is a base-class for most of the system-generated reports.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Report {
+public class Report implements iReport {
     
 }

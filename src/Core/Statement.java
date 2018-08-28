@@ -17,9 +17,10 @@
 package Core;
 
 /**
- *
+ * A Statement is a client Statement (a statement of activity over a particular
+ * time period).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Statement {
+public class Statement extends Report {
     
 }

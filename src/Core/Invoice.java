@@ -17,9 +17,9 @@
 package Core;
 
 /**
- *
+ * An invoice to a client.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Invoice {
+public class Invoice extends Report{
     
 }
