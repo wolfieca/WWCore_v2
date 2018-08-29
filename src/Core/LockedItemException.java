@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * An attempt was made to change a locked item.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class LockedItemException extends Exception {

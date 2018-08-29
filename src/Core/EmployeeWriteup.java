@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * A discplinary writeup for an employee
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class EmployeeWriteup {

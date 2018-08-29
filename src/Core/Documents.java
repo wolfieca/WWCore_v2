@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * A grouping of Documents. 
  * @author rserrano
  */
 public class Documents {

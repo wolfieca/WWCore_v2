@@ -17,7 +17,8 @@
 package Core;
 
 /**
- * This is a System document. Documentation, Letters, Contracts and similary
+ * This is a System document. Documentation, Letters, Contracts and similar 
+ * documents descend from here.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Document {

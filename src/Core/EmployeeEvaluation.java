@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * An Employee Evaluation.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class EmployeeEvaluation {
