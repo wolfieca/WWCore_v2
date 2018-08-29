@@ -17,7 +17,9 @@
 package Core;
 
 /**
- * CollectionUnit reflects a single Collection Unit
+ * CollectionUnit reflects a single Collection Unit in the system. Typically, this
+ * will be a single User, though it is possible for multiple users to share a 
+ * single CollectionUnit.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class CollectionUnit {

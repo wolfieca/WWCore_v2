@@ -17,7 +17,7 @@
 package Core;
 
 /**
- * Debtor flags
+ * Specific flags relating to a particular debtor.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class DebtorFlags {

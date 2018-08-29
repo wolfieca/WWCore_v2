@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A CancelRequest is an explicit request to cancel an account (updating all the 
+ * pertinent statistical and historical data at the same time).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class CancelRequest {

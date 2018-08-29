@@ -17,9 +17,9 @@
 package Core;
 
 /**
- *
+ * A Credit Report pulled from one of the Credit Repositories.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class CreditReport {
+public class CreditReport extends Report{
     
 }

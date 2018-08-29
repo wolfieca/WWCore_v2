@@ -19,7 +19,8 @@ package Core;
 import java.util.HashMap;
 
 /**
- * A container for debts
+ * A container for debts. This is largely to provide a semantically singular place
+ * to query a Debtor's debts.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Debts {

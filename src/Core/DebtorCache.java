@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * DebtorCache is a potential speed optimization, to allow frequently-accessed
+ * Debtor objects to be retained in memory instead of being saved and freed. This
+ * is currently just an thought, and it may not actually be a part of the final
+ * Core product.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class DebtorCache {

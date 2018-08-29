@@ -23,7 +23,9 @@ import java.util.Set;
 
 /**
  * Debtor represents a single debtor on the system. This includes individual
- * debts, payments, legal actions, history, demographic information, etc.
+ * debts, payments, legal actions, history, demographic information, etc. Debtor
+ * is the management class for all these things, and is also largely responsible
+ * for any related reporting functionality.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Debtor {

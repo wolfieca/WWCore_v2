@@ -17,12 +17,10 @@
 package Core;
 
 /**
- * A collector queue. Collectors have a slightly different queue setup than most
- * users, since they have multiple related queues by default (at base, a collector
- * has primary, alternate and miscellaneous queues). This is in addition to the 
- * messageQueue(s) belonging to the user.
+ * This is a base Credit File exported in the standard format (currently Metro2)
+ * for submission to the major credit repositories.
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
+public class CreditFileExport {
     
 }

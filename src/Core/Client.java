@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * Client is, obviously, a client, someone who we provide services to.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Client {

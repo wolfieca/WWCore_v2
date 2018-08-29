@@ -26,6 +26,7 @@ import java.util.TreeSet;
  * But with the migration of a variety of System management-related data to the
  * System object, I'm moving them to a separate Company Object, which is also
  * part of the System object.
+ * Needs to be revised.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Company {

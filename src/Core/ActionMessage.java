@@ -17,7 +17,8 @@
 package Core;
 
 /**
- * An ActionMessage causes the system to perform some action.
+ * An ActionMessage causes the system to perform some action. ActionMessage is the
+ * basic unit of work in the WolffeWare system.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ActionMessage {

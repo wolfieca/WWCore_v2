@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * A single Credit Report request. These are typically XML files with various
+ * data about the debtor being sought. The base class is designed to send requests
+ * to Experian, though subclasses can change that, if need be.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class CreditReportRequest {

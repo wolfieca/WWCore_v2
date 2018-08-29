@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * ClassOfBusiness represent a class of clients and the characteristics that are
+ * common among them. Examples would be Medical, which would cover all Medical
+ * clients, and would include such things as how they are reported on Credit
+ * Reports, what collectors will work them, etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ClassOfBusieness {

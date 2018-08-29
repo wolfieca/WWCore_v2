@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * Statistics for a collector, including amount transferred in/out, amount collected
+ * number of PIF accounts by month, etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class CollectorStatistics {

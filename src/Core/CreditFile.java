@@ -17,12 +17,13 @@
 package Core;
 
 /**
- * A collector queue. Collectors have a slightly different queue setup than most
- * users, since they have multiple related queues by default (at base, a collector
- * has primary, alternate and miscellaneous queues). This is in addition to the 
- * messageQueue(s) belonging to the user.
+ * CreditFile is a utility class designed to allow for the management and testing
+ * of exported Credit File data (eg a Metro2 file produced by CreditFileExport).
+ * A CreditFileExport can be targeted at a CreditFile to allow statistics from
+ * the produced file to be read, and to allow individual records withing the
+ * CreditFileExport to be looked at.
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
+public class CreditFile {
     
 }

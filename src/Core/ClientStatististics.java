@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * ClientStatistics represents various statistical data about a client (placements
+ * by month, amount collected, etc). It is a part of the Client object and is 
+ * updated by Client. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ClientStatististics {
