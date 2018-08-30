@@ -17,8 +17,8 @@
 package Core;
 
 /**
- * A message sent to the system to request that two accounts (or segment thereof)
- * be merged.
+ * A MergeRequest is a message sent requesting a Merge operation be carried out
+ * on two (or more) debtors.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class MergeRequest extends Message{
