@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * A single fee schedule as defined by the Company.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class FeeSchedule {

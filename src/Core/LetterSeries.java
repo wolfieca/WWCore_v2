@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * LetterSeries is a programmed series of letters. This can be specific to 
+ * particular clients, and/or it can be generic and all clients have the same
+ * series. A LetterSeries dictates what letters will be sent on an account, and
+ * when. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class LetterSeries {

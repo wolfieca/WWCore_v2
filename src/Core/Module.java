@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * Module is a loadable plugin module that can be used to add functionality to the 
+ * system as a whole. This allows non-Core units to access Core functionality
+ * (such as the message queues). The ModuleLoader and SecurityManager are the
+ * units of Core responsible for loading Modules into the system (Module provides
+ * the means of registering so that they can be loaded and properly restricted).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Module {

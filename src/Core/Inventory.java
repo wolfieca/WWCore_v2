@@ -17,11 +17,10 @@
 package Core;
 
 /**
- * Documents is a collection of related Document Objects. Documents objects can
- * be attached to most Object types (ie a Debtor for correspondence to/from/
- * regarding the debtor, Client for correspondence and Contracts).
+ * An inventory of Company Assets (equipment and consumables), and statistical
+ * data about them.
  * @author rserrano
  */
-public class Documents {
+public class Inventory {
     
 }

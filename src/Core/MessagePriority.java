@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * MessagePriority controls the rate and order at which messages are delivered. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class MessagePriority {

@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * An individual Item in the System History.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class HistoryItem {

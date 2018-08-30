@@ -17,9 +17,12 @@
 package Core;
 
 /**
- *
+ * When equipment needs to be purchased (indicated by the approval of an 
+ * EquipmentRequest message), and EquipmentOrder message is generated which is
+ * sent to the appropriate purchasers, indicating the item, quantity, acceptable
+ * price limits, where equipment is needed and when it needs to arrive.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class EquipmentOrder {
+public class EquipmentOrder extends Message{
     
 }

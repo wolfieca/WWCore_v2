@@ -18,7 +18,9 @@ package Core;
 
 /**
  * A security group. A group is like a user in many ways. A user can be a member
- * of one or more groups.
+ * of one or more groups. A group has no real security context on its own, it just
+ * provides a single point to control access to system object on a less-granular-
+ * than-individual user level
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 

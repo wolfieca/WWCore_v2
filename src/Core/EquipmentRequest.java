@@ -17,9 +17,9 @@
 package Core;
 
 /**
- *
+ * A request for equipment. This is the initial step of the purchasing chain
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class EquipmentRequest {
+public class EquipmentRequest extends Message{
     
 }

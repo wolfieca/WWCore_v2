@@ -17,11 +17,12 @@
 package Core;
 
 /**
- * Documents is a collection of related Document Objects. Documents objects can
- * be attached to most Object types (ie a Debtor for correspondence to/from/
- * regarding the debtor, Client for correspondence and Contracts).
+ * A container of FeeSchedules. Company has one for all of its Fee Schedules, as
+ * does each Office. Fee Schedules can be dynamically created and destroyed, 
+ * the system will warn the user if they are trying to delete one that is currently
+ * in use anywhere.
  * @author rserrano
  */
-public class Documents {
+public class FeeSchedules {
     
 }

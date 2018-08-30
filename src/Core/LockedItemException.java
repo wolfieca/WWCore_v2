@@ -17,7 +17,12 @@
 package Core;
 
 /**
- *
+ * Thrown when a change has been attempted on a locked item (typically a debtor).
+ * In WolffeWare, Debtors and Debts are the primary lockable objects, and the
+ * locking mechanism is fairly fine tuned. This particular exception is thrown 
+ * when someone attempts to change something that has been explicitly locked
+ * for the target object (ie Debts can have interest locked if they are included
+ * in certain legal actions).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class LockedItemException extends Exception {

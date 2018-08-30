@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * A list of legal Actions. Most often LegalActions are associated with a debtor
+ * and a subset of their debts. The LegalActions object allows LegalActions for
+ * any context to be queries (ie, to find all the LegalActions actively being 
+ * worked by the Company)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class LegalActions {

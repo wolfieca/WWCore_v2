@@ -17,7 +17,8 @@
 package Core;
 
 /**
- * A single bit of demographic data.
+ * A single bit of demographic data. DemographicField objects return null if
+ * isPHI is marked true and the requesting user doesn't have the viewPHI right.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  * @param <T>
  */

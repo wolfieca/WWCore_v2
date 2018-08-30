@@ -17,11 +17,11 @@
 package Core;
 
 /**
- * Documents is a collection of related Document Objects. Documents objects can
- * be attached to most Object types (ie a Debtor for correspondence to/from/
- * regarding the debtor, Client for correspondence and Contracts).
+ * Equipment represents physical assets owned by the company. As such it entails
+ * a purchase price, an estimated depreciation rate, initial and current
+ * conditions, a current disposition and other pertinent data.
  * @author rserrano
  */
-public class Documents {
+public class Equipment extends Asset{
     
 }

@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * An EmployeeEvaluation reflects a Management-generated evaluation of an Employee's
+ * performance, etc. The specific questions and the types of answers expected are
+ * defined by management-level user(s) and can be trivially altered from one
+ * iteration to the next.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class EmployeeEvaluation {

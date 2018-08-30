@@ -17,11 +17,14 @@
 package Core;
 
 /**
- * Documents is a collection of related Document Objects. Documents objects can
- * be attached to most Object types (ie a Debtor for correspondence to/from/
- * regarding the debtor, Client for correspondence and Contracts).
+ * In the event that company equipment is lost/stolen/destroyed, an EquipmentLoss
+ * object is created to account for this loss. This allows the loss to be recorded
+ * and allows for what action is going to be taken to make up for that loss (ie
+ * consider it a write-off, have the employee make restitution for the loss and
+ * potentially generate an EmployeeWriteup as a result, bill insurance for the 
+ * loss, etc).
  * @author rserrano
  */
-public class Documents {
+public class EquipmentLoss {
     
 }

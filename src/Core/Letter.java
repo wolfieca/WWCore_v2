@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * Letter contains all the information needed to produce a single system letter.
+ * This includes the boilerplate for the letter (letterhead, etc) if appropriate,
+ * the format of the letter (ie an actual printed letter or just a file to be 
+ * sent to an outside), and other information for statistical and auditing 
+ * purposes.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Letter {

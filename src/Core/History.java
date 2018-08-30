@@ -17,7 +17,14 @@
 package Core;
 
 /**
- *
+ * This class encompasses all the historical data for the system. Including
+ * debtor contacts, collector activities, client contact, system activities, user
+ * activities, and others. A single history item can be associated with multiple
+ * system entities (ie a debtor contact item is associated with the debtor, with
+ * a collector if appropriate, and with a user, at the same time), and they can 
+ * be filtered and arranged on those same criteria for reporting or auditing 
+ * purposes. HistoryItem, is a separate class, and controls the mapping of 
+ * entities to individual items.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class History {

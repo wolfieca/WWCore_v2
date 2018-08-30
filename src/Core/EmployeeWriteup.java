@@ -17,7 +17,12 @@
 package Core;
 
 /**
- *
+ * Disciplinary write-up of an Employee. This includes the actual infraction, the
+ * reporting party, a detailed incident report, the supervisor sign-off, the
+ * employee sign-off, actions recommended and actions taken, as appropriate. These
+ * are only viewable entirely by management once completed, though the parties
+ * involved can be sent summaries of the incident and actions taken (with no 
+ * personally identifiable information made available to them)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class EmployeeWriteup {

@@ -17,9 +17,14 @@
 package Core;
 
 /**
- *
+ * EquipmentPurchased is the final step in the Equipment Purchasing process. This
+ * object contains various data pertaining to actually placing an EquipmentOrder
+ * with a vendor, including vendor information, purchase date, bill date, items
+ * purchased and the related quantities, prices, and conditions, ship date, 
+ * arrival date, responsible party, etc. Once the Equipment has arrived and been
+ * signed for, this object is made inactive and placed in the Company's History.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class EquipmentPurchased {
+public class EquipmentPurchased extends Message{
     
 }

@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A Message is a basic message in the system. It is intended to be a unit of
+ * synchronization and communication throughout the system as a whole.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Message {

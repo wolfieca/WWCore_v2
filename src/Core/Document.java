@@ -17,7 +17,12 @@
 package Core;
 
 /**
- * This is a System document. Documentation, Letters, Contracts and similary
+ * This is a System document. Documentation, Letters, Contracts and similar items
+ * go here. Basically, Document is a catch-all for any sort of reference or 
+ * historical record (ie renditions of letters that have been sent to debtors,
+ * Contracts and agreements signed by Clients, etc). This includes both generated
+ * (letters, contracts, documentation) documents, and scanned images (ie signed
+ * Contracts, returned Letters, etc).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Document {

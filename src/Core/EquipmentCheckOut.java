@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * Term-assigned equipment needs to be checked out by the requesting user, at the
+ * approval of their manager/supervisor
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class EquipmentCheckOut {

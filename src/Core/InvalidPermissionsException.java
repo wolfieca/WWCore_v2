@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * This exception is thrown when an invalid permission combination is specified.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class InvalidPermissionsException extends Exception {

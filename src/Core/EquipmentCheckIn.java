@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * Certain equipment is assigned to individual users for particular uses or periods
+ * of time (ie during the course of employment, for a particular assignment, etc).
+ * At the expiration of that time period, the equipment must be checked back in to
+ * make sure it's accounted for.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class EquipmentCheckIn {

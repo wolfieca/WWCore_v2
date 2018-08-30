@@ -17,9 +17,10 @@
 package Core;
 
 /**
- *
+ * A message sent to the system to request that two accounts (or segment thereof)
+ * be merged.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class MergeRequest {
+public class MergeRequest extends Message{
     
 }
