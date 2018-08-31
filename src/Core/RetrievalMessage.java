@@ -17,9 +17,11 @@
 package Core;
 
 /**
- *
+ * A RetrievalMessage is a message sent to request a particular object. For 
+ * example, a collector can send a RetrievalMessage to request a Debtor that
+ * called in be pulled up immediately. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class RetrievalMessage {
+public class RetrievalMessage extends Message{
     
 }

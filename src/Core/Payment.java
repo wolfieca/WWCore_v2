@@ -17,7 +17,10 @@
 package Core;
 
 /**
- *
+ * Payment represents a single payment in the system, including such information
+ * as the debtor on whom the payment is being applied, the portions owing that the
+ * payment is apportioned to, the date invoiced (if applicable), etc. Can also be
+ * used to reflect payments made by Clients to the Company.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Payment {

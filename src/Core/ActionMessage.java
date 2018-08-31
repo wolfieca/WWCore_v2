@@ -18,9 +18,11 @@ package Core;
 
 /**
  * An ActionMessage causes the system to perform some action. ActionMessage is the
- * basic unit of work in the WolffeWare system.
+ * basic unit of work in the WolffeWare system. ActionMessages are synchronous
+ * Messages, so the calling object is interested in the results of the Action
+ * and wants to be notified when they are available.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class ActionMessage {
+public class ActionMessage extends Message{
     
 }

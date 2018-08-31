@@ -17,9 +17,11 @@
 package Core;
 
 /**
- * A recap of a client statement.
+ * A ReplyMessage is sent when an ActionMessage has been carried out. It is 
+ * delivered to the caller's MessageQueue and the caller is notified (assigned to
+ * a system thread to it can act on the reply).
  * @author rserrano
  */
-public class StatementRecap extends Report{
+public class ReplyMessage {
     
 }

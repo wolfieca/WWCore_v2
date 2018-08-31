@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * The Result of an Action or Request. ActionMessage senders will be waiting for
+ * this message, which RequestMessage senders most likely will not. If there is 
+ * nothing waiting on this message, it will be sent directly to history
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ResultMessage {

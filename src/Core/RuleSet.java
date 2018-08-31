@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * RuleSet reflects all the Rules that have been applied to a particular context.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class RuleSet {

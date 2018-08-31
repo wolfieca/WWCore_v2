@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * The subtype of a payment (ie the actual payment method)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class PaymentSubType {

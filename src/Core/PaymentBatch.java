@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A batch of payments to apply to system accounts, either debtor or client. A
+ * typical batch will include multiple payments of one type/direction
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class PaymentBatch {

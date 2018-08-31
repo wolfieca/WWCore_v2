@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A SplitRequest is a message, sent to the Server to split debts from a Debtor,
+ * creating a new Debtor in the process.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class SplitRequest {

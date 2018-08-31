@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * Update request. Some change has been made to the referring object and
+ * needs to be committed, so that the change can be made visible to other users.
+ * In light of multiple readers, subsequent attempts to lock the object for
+ * writing will fail until the update has propagated (i.e. all current readers
+ * have acknowledge the update and refreshed their own views of the object).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class UpdateRequest {

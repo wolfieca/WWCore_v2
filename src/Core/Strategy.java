@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * A processing strategy for accounts to pass through over the course of their 
+ * lifetime. This is basically a chain of operations that will be taken in a
+ * particular order once an account has entered the system as an active account.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Strategy  {

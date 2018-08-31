@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * The PriorityCalculator assigns queue priorities to messages based on the
+ * characteristics defined in Priority.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class PriorityCalculator {

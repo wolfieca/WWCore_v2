@@ -17,7 +17,12 @@
 package Core;
 
 /**
- *
+ * A Payment Promise entered into between a Debtor and the Company/Collector. The
+ * promise contains various data, such as the date the promise is due, the amount
+ * promised, whether the promise was kept or broken (or the number of times it's
+ * been kept or broken for recurring promises), whether or not the promise is
+ * set to recur and whether the appropriate documentation is on file to allow it
+ * to recur if it is supposed to recur, etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Promise {

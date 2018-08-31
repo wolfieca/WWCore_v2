@@ -17,9 +17,15 @@
 package Core;
 
 /**
- *
+ * This message is produced in response to an employee resigning. This is treated
+ * as a ActionMessage, and the employee is frozen until the message has been 
+ * dealt with (either by being accepted by a Supervisor or the Company, or by
+ * being rejected). In the event that the resignation is accepted, the resignation
+ * sets off a cascade of related end-of-employment activities (i.e. check-in of
+ * all checked-out equipment, deactivation of the employee's accounts, disbursing
+ * of the employee's queue, determination of the employee's rehire status, etc).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Resignation {
+public class Resignation extends ActionMessage{
     
 }

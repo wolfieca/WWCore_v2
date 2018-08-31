@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * Whenever a User logs into or logs out of the system, a UserLoginLogout message
+ * is produced. These messages can be viewed by Management to audit a User's
+ * arrivals and departures.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class UserLoginLogout {

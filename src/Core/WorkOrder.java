@@ -17,7 +17,12 @@
 package Core;
 
 /**
- *
+ * A WorkOrder is a multi-part message that indicates that a compound task has
+ * been requested. The requirements for the WorkOrder to be completed are
+ * contained within the WorkOrder, as well as who has been assigned to complete 
+ * them, what the deadline is, and what their current status is. Because of their
+ * nature WorkOrders are ActionMessages (they stay in the queue of the current
+ * responsible party until they've been addressed).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class WorkOrder {

@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * A rule is a restriction imposed on accounts and collectors.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Rule {

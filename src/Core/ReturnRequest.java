@@ -17,7 +17,13 @@
 package Core;
 
 /**
- *
+ * ReturnRequest indicates that the client has requested that the account be 
+ * cancelled from the Company and returned to the Client. The exact implementation
+ * may vary, but the effect is the same: the account is removed from placements, 
+ * and all action on the account by the company ceases. The account itself becomes
+ * locked, preventing any changes from being made to it in the future. Only an
+ * existing legal action on the Account can prevent the ReturnRequest from 
+ * completing.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ReturnRequest {

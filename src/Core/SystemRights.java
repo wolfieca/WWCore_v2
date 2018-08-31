@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * The available System Rights (ie things users have access to). May be 
+ * supplanted or incorporated into other systems.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class SystemRights {

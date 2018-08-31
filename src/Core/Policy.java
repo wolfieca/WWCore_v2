@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * A Policy is a system-wide rule that affects operational parameters. This will
+ * typically be things like minimum time between contacts, how long an account 
+ * will be allowed to sit in a queue before being sent to another queue, minimum
+ * balances before Reporting to Credit Bureaus, when legal actions can be started,
+ * etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Policy {

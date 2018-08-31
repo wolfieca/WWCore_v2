@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * Priority definitions. This basically lays out what characteristics of a debtor
+ * will be used to determine its queueing priority.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Priority {

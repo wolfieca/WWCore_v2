@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A Request to generate a Report. This message provides the needed parameters 
+ * for the requested report.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ReportRequest {

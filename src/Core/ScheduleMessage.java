@@ -17,7 +17,12 @@
 package Core;
 
 /**
- *
+ * See Message for more documentation.
+ * A ScheduleMessage is a message sent to request an event to occur in the 
+ * future at a specified time and date. Because of the need to reliably know 
+ * that such events have been scheduled, the results are returned immediately. 
+ * These are functionally identical to Reminders, so they may be removed from the
+ * final product.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class ScheduleMessage {

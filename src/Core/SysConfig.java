@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * System Configuration information. This includes information such as Global
+ * restrictions (do not mail states), among other things
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class SysConfig {

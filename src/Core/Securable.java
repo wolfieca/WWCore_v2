@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * Classes implementing the Securable interface are designed to interact with 
+ * the SecurityManager.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public interface Securable {

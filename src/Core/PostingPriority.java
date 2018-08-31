@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * The priority with which to apportion payments over the various debt fields.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class PostingPriority {

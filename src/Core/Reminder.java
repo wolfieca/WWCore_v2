@@ -26,6 +26,6 @@ package Core;
  * can differ greatly in practice.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Reminder {
+public class Reminder extends Message{
     
 }

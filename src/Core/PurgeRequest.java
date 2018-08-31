@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * A request to purge an account from the system. The exact details of how this 
+ * request is to be carried out are dependent on the System configuration and
+ * Company policy.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class PurgeRequest {

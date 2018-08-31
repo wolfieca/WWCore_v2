@@ -17,9 +17,10 @@
 package Core;
 
 /**
- *
+ * A ticket is a Message indicating that some issue needs to be addressed. This
+ * is primarily an internal message, although it can reference other entities.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Ticket {
+public class Ticket extends Message{
     
 }

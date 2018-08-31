@@ -17,9 +17,10 @@
 package Core;
 
 /**
- *
+ * An asynchronous request to the system. The calling object is not waiting on the
+ * results. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class RequestMessage {
+public class RequestMessage extends Message{
     
 }

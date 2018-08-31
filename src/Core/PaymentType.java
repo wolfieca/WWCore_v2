@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * The type of the payment (Paid Us, Paid Client, Client Check, Paid Us Reversal,
+ * etc)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class PaymentType {

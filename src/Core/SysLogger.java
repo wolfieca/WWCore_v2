@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * The System Event Logger. This is primarily intended to work outside of the 
+ * History system, and is primarily meant for system errors and warnings
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class SysLogger {

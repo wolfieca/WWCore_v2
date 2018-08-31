@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * A single user session. Classes use this to get information about the 
+ * user requesting service. Instances of this object are created on user login 
+ * and destroyed when the user logs off, or when the session is terminated.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Session {

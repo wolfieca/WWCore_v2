@@ -20,7 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * A user on the system
+ * A user on the system. This is the basic security context for the system,
+ * and is used to determine access to various bits of functionality.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 

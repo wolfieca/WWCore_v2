@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * A UserBreak message is generated in response to a User indicating they are
+ * going on break or return from a break. UserBreak works as a toggle, and the
+ * message itself just contains the local reported time the message was generated.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class UserBreak {

@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * Thrown when a requested object is out of range of the containing object (ie
+ * the debt number doesn't exist).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class OutOfBoundsExceptions extends Exception {

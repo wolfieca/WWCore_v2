@@ -17,7 +17,8 @@
 package Core;
 
 /**
- *
+ * A container for payments. Payments objects are attached to Debtors, Clients, 
+ * Debts, etc to allow for specific payments to be referenced.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Payments {
