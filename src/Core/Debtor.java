@@ -25,7 +25,10 @@ import java.util.Set;
  * Debtor represents a single debtor on the system. This includes individual
  * debts, payments, legal actions, history, demographic information, etc. Debtor
  * is the management class for all these things, and is also largely responsible
- * for any related reporting functionality.
+ * for any related reporting functionality. Debtor is designed to defer as much 
+ * as possible until data is actually needed. At the base, a debtor will contain
+ * just the debtor information. Further information will be brought in as needed
+ * and kept in memory until it's been idle for a while.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Debtor {
@@ -81,6 +84,7 @@ public class Debtor {
     // payment processing.
     private Boolean locked;
     private Demographics demographics;
+    private SupplementalData supplementalData;
     
     // Begin working data fields
     //private HashMap<String,SupplementalData> ancil;
@@ -348,5 +352,13 @@ public class Debtor {
      */
     public void edit(){
         
+    }
+    
+    public String metro2(){
+        return null;
+    }
+    
+    public org.w3c.dom.Document exportXML(){
+        return null;
     }
 }

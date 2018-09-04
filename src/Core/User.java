@@ -29,7 +29,6 @@ import java.util.HashMap;
 public class User  extends Actor {
     private String userName;
     private String userID;
-    private Group primaryGroup;
     private ArrayList<Group> supplementaryGroups;
     private Rights userRights;   
     private User effUser;    // Used by System Administrators to act as if they
@@ -48,7 +47,6 @@ public class User  extends Actor {
         super(id);
         this.userName = "";
         this.userID = "";
-        this.primaryGroup = null;
         this.supplementaryGroups = new ArrayList();
         this.userRights = null;
         this.canWorkOffHours = false;
@@ -104,21 +102,6 @@ public class User  extends Actor {
         this.userID = userID;
     }
 
-    /**
-     *
-     * @return
-     */
-    public Group getPrimaryGroup() {
-        return primaryGroup;
-    }
-
-    /**
-     *
-     * @param primaryGroup
-     */
-    protected void setPrimaryGroup(Group primaryGroup) {
-        this.primaryGroup = primaryGroup;
-    }
 
     /**
      *
@@ -226,21 +209,6 @@ public class User  extends Actor {
         this.userID = userid;
     }
 
-    /**
-     *
-     * @return
-     */
-    public Group PrimaryGroup() {
-        return this.primaryGroup;
-    }
-
-    /**
-     *
-     * @param primarygroup
-     */
-    protected void PrimaryGroup(Group primarygroup){
-        this.primaryGroup = primarygroup;
-    }
 
     /**
      *

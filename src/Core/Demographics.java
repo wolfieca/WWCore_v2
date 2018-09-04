@@ -27,6 +27,11 @@ import java.util.HashMap;
  * of a Debtor, Demographic data have more access restrictions than do 
  * SupplementalData (ie a SSN should rarely ever change, but a person's Insurance
  * carrier can change relatively frequently).
+ * Implementation-wise, demographics, supplemental and legal data are accessed 
+ * through a unified API, since they are all deliberately similar in structure.
+ * This way a user doesn't need to know what kind of data they're looking for,
+ * they just specify that they're looking for SSN (for example) and it gets
+ * handled automatically by the system
  * @author Robert
  */
 public class Demographics {

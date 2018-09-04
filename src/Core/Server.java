@@ -33,6 +33,11 @@ package Core;
  * the WWSocket object. WWClient objects only know that there is a Server object
  * that they can communicate with via the WWSocket object, and that provides
  * complete objects on request (pursuant to normal security limitations).
+ * On the server side, Server contains, maintains, and controls the thread pools,
+ * database connection pools, and the various object caches that are maintained
+ * to speed performance (primarily the Debtor cache). It is also a key part of the
+ * initialization process of the System (it connects to the backing database and
+ * passes it to System to allow further initialization of the base objects).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Server {
