@@ -23,8 +23,11 @@ package Core;
  * Contracts and agreements signed by Clients, etc). This includes both generated
  * (letters, contracts, documentation) documents, and scanned images (ie signed
  * Contracts, returned Letters, etc).
+ * Note that, for the purposes of consistency and likely convenience, Documents
+ * are stored as XML documents. Printing and displaying the documents is the work 
+ * other support objects 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Document {
+public class WWDocument {
     
 }

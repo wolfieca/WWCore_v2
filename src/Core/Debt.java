@@ -18,9 +18,9 @@ package Core;
 
 /**
  * A single debt on the System. Typically subordinate to a Debtor object, but 
- * independently addressable for purposes of individual history, manipulation (ie
+ * independently addressable for purposes of individual history, manipulation (i.e.
  * splitting or merging debts), and reporting (for cases where clients' debts are
- * allowed to merge together).
+ * allowed to merge together). Credit Reporting is controlled on a Debt basis
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Debt {

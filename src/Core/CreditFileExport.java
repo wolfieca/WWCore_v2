@@ -19,6 +19,11 @@ package Core;
 /**
  * This is a base Credit File exported in the standard format (currently Metro2)
  * for submission to the major credit repositories.
+ * A CreditFile instance iterates over all debtors (or a specific subset of them), 
+ * and then requests those debtors to return Metro2-format data for each 
+ * applicable debt. Debtors have limited control over this process, though the 
+ * individual debts do ultimately determine whether or not they get reported and 
+ * how.
  * @author rserrano
  */
 public class CreditFileExport {

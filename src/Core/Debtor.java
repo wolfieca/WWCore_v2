@@ -20,6 +20,7 @@ import java.sql.Connection;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Set;
+import org.w3c.dom.Document;
 
 /**
  * Debtor represents a single debtor on the system. This includes individual
@@ -358,7 +359,7 @@ public class Debtor {
         return null;
     }
     
-    public org.w3c.dom.Document exportXML(){
+    public Document exportXML(){
         return null;
     }
 }
