@@ -44,7 +44,6 @@ public class Company {
     private Long lastInvoiceNumber;
     private Long lastInternalBatchNumber;
     private String validInvoiceCycles;
-
     /**
      *
      */

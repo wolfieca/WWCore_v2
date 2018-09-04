@@ -19,21 +19,27 @@ package Core;
 import java.util.HashMap;
 
 /**
- * Server represents a server process for WolffeWare. It works as a holder
- * for the various base core objects, especially the communications and security
- * facilities.
+ * System represents the WolffeWare system. It is the primary active entity,
+ * responsible for resource management, communications (setting up the local
+ * instance's communication channels
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class System {
-    WWSocket serverSocket;
-    HashMap<String, WWPeer> peerList;
-    Company company;
-    SysLogger sysLog;
-    Boolean sysIsLaunching;
-    Boolean sysIsShuttingDown;
-    Boolean sysIsLaunched;
-    Boolean sysIsShutdown;
-    MessageQueue sysMessageQueue;
+    private WWCommChannel commChannel;
+    private HashMap<String, WWPeer> peerList;
+    private Company company;
+    private SysLogger sysLog;
+    private Boolean isServer;
+    private Boolean isClient;
+    private Boolean sysIsLaunching;
+    private Boolean sysIsShuttingDown;
+    private Boolean sysIsLaunched;
+    private Boolean sysIsShutdown;
+    private MessageQueue sysMessageQueue;
+    
+    private HashMap<Long, Debtor> debtorCache;
+    private HashMap<String, User> users;
+    private HashMap<String, Boolean> userLoggedIn;
 
     /**
      *
@@ -44,7 +50,7 @@ public class System {
      *
      */
     public System(){
-        serverSocket = new WWSocket();
+        commChannel = null;
         peerList = null;
         company = new Company();
         sysLog = new SysLogger();
@@ -59,8 +65,8 @@ public class System {
      *
      * @param srvSocket
      */
-    public System(WWSocket srvSocket){
-        serverSocket = srvSocket;
+    public System(WWCommChannel srvSocket){
+        commChannel = srvSocket;
         peerList = null;
         company = new Company();
         sysLog = new SysLogger();
@@ -76,8 +82,8 @@ public class System {
      * @param srvSocket
      * @param peers
      */
-    public System(WWSocket srvSocket, HashMap<String,WWPeer> peers){
-        serverSocket = srvSocket;
+    public System(WWCommChannel srvSocket, HashMap<String,WWPeer> peers){
+        commChannel = srvSocket;
         peerList = peers;
         company = new Company();
         sysLog = new SysLogger();
@@ -94,8 +100,8 @@ public class System {
      * @param peers
      * @param log
      */
-    public System(WWSocket srvSocket, HashMap<String,WWPeer>peers, SysLogger log){
-        serverSocket = srvSocket;
+    public System(WWCommChannel srvSocket, HashMap<String,WWPeer>peers, SysLogger log){
+        commChannel = srvSocket;
         peerList = peers;
         company = new Company();
         sysLog = log;
@@ -113,9 +119,9 @@ public class System {
      * @param log
      * @param messageQueue
      */
-    public System(WWSocket srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
+    public System(WWCommChannel srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
             MessageQueue messageQueue) {
-        serverSocket = srvSocket;
+        commChannel = srvSocket;
         peerList = peers;
         company = new Company();
         sysLog = log;
@@ -134,9 +140,9 @@ public class System {
      * @param messageQueue
      * @param sysCompany
      */
-    public System(WWSocket srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
+    public System(WWCommChannel srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
             MessageQueue messageQueue, Company sysCompany) {
-        serverSocket = srvSocket;
+        commChannel = srvSocket;
         peerList = peers;
         company = sysCompany;
         sysLog = log;

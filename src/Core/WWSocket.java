@@ -27,6 +27,9 @@ import java.io.*;
  * whole
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class WWSocket {
-    ServerSocket listener;
+public class WWSocket extends WWCommChannel{
+    public void init(int portNumber){
+        
+    }
+    private ServerSocket listener;
 }

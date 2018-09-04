@@ -23,7 +23,7 @@ import java.io.*;
  * An outbound socket intended to be sent to client processes from the Server
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class WWClient {
+public class WWClient extends WWCommChannel{
     Socket speaker;
     Long written;
     User user;
@@ -58,5 +58,7 @@ public class WWClient {
         speaker = new Socket(hostName, portNum);
     }
     
-    
+    public void init (int portNumber){
+        
+    }
 }
