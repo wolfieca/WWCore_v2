@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.HashMap;
+
 /**
  * A collector queue. Collectors have a slightly different queue setup than most
  * users, since they have multiple related queues by default (at base, a collector
@@ -24,5 +26,20 @@ package Core;
  * @author rserrano
  */
 public class CollectorQueue extends MessageQueue{
+    private HashMap<String,MessageQueue> alternateQueues;
+    private Integer primaryQueueMaxSize;
     
+    @Override
+    public void enqueue(Message incoming){
+        
+    }
+    
+    
+    public void reevaluate(){
+        
+    }
+    
+    public void reevaluate(String queueID){
+        
+    }
 }

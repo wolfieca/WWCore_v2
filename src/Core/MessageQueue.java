@@ -41,6 +41,7 @@ public class MessageQueue {
     private PriorityQueue<Message> messageQueue;
     private Integer priorityBoostInterval;
     private Integer maxAgeBeforeRequeue;    
+    private Integer maxQueueSizeBeforeReeval;
     private Boolean waiting;
     
     /**

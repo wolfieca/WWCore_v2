@@ -32,8 +32,13 @@ import java.util.TreeSet;
 public class Company {
 
     private TreeSet<String> moneyNames;
-    private HashMap<String,Boolean> simpleInterest;
-    private HashMap<String,Boolean> compoundInterest;
+    public enum Interest {
+        NONE,
+        SIMPLE,
+        COMPOUND
+    }
+    private HashMap<String,Interest> accrueInterest;
+    //private HashMap<String,Boolean> compoundInterest;
     private int collectionCharge;
     private int accumulatedInterest;
     private int billableCourtCosts;
@@ -137,8 +142,6 @@ public class Company {
             int reminderLetterDays, boolean reminderNSF, 
             TreeSet<String> restrictedStates, Forms statements, Forms invoices) {
         this.moneyNames = moneyNames;
-        this.simpleInterest = simpleInterest;
-        this.compoundInterest = compoundInterest;
         this.collectionCharge = collectionCharge;
         this.accumulatedInterest = accumulatedInterest;
         this.billableCourtCosts = billableCourtCosts;
@@ -171,16 +174,6 @@ public class Company {
     /**
      * @return the simpleInterest
      */
-    public HashMap<String,Boolean> getSimpleInterest() {
-        return new HashMap<>(simpleInterest);
-    }
-
-    /**
-     * @return the compoundInterest
-     */
-    public HashMap<String,Boolean> getCompoundInterest() {
-        return new HashMap<>(compoundInterest);
-    }
 
     /**
      * @return the collectionCharge
@@ -322,19 +315,6 @@ public class Company {
         this.moneyNames = moneyNames;
     }
 
-    /**
-     * @param simpleInterest the simpleInterest to set
-     */
-    protected void setSimpleInterest(HashMap<String,Boolean> simpleInterest) {
-        this.simpleInterest = simpleInterest;
-    }
-
-    /**
-     * @param compoundInterest the compoundInterest to set
-     */
-    protected void setCompoundInterest(HashMap<String,Boolean> compoundInterest) {
-        this.compoundInterest = compoundInterest;
-    }
 
     /**
      * @param collectionCharge the collectionCharge to set

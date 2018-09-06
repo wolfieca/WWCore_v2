@@ -16,6 +16,10 @@
  */
 package Core;
 
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Set;
+
 /**
  * CollectionUnit reflects a single Collection Unit in the system. Typically, this
  * will be a single User, though it is possible for multiple users to share a 
@@ -23,5 +27,27 @@ package Core;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class CollectionUnit {
+    private CollectorQueue queue;
+    private String dunningName;
+    private Set<Office> office;
+    private String unit;
+    private Set<String> specialties;
+    private Long minimumAssignment;
+    private Long maximumAssignment;
+    private Boolean loginSummary;
+    private Boolean useDialer;
+    //public enum DialerLimits{
+    //    NO_LIMIT,
+    //    HML_LIMIT,
+    //    NBIZ_SIZ_LIMIT,
+    //    BOTH
+    //}
+    private Integer dialerLimit;
+    private Integer maxNewbiz;
+    private CollectorStatistics collStat;
+    private HashMap<GregorianCalendar,Long> queueSize;
+    private HashMap<GregorianCalendar,Long> queueWorked;
+    private Long maxLetters;
+    private Integer reevalAge;
     
 }
