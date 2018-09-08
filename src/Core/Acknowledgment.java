@@ -16,30 +16,15 @@
  */
 package Core;
 
-import java.util.HashMap;
-
 /**
- * A collector queue. Collectors have a slightly different queue setup than most
- * users, since they have multiple related queues by default (at base, a collector
- * has primary, alternate and miscellaneous queues, though others can be setup, 
- * as needed). This is in addition to the messageQueue(s) belonging to the user.
+ * A newbiz account acknowledgment. An Acknowledgment typically consists of some
+ * boilerplate text and a brief summary of the accounts that were recently sent
+ * to the Company's newbiz processor. Depending on the medium of transmission,
+ * there may also be a cover letter (if printing or if sending via fax), or text
+ * greeting (via email).
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
-    private HashMap<String,MessageQueue> alternateQueues;
-    private Integer primaryQueueMaxSize;
-    
-    @Override
-    public void enqueue(Message incoming){
-        
-    }
-    
-    
-    public void reevaluate(){
-        
-    }
-    
-    public void reevaluate(String queueID){
-        
-    }
+public class Acknowledgment extends WWDocument{
+    private Form ackForm;
+    private Form ackLetter;
 }

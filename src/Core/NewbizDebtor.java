@@ -16,30 +16,16 @@
  */
 package Core;
 
-import java.util.HashMap;
-
 /**
- * A collector queue. Collectors have a slightly different queue setup than most
- * users, since they have multiple related queues by default (at base, a collector
- * has primary, alternate and miscellaneous queues, though others can be setup, 
- * as needed). This is in addition to the messageQueue(s) belonging to the user.
+ * A NewbizDebtor is an individual Newbiz entry. It is derived from the Debtor
+ * class because, for all intents and purposes, it should behave like a Debtor,
+ * except separated from all the actual debtors on the system. Ultimately, this
+ * should simplify the newbiz import process as, once they've been approved, the 
+ * individual NewbizDebtor objects can be re-cast as Debtor objects and allowed to
+ * propagate into the system passively (ie NewbizBatch creates Debtor objects
+ * for the NewbizDebtors).
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
-    private HashMap<String,MessageQueue> alternateQueues;
-    private Integer primaryQueueMaxSize;
+public class NewbizDebtor extends Debtor{
     
-    @Override
-    public void enqueue(Message incoming){
-        
-    }
-    
-    
-    public void reevaluate(){
-        
-    }
-    
-    public void reevaluate(String queueID){
-        
-    }
 }

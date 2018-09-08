@@ -30,24 +30,27 @@ import java.util.TreeSet;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Company {
-
+    private String companyName;
+    private Set<Office> offices;
+    
     private TreeSet<String> moneyNames;
     public enum Interest {
         NONE,
         SIMPLE,
-        COMPOUND
+        COMPOUND,
+        EITHER
     }
     private HashMap<String,Interest> accrueInterest;
     //private HashMap<String,Boolean> compoundInterest;
     private int collectionCharge;
     private int accumulatedInterest;
     private int billableCourtCosts;
-    private int internalCourtCosts;
+    private long internalCourtCosts;
     private boolean closedAccountInterest;
     private GregorianCalendar fiscalMonth;
-    private Long lastDebtorNumber;
-    private Long lastInvoiceNumber;
-    private Long lastInternalBatchNumber;
+    private long lastDebtorNumber;
+    private long lastInvoiceNumber;
+    private long lastInternalBatchNumber;
     private String validInvoiceCycles;
     /**
      *
@@ -199,7 +202,7 @@ public class Company {
     /**
      * @return the internalCourtCosts
      */
-    public int getInternalCourtCosts() {
+    public long getInternalCourtCosts() {
         return internalCourtCosts;
     }
 

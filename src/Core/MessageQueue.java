@@ -32,7 +32,9 @@ import java.util.PriorityQueue;
  * their queue. Non-interactive queues or messages are excluded from these, since 
  * neither needs to be acted upon in any way (for example, the user PunchBreak queue, 
  * which is primarily just a channel to notify supervisors when people log in or
- * out).
+ * out). 
+ * MessageQueues replace the Scheduler/Activity paradigm used by the Wizard
+ * System. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class MessageQueue {

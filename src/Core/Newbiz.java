@@ -16,6 +16,9 @@
  */
 package Core;
 
+import java.util.HashMap;
+import java.util.Set;
+
 /**
  * Newbiz manager class. This class is responsible for maintaining the 
  * NewbizProcessor objects, and providing the interface to the NewbizBatch objects
@@ -23,5 +26,7 @@ package Core;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Newbiz {
+    private Set<NewbizProcessor> processors;
+    private HashMap<String,NewbizBatch> batches;
     
 }

@@ -16,30 +16,10 @@
  */
 package Core;
 
-import java.util.HashMap;
-
 /**
- * A collector queue. Collectors have a slightly different queue setup than most
- * users, since they have multiple related queues by default (at base, a collector
- * has primary, alternate and miscellaneous queues, though others can be setup, 
- * as needed). This is in addition to the messageQueue(s) belonging to the user.
+ *
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
-    private HashMap<String,MessageQueue> alternateQueues;
-    private Integer primaryQueueMaxSize;
+public class NewbizDebt extends Debt{
     
-    @Override
-    public void enqueue(Message incoming){
-        
-    }
-    
-    
-    public void reevaluate(){
-        
-    }
-    
-    public void reevaluate(String queueID){
-        
-    }
 }

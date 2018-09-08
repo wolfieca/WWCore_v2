@@ -27,5 +27,6 @@ package Core;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class NewbizBatch {
+    private Debtor nbizDebtor;
     
 }

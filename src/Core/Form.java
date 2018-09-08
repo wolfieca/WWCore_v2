@@ -16,30 +16,14 @@
  */
 package Core;
 
-import java.util.HashMap;
-
 /**
- * A collector queue. Collectors have a slightly different queue setup than most
- * users, since they have multiple related queues by default (at base, a collector
- * has primary, alternate and miscellaneous queues, though others can be setup, 
- * as needed). This is in addition to the messageQueue(s) belonging to the user.
+ * Form represents a system defined form. Form objects describe the layout
+ * of printed/displayed forms, including the paper size, aspect ratio, fonts,
+ * background imagery/letterhead, boilerplate text and other data to be used
+ * when a Report or Document needs to be made into a form that can be printed or
+ * shown on the screen.
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
-    private HashMap<String,MessageQueue> alternateQueues;
-    private Integer primaryQueueMaxSize;
+public class Form {
     
-    @Override
-    public void enqueue(Message incoming){
-        
-    }
-    
-    
-    public void reevaluate(){
-        
-    }
-    
-    public void reevaluate(String queueID){
-        
-    }
 }
