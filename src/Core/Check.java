@@ -17,7 +17,9 @@
 package Core;
 
 /**
- * A check, usually produced through the Accounting system.
+ * A check, usually produced through the Accounting system. This is almost 
+ * universally an outgoing payment (i.e. a payment to a client or to a vendor),
+ * payments received from debtors just count as Payments.
  * @author rserrano
  */
 public class Check extends WWDocument{

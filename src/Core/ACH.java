@@ -22,7 +22,14 @@ package Core;
  * or as a result of invoice reporting activity (i.e. payments made to a client).
  * We can also receive them back as a result of failures (i.e. NSF, Closed 
  * Accounts, Blocked, etc), though that primarily affects the first variety.
- * 
+ * Unlike checks, ACH transactions can be either incoming or outbound (either
+ * we are crediting a client's account or we are debiting a debtor's account). As
+ * such, the type of an individual transaction will have to be specified on 
+ * creation, so that they end up in the correct ACHFile object before being sent
+ * to the bank.
+ * Security Note: ACH is only creatable/modifiable from ACHFile. So, adding, 
+ * deleting or modifying an ACH requires that the user have the required 
+ * permission set in ACHFile.
  * @author rserrano
  */
 public class ACH extends WWDocument {

@@ -21,6 +21,13 @@ package Core;
  * provides the means to examine individual transactions, to delete selected ACH
  * transactions from the file, approve the file (producing an actual ACH file that
  * can be sent to a bank), etc.
+ * Security for both ACHFile and individual ACH objects is provided by ACHFile. A
+ * user without permissions to change ACHFile cannot do anything to its ACH
+ * objects beyond getting information about them. Once an ACHFile is created (at
+ * which time, all pending ACH transactions are created and added to it), no one
+ * can change the included ACH transactions unless they have CHANGE permission on
+ * the ACHFile object. Processes can add ACH transactions until the ACHFile is 
+ * closed, at which it produces the appropriate file and sends it out.
  * @author rserrano
  */
 public class ACHFile {
