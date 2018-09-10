@@ -16,16 +16,11 @@
  */
 package Core;
 
-import java.time.LocalDate;
-import java.util.List;
-
 /**
- * A TransactionRegister is a list of transactions that have been recorded for 
- * a given period of time (usually a single billing cycle).
+ * A single transaction. This can be new business, payments, etc. as long as it
+ * is related to money moving around.
  * @author rserrano
  */
-public class TransactionRegister {
-    private LocalDate periodBeginning;
-    private LocalDate periodEnding;
-    private List<Transaction> register;
+public class Transaction {
+    
 }
