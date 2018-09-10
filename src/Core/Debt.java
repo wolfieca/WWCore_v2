@@ -24,5 +24,12 @@ package Core;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Debt {
-    
+    private Debtor debtor;
+    private Client debtClient;
+    private DemographicField<String> cliRefNumber;
+    private boolean canAccrueInterest;
+    private History debtHistory;
+    private DemographicField<String> forWhat;
+    private SupplementalData Notes;
+    private Payments debtPayments;
 }

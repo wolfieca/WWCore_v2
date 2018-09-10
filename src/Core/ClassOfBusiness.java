@@ -23,6 +23,6 @@ package Core;
  * Reports, what collectors will work them, etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class ClassOfBusieness {
+public class ClassOfBusiness {
     
 }
