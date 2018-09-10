@@ -17,14 +17,10 @@
 package Core;
 
 /**
- * An ACH transaction. These are Automated Clearing House records and can be
- * produced either as a result of payment activity (payments made by a debtor),
- * or as a result of invoice reporting activity (i.e. payments made to a client).
- * We can also receive them back as a result of failures (i.e. NSF, Closed 
- * Accounts, Blocked, etc), though that primarily affects the first variety.
- * 
+ * The TransactionRegister is a list of transactions that have been recorded for 
+ * a given period of time (usually a single billing cycle).
  * @author rserrano
  */
-public class ACH extends WWDocument {
+public class TransactionRegister {
     
 }

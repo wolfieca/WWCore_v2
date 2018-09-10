@@ -38,6 +38,25 @@ public class PhoneNumber {
         return null;
     }
     
+    public String numberForm(){
+        return null;
+    }
+    
+    public String countryCode(){
+        return null;
+    }
+    public String areaCode(){
+        return null;
+    }
+    
+    public String exchange(){
+        return null;
+    }
+    
+    public String number(){
+        return null;
+    }
+    
     public static Boolean validate (String phoneNumber){
         return null;
     }

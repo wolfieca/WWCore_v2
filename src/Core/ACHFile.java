@@ -17,14 +17,12 @@
 package Core;
 
 /**
- * An ACH transaction. These are Automated Clearing House records and can be
- * produced either as a result of payment activity (payments made by a debtor),
- * or as a result of invoice reporting activity (i.e. payments made to a client).
- * We can also receive them back as a result of failures (i.e. NSF, Closed 
- * Accounts, Blocked, etc), though that primarily affects the first variety.
- * 
+ * An ACHFile contains a batch of ACH objects (individual transactions). ACHFile
+ * provides the means to examine individual transactions, to delete selected ACH
+ * transactions from the file, approve the file (producing an actual ACH file that
+ * can be sent to a bank), etc.
  * @author rserrano
  */
-public class ACH extends WWDocument {
+public class ACHFile {
     
 }
