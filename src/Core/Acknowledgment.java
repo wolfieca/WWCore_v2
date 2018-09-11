@@ -26,5 +26,6 @@ package Core;
  */
 public class Acknowledgment extends WWDocument{
     private Form ackForm;
-    private Form ackLetter;
+    private Letter ackLetter;
+    private NewbizBatch newbizBatch;
 }
