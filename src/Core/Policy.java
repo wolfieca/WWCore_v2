@@ -24,6 +24,6 @@ package Core;
  * etc.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Policy {
+public class Policy implements Reportable{
     
 }

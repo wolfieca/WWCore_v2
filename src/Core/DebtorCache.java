@@ -21,6 +21,9 @@ package Core;
  * Debtor objects to be retained in memory instead of being saved and freed. This
  * is currently just a thought, and it may not actually be a part of the final
  * Core product. 
+ * Implementation: Singleton object. Debtors are added to the cache as they are
+ * referenced and freed when conditions require it (i.e. when memory becomes too 
+ * tight).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class DebtorCache {

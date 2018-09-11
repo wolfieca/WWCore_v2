@@ -20,6 +20,6 @@ package Core;
  * An Entry in a Ledger.
  * @author rserrano
  */
-public class Entry {
+public class Entry implements Reportable{
     
 }

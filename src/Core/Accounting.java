@@ -24,6 +24,6 @@ package Core;
  * transactions occur.
  * @author rserrano
  */
-public class Accounting {
+public class Accounting implements Reportable, Securable{
     
 }

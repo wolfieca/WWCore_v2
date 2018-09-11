@@ -21,6 +21,6 @@ package Core;
  * is related to money moving around.
  * @author rserrano
  */
-public class Transaction {
+public class Transaction implements Reportable{
     
 }

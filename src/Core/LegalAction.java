@@ -20,6 +20,6 @@ package Core;
  * A single Legal Action in the system, and the related Legal data.
  * @author rserrano
  */
-public class LegalAction {
+public class LegalAction implements Reportable{
     
 }

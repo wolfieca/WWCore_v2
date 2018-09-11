@@ -21,6 +21,6 @@ package Core;
  * is primarily a convenience grouping.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class AccountStatusGroup {
+public class AccountStatusGroup implements Securable{
     
 }

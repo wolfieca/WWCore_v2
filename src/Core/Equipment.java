@@ -22,6 +22,6 @@ package Core;
  * conditions, a current disposition and other pertinent data.
  * @author rserrano
  */
-public class Equipment extends Asset{
+public class Equipment extends Asset implements Reportable{
     
 }

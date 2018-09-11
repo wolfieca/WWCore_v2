@@ -23,7 +23,7 @@ package Core;
  * allowed to merge together). Credit Reporting is controlled on a Debt basis
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Debt {
+public class Debt implements Reportable, Securable{
     private Debtor debtor;
     private Client debtClient;
     private DemographicField<String> cliRefNumber;

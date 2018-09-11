@@ -23,6 +23,6 @@ package Core;
  * used to reflect payments made by Clients to the Company.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Payment {
+public class Payment implements Reportable{
     
 }

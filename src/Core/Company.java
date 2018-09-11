@@ -29,7 +29,7 @@ import java.util.TreeSet;
  * Needs to be revised.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Company {
+public class Company implements Reportable, Securable{
     private String companyName;
     private Set<Office> offices;
     

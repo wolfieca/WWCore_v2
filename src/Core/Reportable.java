@@ -17,7 +17,19 @@
 package Core;
 
 /**
- * 
+ * Classes implementing the Reportable interface can export their data in a 
+ * report format to either a printed document (straight text output) or an XML
+ * stream so that the data can be formatted (and redacted, as needed) to be
+ * sent to a printer. The first form is useful if the user just wants to see the
+ * data on the screen, while the second for is useful to produce reports suitable
+ * to be sent to Clients (or potential clients). A related XML specification for
+ * the report class and a set of XSLT files to transform the report files will 
+ * be provided, and the Form class operates as the interface to all this.
+ * The exact details of the export format are left to the individual implementing
+ * classes as far as what data is exported and, for the pure text export, the
+ * layout of the text. The XML export is basically unformatted, with all layout
+ * decisions being left up to the Report class (or other implementer of the 
+ * iReport interface).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public interface Reportable {

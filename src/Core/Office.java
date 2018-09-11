@@ -24,6 +24,6 @@ package Core;
  * Office 2 and 5 are both located within the Hanford Office).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Office {
+public class Office implements Reportable{
     
 }

@@ -22,6 +22,6 @@ package Core;
  * system. It's built around a double-entry model and provides the logic
  * @author rserrano
  */
-public class Ledger {
+public class Ledger implements Reportable{
     
 }

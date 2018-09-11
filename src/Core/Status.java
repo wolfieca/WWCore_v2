@@ -17,7 +17,7 @@
 package Core;
 
 /**
- * An account status and rules and policies associates with that status
+ * An account status and rules and policies associated with that status
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Status {

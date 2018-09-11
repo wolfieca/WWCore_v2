@@ -25,7 +25,7 @@ import java.util.Set;
  * so that new business can both be imported and manipulated by users.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Newbiz {
+public class Newbiz implements Reportable, Securable{
     private Set<NewbizProcessor> processors;
     private HashMap<String,NewbizBatch> batches;
     

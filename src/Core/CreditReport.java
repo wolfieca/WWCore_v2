@@ -20,6 +20,6 @@ package Core;
  * A Credit Report pulled from one of the Credit Repositories. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class CreditReport extends Report{
+public class CreditReport extends Report implements Securable{
     
 }

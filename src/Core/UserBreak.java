@@ -22,6 +22,6 @@ package Core;
  * message itself just contains the local reported time the message was generated.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class UserBreak {
+public class UserBreak extends Message{
     
 }

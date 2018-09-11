@@ -26,7 +26,7 @@ package Core;
  * have a message queue).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class NewbizBatch {
+public class NewbizBatch implements Reportable, Securable{
     private Debtor nbizDebtor;
     
 }

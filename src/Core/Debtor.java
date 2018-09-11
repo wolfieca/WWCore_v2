@@ -32,7 +32,7 @@ import org.w3c.dom.Document;
  * and kept in memory until it's been idle for a while.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Debtor {
+public class Debtor implements Reportable, Securable{
     private Long debtor;
     private AccessControlList ACL;
     //private Client primaryClient; //obsolete

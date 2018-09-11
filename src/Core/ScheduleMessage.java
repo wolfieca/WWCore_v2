@@ -25,6 +25,6 @@ package Core;
  * final product.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class ScheduleMessage {
+public class ScheduleMessage extends Message{
     
 }

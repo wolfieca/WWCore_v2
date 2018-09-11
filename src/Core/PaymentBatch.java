@@ -22,9 +22,9 @@ package Core;
  * PaymentBatch object is used to hold payments prior to approval for disbursal 
  * to the permanent Ledger object (they are attached to the appropriate
  * Debtor, Debt and Client objects immediately, though the batch can be deleted
- * prior to being balanced and processed
+ * prior to being balanced and processed.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class PaymentBatch {
+public class PaymentBatch implements Reportable{
     
 }

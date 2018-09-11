@@ -20,6 +20,6 @@ package Core;
  * A company asset. Typically used to represent office equipment or other property.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Asset {
+public class Asset implements Reportable, Securable{
     
 }

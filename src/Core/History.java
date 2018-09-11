@@ -27,6 +27,6 @@ package Core;
  * entities to individual items.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class History {
+public class History implements Reportable{
     
 }

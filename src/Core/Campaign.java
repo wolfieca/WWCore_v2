@@ -21,6 +21,6 @@ package Core;
  * in some way (ie mail or phone campaign).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Campaign {
+public class Campaign implements Reportable, Securable{
     
 }

@@ -22,7 +22,7 @@ import java.util.HashMap;
  * ActivityQueues is a manager object for the System Message Queues.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class ActivityQueues {
+public class ActivityQueues implements Reportable, Securable {
     private AccessControlList ACL;
     private HashMap<String,MessageQueue> queues;
     

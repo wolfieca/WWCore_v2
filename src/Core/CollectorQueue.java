@@ -25,7 +25,7 @@ import java.util.HashMap;
  * as needed). This is in addition to the messageQueue(s) belonging to the user.
  * @author rserrano
  */
-public class CollectorQueue extends MessageQueue{
+public class CollectorQueue extends MessageQueue implements Reportable, Securable{
     private HashMap<String,MessageQueue> alternateQueues;
     private Integer primaryQueueMaxSize;
     

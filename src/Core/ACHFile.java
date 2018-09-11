@@ -30,6 +30,6 @@ package Core;
  * closed, at which it produces the appropriate file and sends it out.
  * @author rserrano
  */
-public class ACHFile {
+public class ACHFile implements Reportable, Securable{
     
 }

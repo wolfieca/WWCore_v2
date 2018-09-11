@@ -24,6 +24,6 @@ package Core;
  * the means of registering so that they can be loaded and properly restricted).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Module {
+public class Module implements Securable{
     
 }

@@ -23,6 +23,6 @@ package Core;
  * worked by the Company)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class LegalActions {
+public class LegalActions implements Reportable{
     
 }

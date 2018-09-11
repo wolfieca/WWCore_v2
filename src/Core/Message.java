@@ -22,6 +22,6 @@ package Core;
  * can be recursive (ie containing other messages)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Message {
+public class Message implements Securable{
     
 }

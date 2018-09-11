@@ -24,7 +24,7 @@ import java.util.List;
  * a given period of time (usually a single billing cycle).
  * @author rserrano
  */
-public class TransactionRegister {
+public class TransactionRegister implements Reportable{
     private LocalDate periodBeginning;
     private LocalDate periodEnding;
     private List<Transaction> register;

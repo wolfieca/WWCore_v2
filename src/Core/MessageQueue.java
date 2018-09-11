@@ -37,7 +37,7 @@ import java.util.PriorityQueue;
  * System. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class MessageQueue {
+public class MessageQueue implements Reportable, Securable{
     private String queueName;
     private GregorianCalendar nextActivity;
     private PriorityQueue<Message> messageQueue;

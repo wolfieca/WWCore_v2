@@ -21,6 +21,6 @@ package Core;
  * is primarily an internal message, although it can reference other entities.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Ticket extends Message{
+public class Ticket extends Message implements Reportable{
     
 }

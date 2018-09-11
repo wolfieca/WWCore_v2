@@ -21,6 +21,6 @@ package Core;
  * History system, and is primarily meant for system errors and warnings
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class SysLogger {
+public class SysLogger implements Reportable{
     
 }

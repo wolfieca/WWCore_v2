@@ -25,6 +25,6 @@ package Core;
  * etc), for Companies dealing with medical records.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class SupplementalData {
+public class SupplementalData implements Reportable, Securable{
     
 }

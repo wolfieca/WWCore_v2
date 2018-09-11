@@ -21,6 +21,6 @@ package Core;
  * data about them.
  * @author rserrano
  */
-public class Inventory {
+public class Inventory implements Reportable{
     
 }

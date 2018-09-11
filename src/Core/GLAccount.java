@@ -20,6 +20,6 @@ package Core;
  * A GL Account.
  * @author rserrano
  */
-public class GLAccount {
+public class GLAccount implements Reportable{
     
 }

@@ -24,7 +24,7 @@ package Core;
  * greeting (via email).
  * @author rserrano
  */
-public class Acknowledgment extends WWDocument{
+public class Acknowledgment extends WWDocument implements Securable{
     private Form ackForm;
     private Letter ackLetter;
     private NewbizBatch newbizBatch;

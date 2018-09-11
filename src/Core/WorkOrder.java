@@ -25,6 +25,6 @@ package Core;
  * responsible party until they've been addressed).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class WorkOrder {
+public class WorkOrder extends Message{
     
 }

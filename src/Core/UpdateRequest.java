@@ -24,6 +24,6 @@ package Core;
  * have acknowledge the update and refreshed their own views of the object).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class UpdateRequest {
+public class UpdateRequest extends Message{
     
 }

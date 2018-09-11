@@ -21,6 +21,6 @@ package Core;
  * that are shared among the statuses of the same type).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class AccountStatusType {
+public class AccountStatusType implements Securable{
     
 }

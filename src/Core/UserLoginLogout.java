@@ -22,6 +22,6 @@ package Core;
  * arrivals and departures.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class UserLoginLogout {
+public class UserLoginLogout extends Message{
     
 }

@@ -32,6 +32,6 @@ package Core;
  * permission set in ACHFile.
  * @author rserrano
  */
-public class ACH extends WWDocument {
+public class ACH extends WWDocument implements Reportable, Securable {
     
 }

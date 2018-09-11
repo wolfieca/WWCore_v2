@@ -21,6 +21,6 @@ package Core;
  * system. 
  * @author rserrano
  */
-public class ModuleLoader {
+public class ModuleLoader implements Securable{
     
 }

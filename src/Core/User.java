@@ -26,7 +26,7 @@ import java.util.HashMap;
  */
 
 
-public class User  extends Actor {
+public class User  extends Actor implements Reportable, Securable{
     private String userName;
     private String userID;
     private ArrayList<Group> supplementaryGroups;
@@ -38,6 +38,7 @@ public class User  extends Actor {
 
     private boolean canWorkOffHours;
     private HashMap<String, Boolean> moduleAccess; 
+    private History activity;
 
     /**
      * Create a new default user

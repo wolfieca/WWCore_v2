@@ -26,6 +26,6 @@ package Core;
  * how.
  * @author rserrano
  */
-public class CreditFileExport {
+public class CreditFileExport implements Securable{
     
 }

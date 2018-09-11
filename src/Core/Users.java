@@ -17,10 +17,9 @@
 package Core;
 
 /**
- * This represents a Report of Accounts that qualify for Charity Write-offs by the
- * client.
+ *
  * @author rserrano
  */
-public class CharityReport extends Report implements Securable{
+public class Users implements Reportable, Securable{
     
 }

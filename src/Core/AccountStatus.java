@@ -21,7 +21,7 @@ package Core;
  * accounts that are set to this status.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class AccountStatus {
+public class AccountStatus implements Securable{
     private String status;
     private String description;
     private AccountStatusType type;

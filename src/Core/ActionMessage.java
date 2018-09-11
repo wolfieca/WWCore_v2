@@ -23,6 +23,6 @@ package Core;
  * and wants to be notified when they are available.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class ActionMessage extends Message{
+public class ActionMessage extends Message implements Securable{
     
 }

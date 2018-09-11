@@ -34,6 +34,6 @@ import java.util.HashMap;
  * handled automatically by the system
  * @author Robert
  */
-public class Demographics {
+public class Demographics implements Reportable, Securable{
     HashMap <String, DemographicField> fields;
 }

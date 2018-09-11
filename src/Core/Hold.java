@@ -34,6 +34,6 @@ package Core;
  * latter only if the queue owner reports to them)
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Hold {
+public class Hold extends Message{
     
 }

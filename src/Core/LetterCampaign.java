@@ -20,6 +20,6 @@ package Core;
  * A LetterCampaign is a Campaign for letters. (see Campaign).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class LetterCampaign extends Campaign{
+public class LetterCampaign extends Campaign implements Reportable{
     
 }

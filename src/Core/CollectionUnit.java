@@ -26,7 +26,7 @@ import java.util.Set;
  * single CollectionUnit.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class CollectionUnit {
+public class CollectionUnit implements Reportable, Securable{
     private CollectorQueue queue;
     private String dunningName;
     private Set<Office> office;

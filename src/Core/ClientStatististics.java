@@ -22,6 +22,6 @@ package Core;
  * updated by Client. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class ClientStatististics {
+public class ClientStatististics implements Reportable, Securable{
     
 }

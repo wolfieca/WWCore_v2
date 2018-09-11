@@ -17,10 +17,10 @@
 package Core;
 
 /**
- * This represents a Report of Accounts that qualify for Charity Write-offs by the
- * client.
+ * Activity represents a subset of the History containing activities relevant to
+ * a specific user.
  * @author rserrano
  */
-public class CharityReport extends Report implements Securable{
+public class Activity extends History implements Reportable, Securable{
     
 }

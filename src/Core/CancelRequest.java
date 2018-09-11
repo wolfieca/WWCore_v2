@@ -21,6 +21,6 @@ package Core;
  * pertinent statistical and historical data at the same time).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class CancelRequest {
+public class CancelRequest extends Message{
     
 }

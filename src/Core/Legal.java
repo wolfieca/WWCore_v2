@@ -22,6 +22,6 @@ package Core;
  * be set up by the company.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Legal {
+public class Legal implements Reportable{
     
 }

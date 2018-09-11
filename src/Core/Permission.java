@@ -24,6 +24,7 @@ package Core;
 public class Permission {
     private Permission inheritFrom;
     private boolean deny;
+    private boolean audit;
     private int permissions;
     
     static final int NONE = 0x00;

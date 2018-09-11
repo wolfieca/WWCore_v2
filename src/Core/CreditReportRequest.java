@@ -22,6 +22,6 @@ package Core;
  * to Experian, though subclasses can change that, if need be.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class CreditReportRequest {
+public class CreditReportRequest extends Message{
     
 }

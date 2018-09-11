@@ -21,6 +21,6 @@ package Core;
  * Debts, etc to allow for specific payments to be referenced.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Payments {
+public class Payments implements Reportable{
     
 }
