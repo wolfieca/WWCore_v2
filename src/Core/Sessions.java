@@ -17,10 +17,12 @@
 package Core;
 
 /**
- * A list of users on the system and their current statuses (i.e. logged in, 
- * logged out, on break, etc).
+ * Sessions is a list of all the currently active Session objects on the system.
+ * Each Session is tied to a specific User. A Sessions object will usually be
+ * attached to a System object. A Session will also contain a WWClient object,
+ * that is the client-side of the communication process. 
  * @author rserrano
  */
-public class Users implements Reportable, Securable{
+public class Sessions implements Reportable, Securable {
     
 }

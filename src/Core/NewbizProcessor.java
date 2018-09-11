@@ -26,6 +26,6 @@ package Core;
  * file provided, for those cases where the client data is fairly well-behaved.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class NewbizProcessor {
+public class NewbizProcessor implements Reportable, Securable{
     
 }

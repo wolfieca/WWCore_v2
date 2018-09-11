@@ -38,6 +38,7 @@ public class User  extends Actor implements Reportable, Securable{
 
     private boolean canWorkOffHours;
     private HashMap<String, Boolean> moduleAccess; 
+    private HashMap<String, Session> sessions;
     private History activity;
 
     /**
