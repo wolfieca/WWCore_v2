@@ -3,57 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/DebtorDemographics.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/FeeSchedule.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/MessagePriority.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Document.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Asset.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CollectionUnit.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CreditReportRequest.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EquipmentRequest.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EquipmentOrder.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ModuleLoader.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CompanyBuilder.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Users.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Sessions.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/NewbizProcessor.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Session.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/User.java</file>
             <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/MessageQueue.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Debt.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EmployeeEvaluation.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EquipmentCheckOut.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Demographics.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Inventory.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/History.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EmployeeWriteup.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EquipmentCheckIn.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/LegalAction.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/LetterSeries.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Letter.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ClientStatististics.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Debts.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Campaign.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Legal.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/LegalActions.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CollectorStatistics.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/DemographicField.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Company.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Documents.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EquipmentLoss.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Group.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/LetterCampaign.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/HistoryItem.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/DebtorFlags.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/FeeSchedules.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Hold.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EquipmentPurchased.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Message.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/DebtorHistory.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/InvalidPermissionsException.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/LockedItemException.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/MergeRequest.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CollectorQueue.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Debtor.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/DebtorCache.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Invoice.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Module.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Equipment.java</file>
         </group>
     </open-files>
 </project-private>
