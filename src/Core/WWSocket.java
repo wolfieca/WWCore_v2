@@ -28,6 +28,11 @@ import java.io.*;
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class WWSocket extends WWCommChannel{
+
+    /**
+     *
+     * @param portNumber
+     */
     public void init(int portNumber){
         
     }

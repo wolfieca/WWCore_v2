@@ -29,15 +29,51 @@ import java.util.Set;
  * @author rserrano
  */
 public class Bankruptcy {
+
+    /**
+     *
+     */
     public enum Type {
+
+        /**
+         *
+         */
         CHAPTER7,
+
+        /**
+         *
+         */
         CHAPTER11,
+
+        /**
+         *
+         */
         CHAPTER12,
+
+        /**
+         *
+         */
         CHAPTER13
     }
+
+    /**
+     *
+     */
     public enum Status {
+
+        /**
+         *
+         */
         ADJUDICATED,
+
+        /**
+         *
+         */
         DISCHARGED,
+
+        /**
+         *
+         */
         DISMISSED
     }
     private Type chapter;
@@ -49,6 +85,9 @@ public class Bankruptcy {
     private boolean verified;
     private User verifier;
     
+    /**
+     *
+     */
     public Bankruptcy(){
         chapter=null;
         status = null;
@@ -60,6 +99,12 @@ public class Bankruptcy {
         verifier = null;
     }
     
+    /**
+     *
+     * @param type
+     * @param status
+     * @param debtor
+     */
     public Bankruptcy(Type type, Status status, Debtor debtor){
         this.chapter = type;
         this.status = status;

@@ -26,14 +26,24 @@ public class ActivityQueues implements Reportable, Securable {
     private AccessControlList ACL;
     private HashMap<String,MessageQueue> queues;
     
+    /**
+     *
+     */
     public ActivityQueues(){
         
     }
     
+    /**
+     *
+     */
     public static void initialize(){
         
     }
     
+    /**
+     *
+     * @param queueName
+     */
     public void initQueue(String queueName){
         
     }

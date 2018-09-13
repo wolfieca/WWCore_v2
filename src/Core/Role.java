@@ -31,12 +31,20 @@ public class Role {
     private Rights roleRights;
     private ArrayList<Group> roleGroups;
     
+    /**
+     *
+     */
     public Role (){
         roleName = "";
         roleRights=null;
         roleGroups = new ArrayList<>();
     }
     
+    /**
+     *
+     * @param roleName
+     * @return
+     */
     public Role get (String roleName){
         return null;
     }

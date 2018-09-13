@@ -30,37 +30,76 @@ public class PhoneNumber {
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public Integer toInteger(){
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public Set<String> toAliasSet(){
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public String numberForm(){
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public String countryCode(){
         return null;
     }
+
+    /**
+     *
+     * @return
+     */
     public String areaCode(){
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public String exchange(){
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public String number(){
         return null;
     }
     
+    /**
+     *
+     * @param phoneNumber
+     * @return
+     */
     public static Boolean validate (String phoneNumber){
         return null;
     }
     
+    /**
+     *
+     * @param phoneNumber
+     * @return
+     */
     public static String toString(String phoneNumber){
         return null;
     }

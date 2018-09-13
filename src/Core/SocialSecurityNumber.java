@@ -28,9 +28,21 @@ public class SocialSecurityNumber {
     public String toString(){
         return null;
     }
+
+    /**
+     *
+     * @param ssn
+     * @return
+     */
     public static Boolean validate(int ssn){
         return false;
     }
+
+    /**
+     *
+     * @param ssn
+     * @return
+     */
     public static String toString(int ssn){
         return null;
     }

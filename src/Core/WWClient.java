@@ -58,6 +58,10 @@ public class WWClient extends WWCommChannel{
         speaker = new Socket(hostName, portNum);
     }
     
+    /**
+     *
+     * @param portNumber
+     */
     public void init (int portNumber){
         
     }

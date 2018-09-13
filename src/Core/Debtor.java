@@ -103,14 +103,14 @@ public class Debtor implements Reportable, Securable{
     //Constructors
 
     /**
-     *
+     * Base constructor. Creates an empty Debtor object.
      */
     
     public Debtor() {
     }
     
     /**
-     *
+     * 
      * @param debtor
      */
     public Debtor(Long debtor){
@@ -355,10 +355,18 @@ public class Debtor implements Reportable, Securable{
         
     }
     
+    /**
+     *
+     * @return
+     */
     public String metro2(){
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public Document exportXML(){
         return null;
     }

@@ -17,20 +17,12 @@
 package Core;
 
 /**
- * WWCommChannel is a generic communications channel. It's an abstract base class
- * and so, can't be instantiated except through it's children, WWClient and 
- * WWServer. The specific WWCommChannel subclass that is attached to the System
- * object controls the role this WolffeWare instance plays in the whole system.
- * A WWClient is a client node. Client nodes have no direct access to the backing
- * databases, and are only able to affect them by sending messages to a WWServer
- * instance.
+ * A DataSource specifically intended to communicate with a database management
+ * system. DBDataSource is used when trying to retrieve an object that is not
+ * currently present in memory. It is also used when storing changes/data to the
+ * database.
  * @author rserrano
  */
-public abstract class WWCommChannel {
-
-    /**
-     *
-     * @param portNumber
-     */
-    public abstract void init(int portNumber);
+public class DBDataSource extends ServerDataSource{
+    
 }

@@ -21,7 +21,7 @@ import java.util.HashMap;
 /**
  * System represents the WolffeWare system. It is the primary active entity,
  * responsible for resource management, communications (setting up the local
- * instance's communication channels
+ * instance's communication channels), and various other aspects of the system.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class System {
@@ -35,11 +35,13 @@ public class System {
     private Boolean sysIsShuttingDown;
     private Boolean sysIsLaunched;
     private Boolean sysIsShutdown;
-    private MessageQueue sysMessageQueue;
+    private final MessageQueue sysMessageQueue;
     
+    private Sessions sysSessions;
     private HashMap<Long, Debtor> debtorCache;
     private HashMap<String, User> users;
     private HashMap<String, Boolean> userLoggedIn;
+    private DataSource sysDataSource;
 
     /**
      *

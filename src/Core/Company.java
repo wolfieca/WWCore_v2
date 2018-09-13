@@ -34,10 +34,30 @@ public class Company implements Reportable, Securable{
     private Set<Office> offices;
     
     private TreeSet<String> moneyNames;
+
+    /**
+     *
+     */
     public enum Interest {
+
+        /**
+         *
+         */
         NONE,
+
+        /**
+         *
+         */
         SIMPLE,
+
+        /**
+         *
+         */
         COMPOUND,
+
+        /**
+         *
+         */
         EITHER
     }
     private HashMap<String,Interest> accrueInterest;

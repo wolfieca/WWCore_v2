@@ -16,8 +16,11 @@
  */
 package Core;
 
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  * MessageQueue is a straightforward message queue. CollectorQueue is based
@@ -39,22 +42,17 @@ import java.util.PriorityQueue;
  */
 public class MessageQueue implements Reportable, Securable{
     private String queueName;
-    private GregorianCalendar nextActivity;
+    private LocalDateTime nextActivity;
     private PriorityQueue<Message> messageQueue;
     private Integer priorityBoostInterval;
     private Integer maxAgeBeforeRequeue;    
     private Integer maxQueueSizeBeforeReeval;
     private Boolean waiting;
-    
+    private Set<MessageQueue> listeners;
     /**
      *
      */
     public MessageQueue(){
-        queueName = "";
-        nextActivity = new GregorianCalendar();
-        messageQueue = new PriorityQueue<>();
-        maxAgeBeforeRequeue=0;
-        waiting = false;
     }
     
     /**
@@ -63,19 +61,48 @@ public class MessageQueue implements Reportable, Securable{
      */
     public MessageQueue(String queueName){
         this.queueName = queueName;
-        nextActivity = new GregorianCalendar();
-        messageQueue = new PriorityQueue<>();
-        maxAgeBeforeRequeue = 0;
-        waiting = false;
     }
     
     /**
      * 
      * @return
      */
-    public GregorianCalendar nextMessageDate(){
-        return (GregorianCalendar) nextActivity.clone();
+    public LocalDate nextMessageDate(){
+        return nextActivity.toLocalDate();
     }
+    
+    /**
+     *
+     * @return
+     */
+    public LocalTime nextMessageTime(){
+        return nextActivity.toLocalTime();
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public Integer queuedToday(){
+        return 0;
+    }
+    
+    /**
+     *
+     * @param queryDate
+     * @return
+     */
+    public Integer queuedForDay(LocalDate queryDate){
+        return 0;
+    }
+        
+    /**
+     *
+     */
+    public void requeue(){
+        
+    }
+    
     
     /**
      *
@@ -94,7 +121,8 @@ public class MessageQueue implements Reportable, Securable{
     }
     
     /**
-     *
+     * Pushes a Message onto the queue. For bounded queues, this will throw an
+     * exception if the maximum capacity is reached (but see CollectorQueue)
      * @param inbound
      */
     public void enqueue (Message inbound){
