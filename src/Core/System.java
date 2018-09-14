@@ -38,9 +38,9 @@ public class System {
     private final MessageQueue sysMessageQueue;
     
     private Sessions sysSessions;
-    private HashMap<Long, Debtor> debtorCache;
-    private HashMap<String, User> users;
-    private HashMap<String, Boolean> userLoggedIn;
+    private DebtorCache debtorCache;
+    private Users users;
+    //private HashMap<String, Boolean> userLoggedIn;
     private DataSource sysDataSource;
 
     /**
@@ -60,7 +60,7 @@ public class System {
         sysIsShuttingDown = false;
         sysIsLaunched = false;
         sysIsShutdown = false;
-        sysMessageQueue = new MessageQueue();
+        sysMessageQueue = new MessageQueue("System");
     }
     
     /**
@@ -76,7 +76,7 @@ public class System {
         sysIsShuttingDown = false;
         sysIsLaunched = false;
         sysIsShutdown = false;
-        sysMessageQueue = new MessageQueue();
+        sysMessageQueue = new MessageQueue("System");
     }
     
     /**
@@ -93,7 +93,7 @@ public class System {
         sysIsShuttingDown = false;
         sysIsLaunched = false;
         sysIsShutdown = false;
-        sysMessageQueue = new MessageQueue();        
+        sysMessageQueue = new MessageQueue("System");        
     }
     
     /**
@@ -111,7 +111,7 @@ public class System {
         sysIsShuttingDown = false;
         sysIsLaunched = false;
         sysIsShutdown = false;
-        sysMessageQueue = new MessageQueue();        
+        sysMessageQueue = new MessageQueue("System");        
     }
     
     /**
