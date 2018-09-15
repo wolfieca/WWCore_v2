@@ -60,6 +60,8 @@ import java.net.*;
  */
 public class WWPeer {
     Socket systemPeer;
+    
+    String peerName;
     private int localEventClock;
     public enum Status {
         UP,
@@ -67,4 +69,7 @@ public class WWPeer {
         UNKNOWN
     }
     private Status peerStatus;
+    public String getName(){
+        return null;
+    }
 }
