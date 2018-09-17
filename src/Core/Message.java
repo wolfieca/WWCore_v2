@@ -16,12 +16,81 @@
  */
 package Core;
 
+import java.time.LocalDateTime;
+
 /**
  * A Message is a basic message in the system. It is intended to be a unit of
  * synchronization and communication throughout the system as a whole. A message
- * can be recursive (ie containing other messages)
+ * can be recursive (i.e. containing other messages). A message is considered semi
+ * atomic. The message is either entirely loaded, or it's not loaded at all. A 
+ * partial message will not be touched by other parts of the system, until it is
+ * complete. The basic Message object is just a human readable message with no
+ * special data attached to it.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class Message implements Securable{
+    private String messageID;
+    private User sender;
+    private User recipient;
+    private MessageQueue target;
+    private LocalDateTime created;
+    private LocalDateTime sent;
+    private LocalDateTime received;
+    private LocalDateTime replied;
+    private LocalDateTime forwarded;
+    private LocalDateTime rejected;
+    private String message;
     
+    public Message(){
+        
+    }
+    public Message (User sender, User recipient, LocalDateTime sent, String msg){
+        messageID = sender.getMessageID();
+        this.sender = sender;
+        this.recipient = recipient;
+        this.target = null;
+        this.created = sent;
+        this.message = msg;
+    }
+    public Message (User sender, MessageQueue msgQueue, LocalDateTime sent, 
+            String msg){
+        this.messageID = sender.getMessageID();    
+        this.sender = sender;
+        this.recipient = null;
+        this.target = msgQueue;
+        this.created = sent;
+        this.message = msg;
+    }
+    public Message (User sender, User recipient, String msg){
+        messageID = sender.getMessageID();
+
+        this.sender = sender;
+        this.recipient = recipient;
+        this.target = null;
+        this.created = LocalDateTime.now();
+        this.message = msg;
+    }
+    
+    public void send(){
+        
+    }
+    
+    protected Message receive(){
+        return null;
+    }
+    
+    protected void reject(){
+        
+    }
+    public void forward(){
+        
+    }
+    
+    public void reply(){
+        
+    }
+    
+    public void inter(){
+        
+    }
 }

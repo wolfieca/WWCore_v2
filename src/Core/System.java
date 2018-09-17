@@ -26,7 +26,7 @@ import java.util.HashMap;
  */
 public class System {
     private WWCommChannel commChannel;
-    private HashMap<String, WWPeer> peerList;
+    private HashMap<String, Node> peerList;
     private Company company;
     private SysLogger sysLog;
     private Boolean isServer;
@@ -84,7 +84,7 @@ public class System {
      * @param srvSocket
      * @param peers
      */
-    public System(WWCommChannel srvSocket, HashMap<String,WWPeer> peers){
+    public System(WWCommChannel srvSocket, HashMap<String,Node> peers){
         commChannel = srvSocket;
         peerList = peers;
         company = new Company();
@@ -102,7 +102,7 @@ public class System {
      * @param peers
      * @param log
      */
-    public System(WWCommChannel srvSocket, HashMap<String,WWPeer>peers, SysLogger log){
+    public System(WWCommChannel srvSocket, HashMap<String,Node>peers, SysLogger log){
         commChannel = srvSocket;
         peerList = peers;
         company = new Company();
@@ -121,7 +121,7 @@ public class System {
      * @param log
      * @param messageQueue
      */
-    public System(WWCommChannel srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
+    public System(WWCommChannel srvSocket, HashMap<String,Node> peers, SysLogger log, 
             MessageQueue messageQueue) {
         commChannel = srvSocket;
         peerList = peers;
@@ -142,7 +142,7 @@ public class System {
      * @param messageQueue
      * @param sysCompany
      */
-    public System(WWCommChannel srvSocket, HashMap<String,WWPeer> peers, SysLogger log, 
+    public System(WWCommChannel srvSocket, HashMap<String,Node> peers, SysLogger log, 
             MessageQueue messageQueue, Company sysCompany) {
         commChannel = srvSocket;
         peerList = peers;

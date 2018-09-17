@@ -37,6 +37,7 @@ public class User  extends Actor implements Reportable, Securable{
                             // actual user, at their own discretion.
 
     private boolean canWorkOffHours;
+    private Long lastMessageID;
     private HashMap<String, Boolean> moduleAccess; 
     private HashMap<String, Session> sessions;
     private History activity;
@@ -53,6 +54,7 @@ public class User  extends Actor implements Reportable, Securable{
         this.userRights = null;
         this.canWorkOffHours = false;
         this.moduleAccess = new HashMap();
+        this.lastMessageID=Long.valueOf(0);
     }
 
     /**
@@ -96,6 +98,10 @@ public class User  extends Actor implements Reportable, Securable{
         return userID;
     }
 
+    public String getMessageID(){
+        lastMessageID++;
+        return this.userName+this.lastMessageID.toString();
+    }
     /**
      *
      * @param userID

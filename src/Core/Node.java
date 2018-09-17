@@ -16,6 +16,7 @@
  */
 package Core;
 import java.net.*;
+import java.util.Set;
 
 /**
  * A WolffeWare Peer machine. Peers are the core of the WolffeWare distributed
@@ -56,12 +57,21 @@ import java.net.*;
  * through the token interface and the message passing done when a User logs in.
  * If this movement can not be carried out, then the user is considered to have
  * logged out and will need to log back in.
+ * Client software is presented with a simplified view of the system topology. 
+ * Basically, clients only see the communication channel to the server, which 
+ * will be the Prime Node. The Prime node will route the message as appropriate
+ * (preferring to save itself for local users and small, simple requests), 
+ * transparently to the user. Prime will attempt to reduce the work load on itself
+ * and the other nodes as much as possible without dropping messages.
+ * 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class WWPeer {
-    Socket systemPeer;
-    
-    String peerName;
+public class Node {
+    //private Socket systemPeer;
+    private WWServer nodeServer;
+    private Set<Node> neighbors;
+    private String peerName;
+    private boolean prime;
     private int localEventClock;
     public enum Status {
         UP,
@@ -69,6 +79,7 @@ public class WWPeer {
         UNKNOWN
     }
     private Status peerStatus;
+    private MessageQueue primeQueue;
     public String getName(){
         return null;
     }

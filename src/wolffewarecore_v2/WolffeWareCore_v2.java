@@ -18,13 +18,20 @@ package wolffewarecore_v2;
 import Core.*;
 
 /**
- * WolffeWareCore server application and libraries
+ * WolffeWareCore server application and libraries. The primary purpose of this
+ * object is to initialize the Core system. First, it needs to determine in
+ * what capacity it's running: Server or Client. Node and Server are effectively
+ * synonymous (a single-Node topography equivocates the two).
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
 public class WolffeWareCore_v2 {
 
     /**
-     * Main entry point for WolffeWareCore
+     * Main entry point for WolffeWareCore. There are a number of command-line 
+     * parameters that are available. By default, running with no arguments will 
+     * look for a Server/Node running on the local network, initializing a local 
+     * Node if none is found. In the default case, if there is a running Node
+     * on the network, this will try to launch a client UI to connect to the Node.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

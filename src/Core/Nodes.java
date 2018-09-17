@@ -29,17 +29,28 @@ import java.util.HashMap;
  * preference that should be given to it in determining what should be sent to it.
  * @author rserrano
  */
-public class Peers implements Securable{
-    private HashMap<String, WWPeer> peerList;
+public class Nodes implements Securable{
+    private HashMap<String, Node> nodeList;
     
-    public int findPeers(){
-        return 0;
+    public Node[] findNodes(){
+        return null;
     }
 
-    public int findPeers(String ip, int subnet, int port){
+    public Node[] findNodes(String ip, int subnet, int port){
+        return null;
+    }
+    
+    public Node findNode(String ip, int port){
+        return null;
+    }
+    
+    public String getNodeName(Node thePeer){
+        return null;
+    }
+    
+    public int getNodeLatency(Node thePeer){
         return 0;
     }
-    public int findPeer(String ip, int port){
-        return 0;
-    }
+    
+    
 }
