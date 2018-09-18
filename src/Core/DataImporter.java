@@ -24,6 +24,6 @@ package Core;
  * data should be placed. 
  * @author rserrano
  */
-public class DataImporter implements Reportable, Securable{
+public class DataImporter extends Module implements Reportable, Securable{
     
 }

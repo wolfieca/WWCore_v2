@@ -16,6 +16,7 @@
  */
 package Core;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -40,7 +41,7 @@ import java.util.Set;
  * System. 
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class MessageQueue implements Reportable, Securable{
+public class MessageQueue implements Reportable, Securable, Serializable{
     private String queueName;
     private LocalDateTime nextActivity;
     private PriorityQueue<Message> messageQueue;

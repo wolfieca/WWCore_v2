@@ -16,6 +16,7 @@
  */
 package Core;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -28,7 +29,7 @@ import java.time.LocalDateTime;
  * special data attached to it.
  * @author Robert Serrano <wolfieca.rs@gmail.com>
  */
-public class Message implements Securable{
+public class Message implements Securable, Serializable{
     private String messageID;
     private User sender;
     private User recipient;
@@ -39,6 +40,8 @@ public class Message implements Securable{
     private LocalDateTime replied;
     private LocalDateTime forwarded;
     private LocalDateTime rejected;
+    private LocalDateTime interred;
+    private LocalDateTime discarded;
     private String message;
     
     public Message(){
