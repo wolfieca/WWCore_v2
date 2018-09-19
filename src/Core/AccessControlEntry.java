@@ -41,9 +41,9 @@ public class AccessControlEntry {
     }
     
     /**
-     *
-     * @param actor
-     * @param permissions
+     * Constructor. Create an ACE for actor.
+     * @param actor The User requesting the access
+     * @param permissions The access being requested
      */
     public AccessControlEntry(Actor actor, Permission permissions){
         refActor = actor;

@@ -27,17 +27,19 @@ public class Permission {
     private boolean audit;
     private int permissions;
     
-    static final int NONE = 0x00;
-    static final int ALL = 0xff;
-    static final int READ = 0x01;
-    static final int WRITE = 0x02;
-    static final int OWN = 0x04;
-    static final int MODIFY = 0x08;
-    static final int DELETE = 0x10;
-    static final int EXECUTE = 0x20;
-    static final int ALTER_PERMISSIONS = 0x40;
-    static final int TAKE_OWNERSHIP = 0x80;
+    static final int NONE = 0x000;
+    static final int ALL = 0xfff;
+    static final int READ = 0x001;
+    static final int WRITE = 0x002;
+    static final int OWN = 0x004;
+    static final int MODIFY = 0x008;
+    static final int DELETE = 0x010;
+    static final int EXECUTE = 0x020;
+    static final int ALTER_PERMISSIONS = 0x040;
+    static final int TAKE_OWNERSHIP = 0x080;
     static final int WRITE_ACCESS = WRITE+MODIFY+DELETE;
+    static final int SEND_MESSAGE = 0x100;
+    static final int AUDIT = 0xFF000000;
 
     /**
      * Create the specified permission object.
@@ -58,6 +60,7 @@ public class Permission {
     public Permission() {
         this.permissions = ALL;
         this.deny = false;
+        this.audit = false;
         this.inheritFrom = null;
     }
     
@@ -74,8 +77,8 @@ public class Permission {
     
     /**
      * Check to ensure the allowed and denies permissions don't overlap
-     * @param tester
-     * @param testee
+     * @param tester permissions being tested
+     * @param testee permissions being tested
      * @return 0 if allowed and denied permissions don't overlap
      */
     public final int comparePermissions( int tester, int testee) {
