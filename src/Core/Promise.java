@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ package Core;
  * been kept or broken for recurring promises), whether or not the promise is
  * set to recur and whether the appropriate documentation is on file to allow it
  * to recur if it is supposed to recur, etc.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Promise {
     

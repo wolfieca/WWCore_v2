@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import java.time.LocalDateTime;
  * partial message will not be touched by other parts of the system, until it is
  * complete. The basic Message object is just a human readable message with no
  * special data attached to it.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Message implements Securable, Serializable{
     private String messageID;
@@ -44,9 +44,20 @@ public class Message implements Securable, Serializable{
     private LocalDateTime discarded;
     private String message;
     
+    /**
+     *
+     */
     public Message(){
         
     }
+
+    /**
+     *
+     * @param sender
+     * @param recipient
+     * @param sent
+     * @param msg
+     */
     public Message (User sender, User recipient, LocalDateTime sent, String msg){
         messageID = sender.getMessageID();
         this.sender = sender;
@@ -55,6 +66,14 @@ public class Message implements Securable, Serializable{
         this.created = sent;
         this.message = msg;
     }
+
+    /**
+     *
+     * @param sender
+     * @param msgQueue
+     * @param sent
+     * @param msg
+     */
     public Message (User sender, MessageQueue msgQueue, LocalDateTime sent, 
             String msg){
         this.messageID = sender.getMessageID();    
@@ -64,6 +83,13 @@ public class Message implements Securable, Serializable{
         this.created = sent;
         this.message = msg;
     }
+
+    /**
+     *
+     * @param sender
+     * @param recipient
+     * @param msg
+     */
     public Message (User sender, User recipient, String msg){
         messageID = sender.getMessageID();
 
@@ -74,25 +100,45 @@ public class Message implements Securable, Serializable{
         this.message = msg;
     }
     
+    /**
+     *
+     */
     public void send(){
         
     }
     
+    /**
+     *
+     * @return
+     */
     protected Message receive(){
         return null;
     }
     
+    /**
+     *
+     */
     protected void reject(){
         
     }
+
+    /**
+     *
+     */
     public void forward(){
         
     }
     
+    /**
+     *
+     */
     public void reply(){
         
     }
     
+    /**
+     *
+     */
     public void inter(){
         
     }

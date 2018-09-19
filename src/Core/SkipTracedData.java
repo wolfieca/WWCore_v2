@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ package Core;
  * the skip-tracing process. It's placed here until it is committed so that 
  * someone on the system (usually a collector) can verify that the new data is
  * correct.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class SkipTracedData {
     private Demographics stDemographics;

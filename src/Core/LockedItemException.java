@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ package Core;
  * when someone attempts to change something that has been explicitly locked
  * for the target object (ie Debts can have interest locked if they are included
  * in certain legal actions).
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class LockedItemException extends Exception {
 

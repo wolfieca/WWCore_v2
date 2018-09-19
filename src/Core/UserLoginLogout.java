@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package Core;
  * Whenever a User logs into or logs out of the system, a UserLoginLogout message
  * is produced. These messages can be viewed by Management to audit a User's
  * arrivals and departures.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class UserLoginLogout extends Message{
     

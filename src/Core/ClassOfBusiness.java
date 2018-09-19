@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ package Core;
  * common among them. Examples would be Medical, which would cover all Medical
  * clients, and would include such things as how they are reported on Credit
  * Reports, what collectors will work them, etc.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class ClassOfBusiness implements Reportable, Securable{
     

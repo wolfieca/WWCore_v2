@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ package Core;
  * to suit their purposes. It operates as a listener object on various other
  * systems (especially payments), so that it can be updated in real time as 
  * transactions occur.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Accounting implements Reportable, Securable{
     

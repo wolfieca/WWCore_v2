@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import java.util.Set;
  * CollectionUnit reflects a single Collection Unit in the system. Typically, this
  * will be a single User, though it is possible for multiple users to share a 
  * single CollectionUnit.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class CollectionUnit implements Reportable, Securable{
     private CollectorQueue queue;

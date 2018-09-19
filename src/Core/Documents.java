@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package Core;
  * Documents is a collection of related Document Objects. Documents objects can
  * be attached to most Object types (ie a Debtor for correspondence to/from/
  * regarding the debtor, Client for correspondence and Contracts).
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Documents {
     

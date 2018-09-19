@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ package Core;
  * independently addressable for purposes of individual history, manipulation (i.e.
  * splitting or merging debts), and reporting (for cases where clients' debts are
  * allowed to merge together). Credit Reporting is controlled on a Debt basis
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Debt implements Reportable, Securable{
     private Debtor debtor;

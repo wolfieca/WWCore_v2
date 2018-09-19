@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package Core;
  * A report listing history entries found on a specified debtor. This can be 
  * filtered by the requester to prevent superfluous or irrelevant entries from
  * being included.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class DebtorHistory extends Report{
     

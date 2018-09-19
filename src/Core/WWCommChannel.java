@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ package Core;
  * A WWClient is a client node. Client nodes have no direct access to the backing
  * databases, and are only able to affect them by sending messages to a WWServer
  * instance.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public abstract class WWCommChannel {
 

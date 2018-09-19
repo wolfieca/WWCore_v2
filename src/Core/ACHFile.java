@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ package Core;
  * can change the included ACH transactions unless they have CHANGE permission on
  * the ACHFile object. Processes can add ACH transactions until the ACHFile is 
  * closed, at which it produces the appropriate file and sends it out.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class ACHFile implements Reportable, Securable{
     

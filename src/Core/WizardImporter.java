@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ import java.util.Set;
  * To hopefully speed things along here, the WizardImporter builds the appropriate
  * objects in memory, putting everything together as it encounters them, 
  * serializing incomplete ones when memory constraints require it
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class WizardImporter extends DataImporter {
     private String searchPath;
@@ -48,6 +48,9 @@ public class WizardImporter extends DataImporter {
     private Connection databaseConnection;
     private FileInputStream inputStream;
     
+    /**
+     *
+     */
     public void importData() {
         
     }
@@ -112,6 +115,13 @@ public class WizardImporter extends DataImporter {
         
     }
     private void migrateStrategies(){
+        
+    }
+
+    /**
+     *
+     */
+    public void commit(){
         
     }
 }

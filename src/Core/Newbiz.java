@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import java.util.Set;
  * Newbiz manager class. This class is responsible for maintaining the 
  * NewbizProcessor objects, and providing the interface to the NewbizBatch objects
  * so that new business can both be imported and manipulated by users.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Newbiz implements Reportable, Securable{
     private Set<NewbizProcessor> processors;

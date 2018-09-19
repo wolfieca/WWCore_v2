@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ import java.util.HashMap;
 /**
  * A user on the system. This is the basic security context for the system,
  * and is used to determine access to various bits of functionality.
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 
 
@@ -98,6 +98,10 @@ public class User  extends Actor implements Reportable, Securable{
         return userID;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMessageID(){
         lastMessageID++;
         return this.userName+this.lastMessageID.toString();

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ package Core;
  * A CreditFileExport can be targeted at a CreditFile to allow statistics from
  * the produced file to be read, and to allow individual records withing the
  * CreditFileExport to be looked at.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class CreditFile implements Securable{
     CreditFileExport creditFile;

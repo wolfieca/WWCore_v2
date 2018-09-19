@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import java.util.HashMap;
  * users, since they have multiple related queues by default (at base, a collector
  * has primary, alternate and miscellaneous queues, though others can be setup, 
  * as needed). This is in addition to the messageQueue(s) belonging to the user.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class CollectorQueue extends MessageQueue implements Reportable, Securable{
     private HashMap<String,MessageQueue> alternateQueues;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ package Core;
  * time on the accounts sent by the client, broken down as month/year received
  * and amount collected for that client by month/year. I have a feeling this is 
  * another report that can be improved upon greatly.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class ClientBatchTrack extends Report{
     

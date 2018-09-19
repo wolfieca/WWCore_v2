@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ import java.util.Set;
  * transparently to the user. Prime will attempt to reduce the work load on itself
  * and the other nodes as much as possible without dropping messages.
  * 
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Node {
     //private Socket systemPeer;
@@ -73,13 +73,34 @@ public class Node {
     private String peerName;
     private boolean prime;
     private int localEventClock;
+
+    /**
+     *
+     */
     public enum Status {
+
+        /**
+         *
+         */
         UP,
+
+        /**
+         *
+         */
         DOWN,
+
+        /**
+         *
+         */
         UNKNOWN
     }
     private Status peerStatus;
     private MessageQueue primeQueue;
+
+    /**
+     *
+     * @return
+     */
     public String getName(){
         return null;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package Core;
  * A ReplyMessage is sent when an ActionMessage has been carried out. It is 
  * delivered to the caller's MessageQueue and the caller is notified (assigned to
  * a system thread to it can act on the reply).
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class ReplyMessage {
     

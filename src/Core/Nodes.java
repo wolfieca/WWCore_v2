@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,27 +27,54 @@ import java.util.HashMap;
  * primary peer that is responsible for fanning messages out and keeping the
  * system synchronized. Each peer can be assigned a priority that reflects the
  * preference that should be given to it in determining what should be sent to it.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Nodes implements Securable{
     private HashMap<String, Node> nodeList;
     
+    /**
+     *
+     * @return
+     */
     public Node[] findNodes(){
         return null;
     }
 
+    /**
+     *
+     * @param ip
+     * @param subnet
+     * @param port
+     * @return
+     */
     public Node[] findNodes(String ip, int subnet, int port){
         return null;
     }
     
+    /**
+     *
+     * @param ip
+     * @param port
+     * @return
+     */
     public Node findNode(String ip, int port){
         return null;
     }
     
+    /**
+     *
+     * @param thePeer
+     * @return
+     */
     public String getNodeName(Node thePeer){
         return null;
     }
     
+    /**
+     *
+     * @param thePeer
+     * @return
+     */
     public int getNodeLatency(Node thePeer){
         return 0;
     }

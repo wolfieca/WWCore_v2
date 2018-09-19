@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ package Core;
  * Security Note: ACH is only creatable/modifiable from ACHFile. So, adding, 
  * deleting or modifying an ACH requires that the user have the required 
  * permission set in ACHFile.
- * @author rserrano
+ * @author Robert Serrano  (wolfieca.rs at gmail.com)
  */
 public class ACH extends WWDocument implements Reportable, Securable {
     

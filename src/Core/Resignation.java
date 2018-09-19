@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Robert Serrano <wolfieca.rs@gmail.com>
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ package Core;
  * sets off a cascade of related end-of-employment activities (i.e. check-in of
  * all checked-out equipment, deactivation of the employee's accounts, disbursing
  * of the employee's queue, determination of the employee's rehire status, etc).
- * @author Robert Serrano <wolfieca.rs@gmail.com>
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Resignation extends ActionMessage{
     

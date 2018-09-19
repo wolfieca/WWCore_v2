@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * assigned at one time. A user's role is also a part of their security context
  * and can be used to allow extra activities under certain circumstances or just
  * to all for a user's permissions to be reset according to their role.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Role {
     private String roleName;

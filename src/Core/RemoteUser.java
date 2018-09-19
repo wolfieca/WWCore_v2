@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ package Core;
  * represent users who are Debtors and Vendors. Normal users who are logging in
  * from untrusted networks have their access limited until the security of their
  * location has been attested to.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class RemoteUser extends Actor implements Reportable, Securable{
  

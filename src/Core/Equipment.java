@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package Core;
  * Equipment represents physical assets owned by the company. As such it entails
  * a purchase price, an estimated depreciation rate, initial and current
  * conditions, a current disposition and other pertinent data.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Equipment extends Asset implements Reportable{
     

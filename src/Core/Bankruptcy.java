@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 rserrano
+ * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import java.util.Set;
  * debts. The Bankruptcy remains on the debtor unless a BankruptcyClaim dismissal
  * message is received, at which time, the Bankruptcy may be removed from the 
  * Debtor/Debts, depending on Company Policy.
- * @author rserrano
+ * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Bankruptcy {
 
