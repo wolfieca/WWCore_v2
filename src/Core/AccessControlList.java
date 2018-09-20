@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2018 Robert Serrano (wolfieca.rs at gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,221 +16,161 @@
  */
 package Core;
 
-import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Set;
 
 /**
- *
+ * An Access Control List, which is the basic unit of access control for the 
+ * system.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class AccessControlList {
+
     /**
-     * The admin object is for maintenance of this object. It will usually be 
-     * a user on the system, normally a member of the Admin group. The admin
-     * object is capable of reassigning ownership of the object.
-     */
-    private Actor admin; 
-    private Permission adminPerms; 
-    /**
-     * The owner object owns the object protected by this ACL. By default,
-     * the owner is allowed to do most anything with their objects, though 
-     * system policy may prevent things such as deletion.
+     * The assigned owner of the protected object.
      */
     private Actor owner;
-    private Permission ownerPerms;
+
     /**
-     * The group object is the system group (or other object) in charge of this
-     * object. If the group is an actual system group, then members of that 
-     * group are allowed the specified access to the protected object
+     * The assigned administrator of the protected object.
      */
-    private Actor  group;
-    private Permission groupPerms;
-    /**
-     * World permissions apply to anyone not an admin, owner or owning group,
-     * This permission set is the default access to this object, before getting 
-     * to the ACL
-     */
-    private Permission worldPerms;
-    private Dictionary<Actor,Permission> ACL;
+    private Actor administrator;
     
     /**
-     * requests some form of access to this object
-     * @param requestor the object requesting access
-     * @param request the request being bate
-     * @return true if the request is allowed
-     * 
-     * Note that admin, owner, and group can not be the same object, and none of
-     * them can also appear in the ACL object. The check for whether a 
-     * specific access request is allowed is as follows: If the requestor is
-     * the admin, owner or group, those permissions are compared with the 
-     * requested access and accepted if all the requested permissions are allowed
-     * (and not specifically denied). If a permission is neither allowed nor 
-     * denied, then the access world permissions are checked and, if they are 
-     * allowed there, the request is accepted. If the requested permissions are 
-     * not allowed there, the request is rejected.
-     * If the user is not the admin, owner or member of the owning group, the ACL proper has to be
-     * checked. Every ACL entry that is applicable to the requestor is checked
-     * against the request. The request is granted if and only if each requested
-     * permission is allowed either in the applicable ACLs or in the world 
-     * permission set.
-     * In all cases, if one of the requested permissions is denied by the ACL, 
-     * the request fails (requests are an all or nothing affair). Denied 
-     * permissions on world are ignored.
+     * What session has this object locked, if any? This indicates that the User
+     * that owns that session has indicated that they intend to make changes to
+     * the object. Read access doesn't generally cause a lock to be placed on an 
+     * object. Note that this process is distinct from, though similar to, marking
+     * an object as locked, indicating that changes to the object are not to be
+     * allowed on an ongoing basis.
      */
+    private Session locked;
 
-    public boolean requestAccess(Actor requestor, int request){
-        if ( requestor.equals(admin) ) {
-            return adminPerms.checkAccess(request) == request;
-        } else if ( requestor.equals(owner) ) {
-            return ownerPerms.checkAccess(request) == request;
-        }else if ( requestor.equals(group) ){
-            return groupPerms.checkAccess(request) == request;
-        }/* else if ( requestor.PrimaryGroup() != null ) {
-            if ( requestor.PrimaryGroup() != group.PrimaryGroup()) {
-                
-            } else {
-            }
-        }*/
-        if ( ACL.get(requestor) != null )
-            return ACL.get(requestor).checkAccess(request) == request;
-        else
-            return worldPerms.checkAccess(request) == request;
+    private Set<Session> viewers;
+    
+    /**
+     * The ACL for the protected object. Entries within the ACL must exist for
+     * the owner and administrator with the appropriate Owner and Administrator
+     * bits set. The access bits for the Owner and Administrator are largely
+     * ignored while those entries are still defined as those respective
+     * entities, but if administrator or owner changes, they become normal users
+     * again and beholden to the access granted by their ACL entries.
+     */
+    private HashMap<Actor, Permission> acl;
+    
+    /**
+     * Create an empty AccessControlList.
+     */
+    public AccessControlList(){
+        owner = null;
+        administrator = null;
+        acl = new HashMap<>();
     }
     
     /**
-     * Add the specified permissionLest to this ACL
-     * @param requestor
-     * @param permissionList
+     * Create an AccessControlList with the given characteristics.
+     * @param owner the owner of the protected object
+     * @param administrator designated administrator of the protected object
+     * @param acl ACL assigned to the protected object
      */
-    protected void addAccess(Actor requestor, Permission permissionList){
-        
-    }
-
-    /**
-     * Who is the Administrative user for this object?
-     * @return
-     */
-    public Actor getAdmin() {
-        return admin;
-    }
-
-    /**
-     * Set/Change the administrator user.
-     * @param admin
-     */
-    public void setAdmin(Actor admin) {
-        this.admin = admin;
-    }
-
-    /**
-     * What permissions does the Admin user have?
-     * @return
-     */
-    public Permission getAdminPerms() {
-        return adminPerms;
-    }
-
-    /**
-     * Set/Change the Admin user's permissions.
-     * @param adminPerms
-     */
-    public void setAdminPerms(Permission adminPerms) {
-        this.adminPerms = adminPerms;
-    }
-
-    /**
-     * Who is the owner of this object?
-     * @return
-     */
-    public Actor getOwner() {
-        return owner;
-    }
-
-    /**
-     * Set/Change the owner.
-     * @param owner
-     */
-    public void setOwner(Actor owner) {
+    public AccessControlList(Actor owner, Actor administrator, 
+            HashMap<Actor,Permission> acl){
         this.owner = owner;
+        this.administrator = administrator;
+        this.acl = acl;
+    }
+    
+    private boolean checkAccess(Actor requestor, Permission requested){
+        return false;
     }
 
     /**
-     * What are the owners permissions?
+     * Request a specific access to the protected object on behalf of the
+     * requestor. 
+     * @param requestor
+     * @param requested
      * @return
      */
-    public Permission getOwnerPerms() {
-        return ownerPerms;
+    public boolean requestAccess(Actor requestor, Permission requested){
+        return checkAccess(requestor,requested);
     }
-
-    /**
-     * Set the owner's permissions.
-     * @param ownerPerms
+    
+    /*
+     * In order to change an ACL, the requesting user must be the Owner, the 
+     * Administrator, or have the Alter Permission permission. In any event,
+     * changing the ACL on an object is subject to several consistency checks
+     * before it will be allowed.
      */
-    public void setOwnerPerms(Permission ownerPerms) {
-        this.ownerPerms = ownerPerms;
-    }
-
+    
     /**
-     * What is the primary group owning this object?
+     *
+     * @param requestor
+     * @param user
+     * @param permission
      * @return
      */
-    public Actor getGroup() {
-        return group;
+    protected boolean add(Actor requestor, Actor user, Permission permission){
+        return false;
     }
 
     /**
-     * Change the owning group.
-     * @param group
-     */
-    public void setGroup(Actor group) {
-        this.group = group;
-    }
-
-    /**
-     * Get the owning group's permissions.
+     *
+     * @param requestor
+     * @param user
+     * @param permission
      * @return
      */
-    public Permission getGroupPerms() {
-        return groupPerms;
+    protected boolean remove(Actor requestor, Actor user, Permission permission){
+        return false;
     }
 
     /**
-     * Set the owning group's permissions.
-     * @param groupPerms
-     */
-    public void setGroupPerms(Permission groupPerms) {
-        this.groupPerms = groupPerms;
-    }
-
-    /**
-     * Get world (default) permissions.
+     *
+     * @param requestor
+     * @param user
+     * @param permission
      * @return
      */
-    public Permission getWorldPerms() {
-        return worldPerms;
+    protected boolean modify(Actor requestor, Actor user, Permission permission){
+        return false;
     }
 
     /**
-     * Set/Change world (default) permissions.
-     * @param worldPerms
-     */
-    public void setWorldPerms(Permission worldPerms) {
-        this.worldPerms = worldPerms;
-    }
-
-    /**
-     * Get the ACL for this object.
+     *
+     * @param requestor
+     * @param user
      * @return
      */
-    public Dictionary<Actor, Permission> getACL() {
-        return ACL;
+    protected boolean strip(Actor requestor, Actor user){
+        return false;
     }
 
     /**
-     * Change the ACL or this object (restricted).
-     * @param ACL
+     *
+     * @param requestor
+     * @return
      */
-    public void setACL(Dictionary<Actor, Permission> ACL) {
-        this.ACL = ACL;
+    protected boolean takeOwnership(Actor requestor){
+        return false;
     }
 
+    /**
+     *
+     * @param requestor
+     * @param target
+     * @return
+     */
+    protected boolean giveOwnership(Actor requestor, Actor target){
+        return false;
+    }
+
+    /**
+     *
+     * @param requestor
+     * @param newAdmin
+     * @return
+     */
+    protected boolean makeAdministrator(Actor requestor, Actor newAdmin){
+        return false;
+    }
 }

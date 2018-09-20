@@ -34,7 +34,7 @@ import org.w3c.dom.Document;
  */
 public class Debtor implements Reportable, Securable{
     private Long debtor;
-    private AccessControlList ACL;
+    private OldAccessControlList ACL;
     //private Client primaryClient; //obsolete
     //private HashMap<Client,Integer> clients;
     //private Actor collector;

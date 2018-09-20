@@ -23,7 +23,7 @@ import java.util.HashMap;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class ActivityQueues implements Reportable, Securable {
-    private AccessControlList ACL;
+    private OldAccessControlList ACL;
     private HashMap<String,MessageQueue> queues;
     
     /**

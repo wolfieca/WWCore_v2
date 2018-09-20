@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * A printer object is a rendering device intended to produce hard-copy. Due to 
+ * the nature of this sort of device, printer objects are sensitive to the 
+ * physical location of the device itself and the actual rendering capabilities 
+ * of the device (i.e. what paper dimensions are supported, whether it supports
+ * color rendering, etc).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Printer extends Renderer{

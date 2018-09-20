@@ -27,20 +27,37 @@ public class Permission {
     private boolean audit;
     private int permissions;
     
-    static final int NONE = 0x000;
-    static final int ALL = 0xfff;
-    static final int READ = 0x001;
-    static final int WRITE = 0x002;
-    static final int OWN = 0x004;
-    static final int MODIFY = 0x008;
-    static final int DELETE = 0x010;
-    static final int EXECUTE = 0x020;
-    static final int ALTER_PERMISSIONS = 0x040;
-    static final int TAKE_OWNERSHIP = 0x080;
-    static final int WRITE_ACCESS = WRITE+MODIFY+DELETE;
-    static final int SEND_MESSAGE = 0x100;
-    static final int AUDIT = 0xFF000000;
+    static final int NONE               = 0x00000000;
+    static final int ALL                = 0x00000fff;
+    static final int READ               = 0x00000001;
+    static final int WRITE              = 0x00000002;
+    static final int LOCK               = 0x00000004;
+    static final int MODIFY             = 0x00000008;
+    static final int DELETE             = 0x00000010;
+    static final int EXECUTE            = 0x00000020;
+    static final int ALTER_PERMISSIONS  = 0x00000040;
+    static final int TAKE_OWNERSHIP     = 0x00000080;
+    static final int WRITE_ACCESS       = WRITE+MODIFY+DELETE;
+    static final int SEND_MESSAGE       = 0x00000100;
+    static final int OWNER              = 0x10000fff;
+    static final int ADMINISTRATOR      = 0x20000fff;
+    static final int AUDIT              = 0x40000000;
+    static final int DENY               = 0x80000000;
 
+    /**
+     * Permission notes:
+     *  Permissions are defined as a 32-bit mask. The top 8 bits are basically
+     *  administrative characteristics of the mask, while the remainder are access
+     *  permissions. In the ACL itself, only one entry can be Administrator and
+     *  only one entry can be Owner. The Audit permission causes all access to 
+     *  create an audit trail. 
+     *  Deny causes the selected access permissions to be explicitly denied to the
+     *  affected user. Otherwise selected access permissions are allowed. Both 
+     *  allowed and denied permissions can be assigned to a single user. Denied
+     *  permissions are processed first, and if the requested permissions are 
+     *  denied, the operation is denied. 
+     */
+    
     /**
      * Create the specified permission object.
      * @param deny

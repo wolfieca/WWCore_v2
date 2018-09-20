@@ -17,7 +17,11 @@
 package Core;
 
 /**
- *
+ * This Renderer subclass is meant to create render files that can be saved and
+ * reloaded like regular files. This will be for a generic meta-file format, but
+ * the base will most likely be a document-oriented format like PDF, though other
+ * subclasses will likely support other meta-file formats (like WMF) and straight
+ * graphics file formats such as TIFF or PNG.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Outfile extends Renderer{

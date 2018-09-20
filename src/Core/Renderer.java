@@ -17,7 +17,7 @@
 package Core;
 
 /**
- *
+ * A generic class for rendering reports, documents and other similar output.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Renderer {

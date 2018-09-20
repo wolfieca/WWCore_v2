@@ -17,12 +17,9 @@
 package Core;
 
 /**
- * Screen is a physical monitor, normally the one attached to the user's terminal.
- * This class is meant for rendering that is intended for viewing on a monitor.
- * Thoughts: Can this class be serialized to appropriate machines to allow them 
- * to display the rendered document, to facilitate some degree of collaboration?
+ * A request to change the AccessControlList of an Object.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Screen extends Renderer{
+public class ACLModificationRequest extends Message{
     
 }
