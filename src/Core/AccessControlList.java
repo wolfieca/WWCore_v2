@@ -49,14 +49,23 @@ public class AccessControlList {
     private Set<Session> viewers;
     
     /**
-     * The ACL for the protected object. Entries within the ACL must exist for
+     * The ACLs for the protected object. Entries within the ACL must exist for
      * the owner and administrator with the appropriate Owner and Administrator
      * bits set. The access bits for the Owner and Administrator are largely
      * ignored while those entries are still defined as those respective
      * entities, but if administrator or owner changes, they become normal users
      * again and beholden to the access granted by their ACL entries.
+     * Entries in acl are explicitly allowed permissions. Entries in denied are 
+     * explicitly denied permission. Access is checked in order of denied, then
+     * allowed from specific user, to the groups that user is a member of, the
+     * office the user works in, the company the user is a member of, and, 
+     * finally, at the world level (the most generic). If, at any point, the 
+     * access is explicitly granted or denied, the evaluation stops. If the 
+     * requested access is not explicitly granted or denied, even at the World 
+     * level, access is generally denied.
      */
     private HashMap<Actor, Permission> acl;
+    private HashMap<Actor, Permission> denied;
     
     /**
      * Create an empty AccessControlList.
@@ -80,16 +89,25 @@ public class AccessControlList {
         this.acl = acl;
     }
     
+    /**
+     * checks whether or not requester has the required permissions on the
+     * protected object to claim the specified access
+     * @param requestor the requesting Actor
+     * @param requested the requested permissions
+     * @return True if requested access is allowed
+     */
     private boolean checkAccess(Actor requestor, Permission requested){
         return false;
     }
 
     /**
      * Request a specific access to the protected object on behalf of the
-     * requestor. 
-     * @param requestor
-     * @param requested
-     * @return
+     * requester. 
+     * @param requestor the Actor requesting the access
+     * @param requested the requested permissions
+     * @return True if requested access is allowed and was able to be granted
+     * (generally true if read access, false if write access was requested and
+     * the object was already locked).
      */
     public boolean requestAccess(Actor requestor, Permission requested){
         return checkAccess(requestor,requested);
@@ -103,51 +121,77 @@ public class AccessControlList {
      */
     
     /**
-     *
-     * @param requestor
-     * @param user
-     * @param permission
-     * @return
+     * Add the specified user:permission to the ACL. The requester must have 
+     * Alter Permissions access, and the user must not already have a permission
+     * of the same type (allow or deny) in the ACL. If an Owner or Administrator
+     * permission is being added, the requester must have Take Ownership 
+     * permissions (if taking ownership), or Owner or Administrator permissions
+     * (if giving them to another user).
+     * @param requestor The user requesting the addition
+     * @param user the user to be added to the ACL
+     * @param permission the permissions the user is to have
+     * @return True if the operation was allowed and succeeded.
      */
     protected boolean add(Actor requestor, Actor user, Permission permission){
         return false;
     }
 
     /**
-     *
+     * The negation of add, deny explicitly denies the specified permission list
+     * to the user. If the specified permission is not defined
      * @param requestor
      * @param user
      * @param permission
-     * @return
+     * @return 
+     */
+    protected boolean deny(Actor requestor, Actor user, Permission permission){
+        return false;
+    }
+    /**
+     * Remove the specified permission from the specified user in the ACL. Most 
+     * requirements as above. The specified permissions must already be possessed
+     * by the user or this fails. 
+     * @param requestor The user requesting the removal
+     * @param user The user whole ACE is to be altered
+     * @param permission The permissions to be removed
+     * @return True if the operation was allowed and succeeded
      */
     protected boolean remove(Actor requestor, Actor user, Permission permission){
         return false;
     }
 
     /**
-     *
-     * @param requestor
-     * @param user
-     * @param permission
-     * @return
+     * Modify the specified user's existing permissions. Requestor must have
+     * Alter Permissions access to the protected object. Requestor must have all
+     * permission they are granting to the user. This method does not allow 
+     * owner or administrator changes, nor does it allow
+     * @param requestor The requesting Actor
+     * @param user The target user
+     * @param permission The new permission set
+     * @return True if allowed and successful
      */
     protected boolean modify(Actor requestor, Actor user, Permission permission){
         return false;
     }
 
     /**
-     *
-     * @param requestor
-     * @param user
-     * @return
+     * Remove access to the protected object from user. User must already exist
+     * in the ACL, otherwise, this operation will fail (and be mooted). This will
+     * completely remove user from the ACL for the object (both allow and deny
+     * permissions will be removed), so the user will be limited to default/World
+     * access afterward.
+     * @param requestor Requesting user
+     * @param user the target user.
+     * @return True if successful.
      */
     protected boolean strip(Actor requestor, Actor user){
         return false;
     }
 
     /**
-     *
-     * @param requestor
+     * Take ownership of the protected object. Requestor must have Take Ownership
+     * permission on the object
+     * @param requestor The user requesting ownership.
      * @return
      */
     protected boolean takeOwnership(Actor requestor){
@@ -155,22 +199,47 @@ public class AccessControlList {
     }
 
     /**
-     *
-     * @param requestor
-     * @param target
-     * @return
+     * Give ownership of the protected object to the target. Requestor must be
+     * the owner or administrator of the protected object.
+     * @param requestor The user requesting the ownership change
+     * @param target The target to give ownership to
+     * @return True if successful.
      */
     protected boolean giveOwnership(Actor requestor, Actor target){
         return false;
     }
 
     /**
-     *
-     * @param requestor
-     * @param newAdmin
-     * @return
+     * Make the specified user the Administrator of the protected object. The 
+     * requestor must currently be the administrator of the object.
+     * @param requestor The user requesting the change
+     * @param newAdmin The new Administrator.
+     * @return True if successful.
      */
     protected boolean makeAdministrator(Actor requestor, Actor newAdmin){
+        return false;
+    }
+    
+    /**
+     * Requests that the specified user session be given read access. User must
+     * have permission to read the object. Multiple user sessions can read a
+     * given object at the same time.
+     * @param session the user session to be given access.
+     * @return True if successful.
+     */
+    public boolean requestRead(Session session){
+        return false;
+    }
+    
+    /**
+     * Requests that the specified user session be given access to write/modify
+     * the object. User must have write permission. Only one user session can 
+     * hold write access to an object at a time. Once it has been given to one
+     * session, other requests block or fail until it has been released.
+     * @param session the user session requesting access.
+     * @return True if successful.
+     */
+    public boolean requestWrite(Session session){
         return false;
     }
 }

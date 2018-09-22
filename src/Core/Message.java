@@ -31,6 +31,7 @@ import java.time.LocalDateTime;
  */
 public class Message implements Securable, Serializable{
     private String messageID;
+    private Session waitingSession;
     private User sender;
     private User recipient;
     private MessageQueue target;

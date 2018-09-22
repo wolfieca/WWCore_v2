@@ -22,9 +22,10 @@ package Core;
  * and destroyed when the user logs off, or when the session is terminated. A user
  * can have multiple sessions open simultaneously, each looking at different
  * things. A Session can belong to only one User. A session can be identified by
- * a Username:SessionName pair
+ * a Username:SessionName pair in the Sessions object.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Session {
+    private User sessionOwner;
     
 }

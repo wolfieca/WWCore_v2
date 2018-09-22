@@ -16,15 +16,18 @@
  */
 package Core;
 
-import java.util.HashMap;
-
 /**
- * Sessions is a list of all the currently active Session objects on the system.
- * Each Session is tied to a specific User. A Sessions object will usually be
- * attached to a System object. A Session will also contain a WWClient object,
- * that is the client-side of the communication process. 
+ * A map of the locations of devices in a Company's Office. This is basically a
+ * grid representing the layout of the physical building in which the office is 
+ * located. Multiple offices may share the same OfficeMap for offices that
+ * are located in the same building. The primary use of OfficeMap is to help in
+ * determining priorities for printers and similar devices. So if a user is right
+ * next to a printer that is offline, the OfficeMap can be used to determine the
+ * next best printer to print their jobs to. Terminals will be assigned to their
+ * own locations on the map, and any user logging in will be assigned to a default
+ * printer based on the location of their terminal within the office.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Sessions implements Reportable, Securable {
-    private HashMap<Actor,HashMap<String,Session>> systemSessions;
+public class OfficeMap {
+    
 }
