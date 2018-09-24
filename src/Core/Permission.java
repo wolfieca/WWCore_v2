@@ -39,6 +39,7 @@ public class Permission {
     static final int TAKE_OWNERSHIP     = 0x00000080;
     static final int WRITE_ACCESS       = WRITE+MODIFY+DELETE;
     static final int SEND_MESSAGE       = 0x00000100;
+    static final int IMPERSONATE        = 0x0f000000;
     static final int OWNER              = 0x10000fff;
     static final int ADMINISTRATOR      = 0x20000fff;
     static final int AUDIT              = 0x40000000;

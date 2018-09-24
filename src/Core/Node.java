@@ -75,27 +75,51 @@ public class Node {
     private int localEventClock;
 
     /**
-     *
+     * A single nodes can be in one of several states:
+     * It can be Down (not responsive to node requests)
+     * It can be Up (responsive to node requests)
+     * It can be Starting (initializing in preparation of entering the Up state)
+     * It can be Stopping (engaged in shutdown procedures, preparing to enter the
+     * Down state).
+     * It can be Crashed (stops responding, for a long time, but never sent a
+     * notification that it was Stopping).
+     * It can be Recovering (Crashed, but is currently in the process of recovery
+     * from the crash so it can rejoin the network).
+     * It can be waiting to Join a cluster.
+     * It can be attempting to join a cluster.
+     * It can be Joined to a cluster.
+     * It can be operating as a solo Node.
+     * It can be operating as the master node for its cluster.
+     * A node that is Starting is implicitly Down (transitioning to be Up)
+     * A node that is Stopping is implicitly Up (transitioning to being Down)
+     * A node that is Crashed is implicitly Down (awaiting potential transition
+     * to a Recovering State)
+     * A Recovering node is Down, but is awaiting a transition to an Up state if
+     * approved by an Administrator. The recovery process forces the Node to go
+     * through a variety of tests to ensure that it is capable of running on a 
+     * sustained basis. All files have to be rechecked to ensure there is no 
+     * corruption, and the Wolffe system files will all need to be checked against
+     * the current files to make sure they are all correct. A node that fails more
+     * than a certain number of times may be locked out until an Administrator
+     * is able to assure the rest of the nodes that the problem has been resolved.
+     * A Waiting cluster is up, but waiting to be joined with a cluster. This may
+     * require that the other nodes be told to scan for new nodes first, if the
+     * node hasn't been a member of this cluster previously.
+     * A Joining node is attempting to negotiate to join a cluster.
+     * A Joined node has joined a cluster.
+     * A Solo node is not a member of a cluster and is not searching for a 
+     * cluster to join. A Solo node is effectively a Master node of its own local
+     * cluster.
+     * A Master node is joined to a cluster and is operating as the master of the
+     * node. A node explicitly attempting to become master will force an election
+     * for Master. If there currently is no Master node in the cluster (or the
+     * master node has gone offline or otherwise become disconnected from the 
+     * cluster) the cluster's nodes will hold an election to determine which node
+     * should be made the Master. The election results are based on a number of
+     * metrics, with ties ultimately broken by node uptime.
      */
-    public enum Status {
-
-        /**
-         *
-         */
-        UP,
-
-        /**
-         *
-         */
-        DOWN,
-
-        /**
-         *
-         */
-        UNKNOWN
-    }
-    private Status peerStatus;
-    private MessageQueue primeQueue;
+    private int nodeStatus;
+    private MessageQueue nodeQueue;
 
     /**
      *

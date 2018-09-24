@@ -36,6 +36,7 @@ public class Message implements Securable, Serializable{
     private User recipient;
     private MessageQueue target;
     private LocalDateTime created;
+    private LocalDateTime send;
     private LocalDateTime sent;
     private LocalDateTime received;
     private LocalDateTime replied;
@@ -46,42 +47,48 @@ public class Message implements Securable, Serializable{
     private String message;
     
     /**
-     *
+     * Default constructor. Create a null message.
      */
     public Message(){
         
     }
 
     /**
-     *
-     * @param sender
-     * @param recipient
-     * @param sent
-     * @param msg
+     * Create and send a message to a specified user, to be send at the specified
+     * time. The message queueing system will determine which queue to send the
+     * message to.
+     * @param sender The sending user (messages always originate from a user)
+     * @param recipient the receiver (in this case a User)
+     * @param send the time the message is to be sent.
+     * @param msg The message being sent.
      */
-    public Message (User sender, User recipient, LocalDateTime sent, String msg){
+    public Message (User sender, User recipient, LocalDateTime send, String msg){
         messageID = sender.getMessageID();
         this.sender = sender;
         this.recipient = recipient;
         this.target = null;
-        this.created = sent;
+        this.created = LocalDateTime.now();
+        this.send = send;
         this.message = msg;
     }
 
     /**
-     *
+     * Create and send a message to a specified message queue, to be sent at the
+     * specified time. Any user with access to the message queue will be able to
+     * receive/view/etc the message.
      * @param sender
      * @param msgQueue
-     * @param sent
+     * @param send
      * @param msg
      */
-    public Message (User sender, MessageQueue msgQueue, LocalDateTime sent, 
+    public Message (User sender, MessageQueue msgQueue, LocalDateTime send, 
             String msg){
         this.messageID = sender.getMessageID();    
         this.sender = sender;
         this.recipient = null;
         this.target = msgQueue;
-        this.created = sent;
+        this.created = LocalDateTime.now();
+        this.send = send;
         this.message = msg;
     }
 

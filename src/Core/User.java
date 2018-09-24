@@ -31,7 +31,7 @@ public class User  extends Actor implements Reportable, Securable{
     private String userID;
     private ArrayList<Group> supplementaryGroups;
     private Rights userRights;   
-    private User effUser;    // Used by System Administrators to act as if they
+    private User effUser;   // Used by System Administrators to act as if they
                             // were another user. Programs may choose to ignore
                             // this security context and operate only as the 
                             // actual user, at their own discretion.
