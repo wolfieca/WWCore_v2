@@ -26,5 +26,5 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class SupplementalData implements Reportable, Securable{
-    
+    SupplementalDataItem<String> i;
 }

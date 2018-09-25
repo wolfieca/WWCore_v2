@@ -16,15 +16,11 @@
  */
 package Core;
 
-import java.util.Set;
-
 /**
- * A single Legal Action in the system, and the related Legal data.
+ * Information about a state. Primarily useful as a data source for the states
+ * not allowed to be mailed to.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable{
-    private int action;
-    private String caseNumber;
-    private Set<Integer> debtsIncluded;
-    private Legal legalInformation;
+public class State {
+    
 }

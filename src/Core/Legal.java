@@ -16,12 +16,17 @@
  */
 package Core;
 
+import java.util.HashMap;
+
 /**
  * Legal data. This is structured somewhat like the Supplemental and Demographic
  * Data classes. Legal data is not necessarily encumbered by PHI, but that can
- * be set up by the company.
+ * be set up by the company. Legal Data is associated with a particular 
+ * LegalAction on a particular Debtor, and there can be multiple Legal datasets
+ * for a particular Debtor, though Debts can only be included in a single 
+ * LegalAction.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Legal implements Reportable{
-    
+    private HashMap<String,HashMap<String,LegalData>> legalData;
 }

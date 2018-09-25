@@ -16,15 +16,11 @@
  */
 package Core;
 
-import java.util.Set;
-
 /**
- * A single Legal Action in the system, and the related Legal data.
+ * A Message to be sent via SMS (text message). Depending on the SMS gateway being
+ * used, this may be a two-way or a one way communication.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable{
-    private int action;
-    private String caseNumber;
-    private Set<Integer> debtsIncluded;
-    private Legal legalInformation;
+public class SMSMessage extends Message implements SMS{
+    
 }

@@ -16,15 +16,10 @@
  */
 package Core;
 
-import java.util.Set;
-
 /**
- * A single Legal Action in the system, and the related Legal data.
+ * Interface for SMS-capable classes.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable{
-    private int action;
-    private String caseNumber;
-    private Set<Integer> debtsIncluded;
-    private Legal legalInformation;
+public interface SMS {
+    
 }

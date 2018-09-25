@@ -24,26 +24,60 @@ package Core;
 public class SocialSecurityNumber {
     private Integer ssn;
     
+    public SocialSecurityNumber(int ssn) {
+        this.ssn = ssn;
+    }
     @Override
     public String toString(){
-        return null;
+        return group1()+"-"+group2()+"-"+group3();
     }
-
     /**
-     *
+     * Validates a given SSN, using the current valildation rules.
+     * A valid social security number cannot:
+     * Contain all zeroes in any group (000-xx-xxxx, xxx-00-xxxx, xxx-xx-0000)
+     * Begin with '666'
+     * Begin with a value in the range 900-999
+     * Be 078-05-1120 (Woolworth's wallet)
+     * Be 219-09-9999 (SSA Advert number)
+     * @return true if the SSN has a valid value.
+     */
+    public boolean validate(){
+        boolean valid = true;
+        valid = (!group1().equals("000") && !group2().equals("00") && 
+                !group3().equals("0000") && !group1().equals("666") && 
+                ssn<900000000 && !this.toString().equals("078-05-1120") &&
+                !this.toString().equals("219-09-9999"));
+        return valid;
+    }
+    
+    private String group1(){
+        String test = String.format("%9d", ssn.toString());
+        return test.substring(0,2);  
+    }
+    private String group2(){
+        String test = String.format("%9d", ssn.toString());
+        return test.substring(3,4);
+    }
+    
+    private String group3(){
+        String test = String.format("%9d", ssn.toString());
+        return test.substring(5);
+    }
+    /**
+     * Validates a given SSN.
      * @param ssn
      * @return
      */
     public static Boolean validate(int ssn){
-        return false;
+        return new SocialSecurityNumber(ssn).validate();
     }
 
     /**
-     *
+     * Returns a formatted ssn string.
      * @param ssn
      * @return
      */
     public static String toString(int ssn){
-        return null;
+        return new SocialSecurityNumber(ssn).toString();
     }
 }

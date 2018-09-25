@@ -16,15 +16,13 @@
  */
 package Core;
 
-import java.util.Set;
-
 /**
- * A single Legal Action in the system, and the related Legal data.
+ * A message that is meant to be sent via email. The recipients in this case
+ * are email addresses. Depending on the receiving end of the message, the 
+ * EmailMessage may be converted into a regular message and processed on the
+ * remote end.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable{
-    private int action;
-    private String caseNumber;
-    private Set<Integer> debtsIncluded;
-    private Legal legalInformation;
+public class EmailMessage extends Message implements Email{
+    
 }

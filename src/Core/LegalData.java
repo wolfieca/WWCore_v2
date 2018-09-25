@@ -16,15 +16,11 @@
  */
 package Core;
 
-import java.util.Set;
-
 /**
- * A single Legal Action in the system, and the related Legal data.
+ * Legal Data. Like DemographicField, this is simply a single field of Legal
+ * data for a debtor.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable{
-    private int action;
-    private String caseNumber;
-    private Set<Integer> debtsIncluded;
-    private Legal legalInformation;
+public class LegalData<T> extends DemographicField{
+    
 }

@@ -20,6 +20,6 @@ package Core;
  * An individual SupplementalData Item.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class SupplementalDataItem extends DemographicField{
+public class SupplementalDataItem<T> extends DemographicField{
     
 }
