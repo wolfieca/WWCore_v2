@@ -22,10 +22,18 @@ package Core;
  * and destroyed when the user logs off, or when the session is terminated. A user
  * can have multiple sessions open simultaneously, each looking at different
  * things. A Session can belong to only one User. A session can be identified by
- * a Username:SessionName pair in the Sessions object.
+ * an Actor:Username:SessionName triad in the Sessions object.
+ * Each Session is assigned to a Thread on the client side, and may be assigned 
+ * threads on the Server-side depending on need and availability. The session is
+ * used to hold the security context for all requests. A Session impersonating 
+ * another user does not affect any other session belonging to the real user
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Session {
+public class Session implements Runnable{
     private User sessionOwner;
     
+    @Override
+    public void run(){
+        
+    }
 }

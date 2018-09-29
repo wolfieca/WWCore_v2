@@ -16,14 +16,28 @@
  */
 package Core;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
- * Information about a state. Primarily useful as a data source for the states
- * not allowed to be mailed to.
+ * State Rights is a list of various characteristics for states.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class State {
-    private String stateName;
-    private String stateAbbrev;
+public class StateRights {
+    private HashMap<String,Boolean> rights;
+    private Set<String> validRights;
     
+    public StateRights(){
+        rights = new HashMap<>();
+        rights.put("Restricted State", false);
+        validRights = new HashSet<>();
+        validRights.add("Restricted State");
+    }
     
+    protected void setRights(HashMap<String,Boolean> rightsMap){
+        validRights = rightsMap.keySet();
+        
+        rights = rightsMap;
+    }
 }

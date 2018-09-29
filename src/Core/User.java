@@ -18,6 +18,8 @@ package Core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A user on the system. This is the basic security context for the system,
@@ -29,7 +31,7 @@ import java.util.HashMap;
 public class User  extends Actor implements Reportable, Securable{
     private String userName;
     private String userID;
-    private ArrayList<Group> supplementaryGroups;
+    private Set<Group> supplementaryGroups;
     private Rights userRights;   
     private User effUser;   // Used by System Administrators to act as if they
                             // were another user. Programs may choose to ignore
@@ -41,6 +43,8 @@ public class User  extends Actor implements Reportable, Securable{
     private HashMap<String, Boolean> moduleAccess; 
     private HashMap<String, Session> sessions;
     private History activity;
+    private MessageQueue userMessageQueue;
+    private Set<String> supplementalMessageQueues;
 
     /**
      * Create a new default user
@@ -50,7 +54,7 @@ public class User  extends Actor implements Reportable, Securable{
         super(id);
         this.userName = "";
         this.userID = "";
-        this.supplementaryGroups = new ArrayList();
+        this.supplementaryGroups = new HashSet();
         this.userRights = null;
         this.canWorkOffHours = false;
         this.moduleAccess = new HashMap();
@@ -119,7 +123,7 @@ public class User  extends Actor implements Reportable, Securable{
      *
      * @return
      */
-    public ArrayList<Group> getSupplementaryGroups() {
+    public Set<Group> getSupplementaryGroups() {
         return supplementaryGroups;
     }
 
@@ -127,7 +131,7 @@ public class User  extends Actor implements Reportable, Securable{
      *
      * @param supplementaryGroups
      */
-    protected void setSupplementaryGroups(ArrayList<Group> supplementaryGroups) {
+    protected void setSupplementaryGroups(Set<Group> supplementaryGroups) {
         this.supplementaryGroups = supplementaryGroups;
     }
 
@@ -226,7 +230,7 @@ public class User  extends Actor implements Reportable, Securable{
      *
      * @return
      */
-    public ArrayList SupplementaryGroups(){
+    public Set SupplementaryGroups(){
         return this.supplementaryGroups;
     }
 
@@ -234,7 +238,7 @@ public class User  extends Actor implements Reportable, Securable{
      *
      * @param supplementarygroups
      */
-    protected void SupplementaryGroups(ArrayList supplementarygroups){
+    protected void SupplementaryGroups(Set supplementarygroups){
         this.supplementaryGroups = supplementarygroups;
     }
 
