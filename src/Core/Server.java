@@ -40,6 +40,9 @@ package Core;
  * passes it to System to allow further initialization of the base objects).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Server {
-    
+public class Server implements Runnable{
+    @Override
+    public void run(){
+        
+    }
 }

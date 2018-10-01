@@ -17,6 +17,8 @@
 package Core;
 
 import java.util.HashMap;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * System represents the WolffeWare system. It is the primary active entity,
@@ -24,7 +26,7 @@ import java.util.HashMap;
  * instance's communication channels), and various other aspects of the system.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class System {
+public class System implements Runnable{
     private WWCommChannel commChannel;
     private HashMap<String, Node> peerList;
     private Company company;
@@ -36,6 +38,8 @@ public class System {
     private Boolean sysIsLaunched;
     private Boolean sysIsShutdown;
     private final MessageQueue sysMessageQueue;
+    private ThreadPoolExecutor sysThreadPool;
+    private ScheduledExecutorService sysScheduledThreads;
     
     private Sessions sysSessions;
     private DebtorCache debtorCache;
@@ -49,6 +53,15 @@ public class System {
      */
     public static String BUILD="0.01";
     
+    /**
+     * The run method of System. This initializes everything, creates the thread 
+     * pools, and gets everything rolling. If this is a Node process, connect
+     * to any other Nodes that allow it. If a Client process, connect to a Node.
+     */
+    @Override
+    public void run(){
+        
+    }
     /**
      *
      */

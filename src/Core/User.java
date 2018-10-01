@@ -23,7 +23,11 @@ import java.util.Set;
 
 /**
  * A user on the system. This is the basic security context for the system,
- * and is used to determine access to various bits of functionality.
+ * and is used to determine access to various bits of functionality. Everything
+ * that happens in the system is done by Users. Services run as Users and even
+ * have their own Sessions. This allows for fine-grained control and accounting,
+ * and facilitates a separate sand-boxing model for modules and the like (which 
+ * operate as a particular user, and can be restricted as that user).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 

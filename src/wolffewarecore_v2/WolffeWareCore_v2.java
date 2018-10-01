@@ -30,8 +30,15 @@ public class WolffeWareCore_v2 {
      * Main entry point for WolffeWareCore. There are a number of command-line 
      * parameters that are available. By default, running with no arguments will 
      * look for a Server/Node running on the local network, initializing a local 
-     * Node if none is found. In the default case, if there is a running Node
-     * on the network, this will try to launch a client UI to connect to the Node.
+     * Node if none is found. If there is an extant Node operating on the network,
+     * this queries it to determine if this is another known Node, in which case
+     * it will continue on along the Node setup path.
+     * If there is a Node running on the network and this is NOT another known
+     * Node, then this will by default begin the Client startup process. Clients
+     * only see a subset of the Nodes on the system, namely the Master Node and
+     * the Node it is directly tied to (which may be the same).
+     * Once the initialization is completed, this code basically steps out of the
+     * way and lets the System objects do their jobs
      * @param args the command line arguments
      */
     public static void main(String[] args) {

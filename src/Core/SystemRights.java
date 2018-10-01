@@ -22,103 +22,106 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class SystemRights {
-       /**
+    /**
      *
      */
     public enum Base {
 
         /**
-         *
+         * User can login to the system locally (ie via command-line on the 
+         * server)
          */
         LOCALLOGIN,
 
         /**
-         *
+         * User can login to the system remotely (i.e. via a remote client user
+         * interface)
          */
         REMOTELOGIN,
 
         /**
-         *
+         * User is allowed to initiate backups, this also permits access to 
+         * records/objects on the system that are currently locked.
          */
         BACKUP,
 
         /**
-         *
+         * User is allowed to initiate system shutdown routines.
          */
         SHUTDOWN,
 
         /**
-         *
+         * User is allowed to monitor (watch) other users on the system.
          */
         MONITOR,
 
         /**
-         *
+         * User is allowed to grant access to system functionality to other users.
          */
         GRANT,
 
         /**
-         *
+         * User can revoke previously granted access from other users.
          */
         REVOKE,
 
         /**
-         *
+         * User is allowed to take ownership of objects on the system.
          */
         TAKEOWNERSHIP,
 
         /**
-         *
+         * User is allowed to start system services.
          */
         STARTSERVICES,
 
         /**
-         *
+         * User is allowed to stop system services.
          */
         STOPSERVICES,
 
         /**
-         *
+         * User can create other system users.
          */
         CREATEUSERS,
 
         /**
-         *
+         * User can delete other system users.
          */
         DELETEUSERS,
 
         /**
-         *
+         * User can register system modules.
          */
         REGISTERMODULES,
 
         /**
-         *
+         * User can un-register system modules.
          */
         UNREGISTERMODULES,
 
         /**
-         *
+         * User can print documents to a printer.
          */
         PRINT,
 
         /**
-         *
+         * User is allowed to request 
          */
         REQUESTDOCUMENTS,
 
         /**
-         *
+         * User is allowed to listen to events.
          */
         EVENTLISTENER,
 
         /**
-         *
+         * User can re-purpose threads.
          */
         REASSIGNTHREADS,
 
         /**
-         *
+         * User is allowed to impersonate another user on the system.
          */
         IMPERSONATEUSER,
     }

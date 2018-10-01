@@ -26,14 +26,25 @@ package Core;
  * Each Session is assigned to a Thread on the client side, and may be assigned 
  * threads on the Server-side depending on need and availability. The session is
  * used to hold the security context for all requests. A Session impersonating 
- * another user does not affect any other session belonging to the real user
- * @author Robert Serrano (wolfieca.rs at gmail.com)
+ * another user does not affect any other session belonging to the real user, so
+ * if Actor1:User1:Session1 is impersonating User2, :Session2 will run as User1. 
+ * Note that impersonations are always logged by the system
+ * @author Robert Serrano (wolfieca.rs at gmail.com).
  */
 public class Session implements Runnable{
     private User sessionOwner;
+    private User sessionUser;
+    
     
     @Override
     public void run(){
+        
+    }
+    
+    /**
+     * Destroy this session.
+     */
+    public void destroy(){
         
     }
 }
