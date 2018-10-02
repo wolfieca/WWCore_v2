@@ -24,6 +24,4 @@ package Core;
 public class State {
     private String stateName;
     private String stateAbbrev;
-    
-    
 }

@@ -24,7 +24,7 @@ import java.util.Set;
  * State Rights is a list of various characteristics for states.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class StateRights {
+public class StateRights implements Securable{
     private HashMap<String,Boolean> rights;
     private Set<String> validRights;
     

@@ -22,7 +22,7 @@ import java.util.Set;
  * A single Legal Action in the system, and the related Legal data.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable{
+public class LegalAction implements Reportable, Securable{
     private int action;
     private String caseNumber;
     private Set<Integer> debtsIncluded;

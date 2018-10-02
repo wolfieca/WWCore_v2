@@ -27,6 +27,6 @@ import java.util.HashMap;
  * LegalAction.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Legal implements Reportable{
+public class Legal implements Reportable, Securable{
     private HashMap<String,HashMap<String,LegalData>> legalData;
 }

@@ -26,7 +26,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * instance's communication channels), and various other aspects of the system.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class System implements Runnable{
+public class System implements Runnable, Securable{
     private WWCommChannel commChannel;
     private HashMap<String, Node> peerList;
     private Company company;

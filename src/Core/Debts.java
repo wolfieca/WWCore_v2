@@ -23,7 +23,7 @@ import java.util.HashMap;
  * to query a Debtor's debts.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Debts {
+public class Debts implements Reportable, Securable{
     private HashMap<Integer, Client> debts;
     
     /**

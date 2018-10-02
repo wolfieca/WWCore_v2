@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * MessageQueue is a straightforward message queue. CollectorQueue is based
@@ -45,6 +46,7 @@ public class MessageQueue implements Reportable, Securable, Serializable{
     private String queueName;
     private LocalDateTime nextActivity;
     private PriorityQueue<Message> messageQueue;
+    private TreeMap<LocalDateTime,Message> futureMessages;
     private Integer priorityBoostInterval;
     private Integer maxAgeBeforeRequeue;    
     private Integer maxQueueSizeBeforeReeval;
@@ -136,5 +138,9 @@ public class MessageQueue implements Reportable, Securable, Serializable{
      */
     public Message dequeue (){
         return null;
+    }
+    
+    public void alert(){
+        
     }
 }

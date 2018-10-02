@@ -24,5 +24,55 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class SecurityManager {
+    private boolean canAccess(Securable target, Actor actor, Permission request){
+        return false;
+    }
     
+    private boolean canAccess(Securable target, Actor actor, Integer requested){
+        return false;
+    }
+    
+    public boolean canRead (Securable target, Actor user){
+        return canAccess(target, user, Permission.READ);
+    } 
+    public boolean canWrite (Securable target, Actor user){
+        return canAccess(target, user, Permission.WRITE);
+    }
+    public boolean canLock (Securable target, Actor user){
+        return canAccess(target, user, Permission.LOCK);
+    }
+    public boolean canDelete (Securable target, Actor user){
+        return canAccess(target, user, Permission.DELETE);
+    }
+    public boolean canExecute (Securable target, Actor user){
+        return canAccess(target, user, Permission.EXECUTE);
+    }
+    public boolean canAlterPermissions (Securable target, Actor user){
+        return canAccess(target, user, Permission.ALTER_PERMISSIONS);
+    }
+    public boolean canTakeOwnership (Securable target, Actor user){
+        return canAccess(target, user, Permission.TAKE_OWNERSHIP);
+    }
+    public boolean canSendMessage (Securable target, Actor user){
+        return canAccess(target, user, Permission.SEND_MESSAGE);
+    }
+    public boolean canImpersonate (Securable target, Actor user){
+        return canAccess(target, user, Permission.IMPERSONATE);
+    }
+    public boolean isOwner (Securable target, Actor user){
+        return canAccess(target, user, Permission.OWNER);
+    }
+    public boolean isAdministrator (Securable target, Actor user){
+        return canAccess(target, user, Permission.ADMINISTRATOR);
+    }
+    public boolean isAudited (Securable target, Actor user){
+        return canAccess(target, user, Permission.AUDIT);
+    }
+    
+    public boolean requestRead(Securable target, Actor user){
+        return false;
+    }
+    public boolean requestWrite(Securable target, Actor user){
+        return false;
+    }
 }
