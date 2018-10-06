@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/RequestMessage.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/wolffewarecore_v2/WolffeWareCore_v2.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/MessageQueue.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Securable.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WorkOrder.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Server.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/SystemRights.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/SecurityManager.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWServer.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWClient.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Sessions.java</file>
             <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Permission.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ACH.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ACLModificationRequest.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ACHFile.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/AccessControlEntry.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Message.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WizardImporter.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ScheduleMessage.java</file>
         </group>
     </open-files>
 </project-private>

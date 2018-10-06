@@ -94,7 +94,7 @@ public class Permission {
     }
     
     /**
-     * Check to ensure the allowed and denies permissions don't overlap
+     * Check to ensure the allowed and denied permissions don't overlap
      * @param tester permissions being tested
      * @param testee permissions being tested
      * @return 0 if allowed and denied permissions don't overlap

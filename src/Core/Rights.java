@@ -18,6 +18,7 @@ package Core;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 /**
  * The Rights class enumerates rights that an Actor is granted to the
  * system and specified subsystems (run-time modules, for example). Note that
@@ -51,7 +52,8 @@ public class Rights {
     private boolean addSupplementalCategory;
     private boolean deleteSupplementalCategory;
     private boolean alterSupplementalCategory;
-    private Map<String,Boolean> rightSet;
+    private Map<String,Map<String,Boolean>> rightSet;
+   
     private Long rightSet1;
     private Long rightSet2;
     private Long rightSet3;
@@ -67,8 +69,7 @@ public class Rights {
          // Initialize the rightNames
          //The default rightNames will not change order after release. 
          rightNames = new HashMap<>();
-         
-         //System rights
+        //System rights
         this.localLogin=false;
         this.backup=false;
         this.remoteLogin=false;
@@ -98,6 +99,151 @@ public class Rights {
          
         //Rights Definitions for built-in objects
         rightSet = new HashMap();
+        //rightSet.put("Debtor",)
+        HashMap<String,Boolean> subTree = new HashMap();  
+        subTree.put("Merge", false);
+        subTree.put("Split", false);
+        subTree.put("Delete", false);
+        subTree.put("Debtor.PHI.Read", false);
+        subTree.put("Debtor.PHI.Write", false);
+        subTree.put("Debtor.Demographics.Read", false);
+        subTree.put("Debtor.Demographics.Write", false);
+        subTree.put("Debtor.Lookup.ByHistory", false);
+        subTree.put("Debtor.Lookup.ByQueue", false);
+        subTree.put("Debtor.Lookup.ByGeneral", false);
+        subTree.put("Debtor.Lookup.ByUnit", false);
+        subTree.put("Debtor.Lookup.Blitz", false);
+        subTree.put("Debtor.Lookup.ByTag", false);
+        subTree.put("Debtor.Access.LegalActions", false);
+        subTree.put("Debtor.Access.Precollect", false);
+        subTree.put("Debtor.Update.Telephone", false);
+        subTree.put("Debtor.Update.Collector",false);
+        subTree.put("Debtor.Update.MailReturn",false);
+        subTree.put("Debtor.Update.StrategyStatus", false);
+        subTree.put("Debtor.Update.StatusWithinType", false);
+        subTree.put("Debtor.Update.LettersLeft", false);
+        subTree.put("Debtor.Update.Indicators", false);
+        subTree.put("Debtor.Update.LegalScreen",false);
+        subTree.put("Debtor.Lock", false);
+        rightSet.put("Debtor", subTree);
+        subTree.clear();
+        subTree.put("Debt.Read", false);
+        subTree.put("Debt.Write", false);
+        subTree.put("Debt.CRStatus.Write", false);
+        subTree.put("Debt.CRStatus.Read", false);
+        subTree.put("Debt.Update.OrigBalance", false);
+        subTree.put("Debt.Update.For", false);
+        subTree.put("Debt.Update.CliRef", false);
+        subTree.put("Debt.Update.SvcType", false);
+        subTree.put("Debt.Update.DLC", false);
+        subTree.put("Debt.Update.DLP", false);
+        subTree.put("Debt.Update.FeeSched", false);
+        subTree.put("Debt.Update.CredirBureauFields", false);
+        subTree.put("Debt.Update.ReturnStatus", false);
+        subTree.put("Debt.Update.Client", false);
+        subTree.put("Debt.Update.Comments", false);
+        subTree.put("Debt.Update.Tags", false);
+        rightSet.put("Debt", subTree);
+        subTree.clear();
+        subTree.put("Bank.Setup.Read", false);
+        subTree.put("Bank.Setup.Write", false);
+        rightSet.put("Bank", subTree);
+        subTree.clear();
+        subTree.put("Fee.Setup.Read", false);
+        subTree.put("Fee.Setup.Write", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();
+        subTree.put("Invoice.Setup.Read", false);
+        subTree.put("Invoice.Setup.Write", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();
+        subTree.put("Attorney.Setup.Read", false);
+        subTree.put("Attorney.Setup.Write", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();        
+        subTree.put("Lead.Add", false);
+        subTree.put("Lead.Update", false);
+        subTree.put("Lead.Read", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();        
+        subTree.put("LetterSeries.Read", false);
+        subTree.put("LetterSeries.Write", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();        
+        subTree.put("Match.Setup.Read", false);
+        subTree.put("Match.Setup.Write", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();        
+        subTree.put("Newbiz.Read", false);
+        subTree.put("Newbiz.Write", false);
+        subTree.put("Newbiz.Add", false);
+        subTree.put("Newbiz.Update.AccountName", false);
+        subTree.put("Newbiz.Update.GeneralInformation", false);
+        subTree.put("Newbiz.Update.SkipTraceInfo", false);
+        subTree.put("Newbiz.Update.CrossReference", false);
+        subTree.put("Newbiz.Update.Historical", false);
+        subTree.put("Newbiz.Update.CollectorNotes", false);
+        rightSet.put("Fee", subTree);
+        subTree.clear();        
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        rightSet.put("Office", subTree);
+        subTree.clear();        
+        subTree.put("Read", false);
+        subTree.put("Add", false);
+        subTree.put("Write", false);
+        rightSet.put("Payments", subTree);
+        subTree.clear();
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        rightSet.put("Priority", subTree);
+        subTree.clear();    
+        
+        subTree.put("Planning.Read", false);
+        subTree.put("Planning.Write", false);
+        rightSet.put("Strategy", subTree);
+        subTree.clear();       
+        
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        subTree.put("ObserveUser", false);
+        subTree.put("AdviseUser", false);
+        subTree.put("MonitorUsers", false);
+        rightSet.put("User", subTree);
+        subTree.clear();        
+        
+        subTree.put("Category.Read", false);
+        subTree.put("Category.Write", false);
+        rightSet.put("Supplemental", subTree);
+        subTree.clear();        
+        
+        subTree.put("CollectorPaymentStats.Read", false);
+        subTree.put("ReverseUnmatchedPayments", false);
+        subTree.put("MultipleOfficeAcccess", false);
+        subTree.put("ElevatePrivilege", false);
+        subTree.put("SendAnnouncements", false);
+        subTree.put("SuperCollector", false);
+        subTree.put("TriggerEvents", false);
+        subTree.put("CreateNewTags", false);
+        subTree.put("InhibitAuditing", false);
+        subTree.put("Read", false);
+        subTree.put("Write", false);
+        rightSet.put("Misc", subTree);
+        subTree.clear();        
+        
+        subTree.put("Run", false);
+        rightSet.put("Report", subTree);
+        subTree.clear();        
+        
+        subTree.put("Merge", false);
+        rightSet.put("Queue", subTree);
+        subTree.clear();        
+        
+        subTree.put("Reinstate", false);     
+        rightSet.put("Account", subTree);
+        subTree.clear();
+
+/* Old implementation        
         rightSet.put("Debtor.Merge", false);
         rightSet.put("Debtor.Split", false);
         rightSet.put("Debtor.Delete", false);
@@ -192,7 +338,7 @@ public class Rights {
         rightSet.put("Report.Run", false);
         rightSet.put("Queue.Merge", false);
         rightSet.put("Account.Reinstate", false);     
-
+*/
         // loginHours by default are cleared (no hours allowed
          // loginHours defaults to having 24 members (ie one element for each
          // hour of the day).
@@ -242,7 +388,7 @@ public class Rights {
      * @param rightNames
      * @param lastPosition 
      */
-    public Rights(boolean localLogin, boolean backup, boolean remoteLogin, boolean shutdown, boolean monitor, boolean grantAccess, boolean revokeAccess, boolean takeOwnership, boolean startServices, boolean stopServices, boolean createUsers, boolean deleteUsers, boolean registerModules, boolean unregisterModules, boolean print, boolean documentRequest, boolean eventListener, boolean reassignThreads, boolean impersonateUser, boolean viewPHI, boolean updatePHI, boolean addSupplementalCategory, boolean deleteSupplementalCategory, boolean alterSupplementalCategory, Map<String, Boolean> rightSet, Long rightSet1, Long rightSet2, Long rightSet3, Long rightSet4, Map<String, Integer> loginHours, Map<String, Integer> rightNames, int lastPosition) {
+    public Rights(boolean localLogin, boolean backup, boolean remoteLogin, boolean shutdown, boolean monitor, boolean grantAccess, boolean revokeAccess, boolean takeOwnership, boolean startServices, boolean stopServices, boolean createUsers, boolean deleteUsers, boolean registerModules, boolean unregisterModules, boolean print, boolean documentRequest, boolean eventListener, boolean reassignThreads, boolean impersonateUser, boolean viewPHI, boolean updatePHI, boolean addSupplementalCategory, boolean deleteSupplementalCategory, boolean alterSupplementalCategory, Map<String, Map<String,Boolean>> rightSet, Long rightSet1, Long rightSet2, Long rightSet3, Long rightSet4, Map<String, Integer> loginHours, Map<String, Integer> rightNames, int lastPosition) {
         this.localLogin = localLogin;
         this.backup = backup;
         this.remoteLogin = remoteLogin;
@@ -798,12 +944,4 @@ public class Rights {
         this.alterSupplementalCategory = alterSupplementalCategory;
     }
 
-    /**
-     *
-     * @param requestedRight
-     * @return
-     */
-    public Boolean hasRight(String requestedRight){
-        return rightSet.get(requestedRight);
-    }
 }
