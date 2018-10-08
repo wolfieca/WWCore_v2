@@ -18,7 +18,7 @@ package Core;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
 /**
  * The Rights class enumerates rights that an Actor is granted to the
  * system and specified subsystems (run-time modules, for example). Note that
@@ -58,7 +58,7 @@ public class Rights {
     private Long rightSet2;
     private Long rightSet3;
     private Long rightSet4;
-    private final Map<String,Integer> loginHours;
+    private final Map<String,Map<String,Boolean>> loginHours;
     private final Map<String,Integer> rightNames;
     private int lastPosition;
 
@@ -101,98 +101,144 @@ public class Rights {
         rightSet = new HashMap();
         //rightSet.put("Debtor",)
         HashMap<String,Boolean> subTree = new HashMap();  
+        
+        /**
+         * PHI Rights. What interaction with PHI is the user allowed?
+         */
+        subTree.put("Read", false); 
+        subTree.put("Write", false);
+        subTree.put("Update", false);
+        rightSet.put("PHI", subTree);
+        subTree.clear();
+
+        /**
+         * Debtor Rights. What rights does the user have to Debtor objects and
+         * sub-parts thereof?
+         */
         subTree.put("Merge", false);
         subTree.put("Split", false);
         subTree.put("Delete", false);
-        subTree.put("Debtor.PHI.Read", false);
-        subTree.put("Debtor.PHI.Write", false);
-        subTree.put("Debtor.Demographics.Read", false);
-        subTree.put("Debtor.Demographics.Write", false);
-        subTree.put("Debtor.Lookup.ByHistory", false);
-        subTree.put("Debtor.Lookup.ByQueue", false);
-        subTree.put("Debtor.Lookup.ByGeneral", false);
-        subTree.put("Debtor.Lookup.ByUnit", false);
-        subTree.put("Debtor.Lookup.Blitz", false);
-        subTree.put("Debtor.Lookup.ByTag", false);
-        subTree.put("Debtor.Access.LegalActions", false);
-        subTree.put("Debtor.Access.Precollect", false);
-        subTree.put("Debtor.Update.Telephone", false);
-        subTree.put("Debtor.Update.Collector",false);
-        subTree.put("Debtor.Update.MailReturn",false);
-        subTree.put("Debtor.Update.StrategyStatus", false);
-        subTree.put("Debtor.Update.StatusWithinType", false);
-        subTree.put("Debtor.Update.LettersLeft", false);
-        subTree.put("Debtor.Update.Indicators", false);
-        subTree.put("Debtor.Update.LegalScreen",false);
-        subTree.put("Debtor.Lock", false);
+        subTree.put("Demographics.Read", false);
+        subTree.put("Demographics.Write", false);
+        subTree.put("Lookup.ByHistory", false);
+        subTree.put("Lookup.ByQueue", false);
+        subTree.put("Lookup.ByGeneral", false);
+        subTree.put("Lookup.ByUnit", false);
+        subTree.put("Lookup.Blitz", false);
+        subTree.put("Lookup.ByTag", false);
+        subTree.put("Access.LegalActions", false);
+        subTree.put("Access.Precollect", false);
+        subTree.put("Update.Telephone", false);
+        subTree.put("Update.Collector",false);
+        subTree.put("Update.MailReturn",false);
+        subTree.put("Update.StrategyStatus", false);
+        subTree.put("Update.StatusWithinType", false);
+        subTree.put("Update.LettersLeft", false);
+        subTree.put("Update.Indicators", false);
+        subTree.put("Update.LegalScreen",false);
+        subTree.put("Lock", false);
         rightSet.put("Debtor", subTree);
         subTree.clear();
-        subTree.put("Debt.Read", false);
-        subTree.put("Debt.Write", false);
-        subTree.put("Debt.CRStatus.Write", false);
-        subTree.put("Debt.CRStatus.Read", false);
-        subTree.put("Debt.Update.OrigBalance", false);
-        subTree.put("Debt.Update.For", false);
-        subTree.put("Debt.Update.CliRef", false);
-        subTree.put("Debt.Update.SvcType", false);
-        subTree.put("Debt.Update.DLC", false);
-        subTree.put("Debt.Update.DLP", false);
-        subTree.put("Debt.Update.FeeSched", false);
-        subTree.put("Debt.Update.CredirBureauFields", false);
-        subTree.put("Debt.Update.ReturnStatus", false);
-        subTree.put("Debt.Update.Client", false);
-        subTree.put("Debt.Update.Comments", false);
-        subTree.put("Debt.Update.Tags", false);
+        
+        /**
+         * Debt rights. What access does the user have to debts. 
+         */
+        subTree.put("Read", false);
+        subTree.put("Write", false);
+        subTree.put("CRStatus.Write", false);
+        subTree.put("CRStatus.Read", false);
+        subTree.put("Update.OrigBalance", false);
+        subTree.put("Update.For", false);
+        subTree.put("Update.CliRef", false);
+        subTree.put("Update.SvcType", false);
+        subTree.put("Update.DLC", false);
+        subTree.put("Update.DLP", false);
+        subTree.put("Update.FeeSched", false);
+        subTree.put("Update.CredirBureauFields", false);
+        subTree.put("Update.ReturnStatus", false);
+        subTree.put("Update.Client", false);
+        subTree.put("Update.Comments", false);
+        subTree.put("Update.Tags", false);
         rightSet.put("Debt", subTree);
         subTree.clear();
+        
+        /**
+         * Bank setup. 
+         */
         subTree.put("Bank.Setup.Read", false);
         subTree.put("Bank.Setup.Write", false);
         rightSet.put("Bank", subTree);
         subTree.clear();
-        subTree.put("Fee.Setup.Read", false);
-        subTree.put("Fee.Setup.Write", false);
+        
+        /**
+         * Fee setup.
+         */
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        subTree.put("Setup.Add", false);
+        subTree.put("Setup.Delete", false);
         rightSet.put("Fee", subTree);
         subTree.clear();
-        subTree.put("Invoice.Setup.Read", false);
-        subTree.put("Invoice.Setup.Write", false);
-        rightSet.put("Fee", subTree);
+        
+        /**
+         * Invoice setup.
+         */
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        rightSet.put("Invoice", subTree);
         subTree.clear();
-        subTree.put("Attorney.Setup.Read", false);
-        subTree.put("Attorney.Setup.Write", false);
-        rightSet.put("Fee", subTree);
+        
+        /**
+         * Attorney setup.
+         */
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        rightSet.put("Attorney", subTree);
         subTree.clear();        
-        subTree.put("Lead.Add", false);
-        subTree.put("Lead.Update", false);
-        subTree.put("Lead.Read", false);
-        rightSet.put("Fee", subTree);
+        
+        /**
+         * Lead setup.
+         */
+        subTree.put("Add", false);
+        subTree.put("Update", false);
+        subTree.put("Read", false);
+        rightSet.put("Lead", subTree);
+        subTree.clear();       
+        
+        subTree.put("Read", false);
+        subTree.put("Write", false);
+        subTree.put("Create", false);
+        subTree.put("Cancel", false);
+        rightSet.put("LetterSeries", subTree);
         subTree.clear();        
-        subTree.put("LetterSeries.Read", false);
-        subTree.put("LetterSeries.Write", false);
-        rightSet.put("Fee", subTree);
+        
+        subTree.put("Setup.Read", false);
+        subTree.put("Setup.Write", false);
+        rightSet.put("Match", subTree);
         subTree.clear();        
-        subTree.put("Match.Setup.Read", false);
-        subTree.put("Match.Setup.Write", false);
-        rightSet.put("Fee", subTree);
+        
+        subTree.put("Read", false);
+        subTree.put("Write", false);
+        subTree.put("Add", false);
+        subTree.put("Update.AccountName", false);
+        subTree.put("Update.GeneralInformation", false);
+        subTree.put("Update.SkipTraceInfo", false);
+        subTree.put("Update.CrossReference", false);
+        subTree.put("Update.Historical", false);
+        subTree.put("Update.CollectorNotes", false);
+        rightSet.put("Newbiz", subTree);
         subTree.clear();        
-        subTree.put("Newbiz.Read", false);
-        subTree.put("Newbiz.Write", false);
-        subTree.put("Newbiz.Add", false);
-        subTree.put("Newbiz.Update.AccountName", false);
-        subTree.put("Newbiz.Update.GeneralInformation", false);
-        subTree.put("Newbiz.Update.SkipTraceInfo", false);
-        subTree.put("Newbiz.Update.CrossReference", false);
-        subTree.put("Newbiz.Update.Historical", false);
-        subTree.put("Newbiz.Update.CollectorNotes", false);
-        rightSet.put("Fee", subTree);
-        subTree.clear();        
+        
         subTree.put("Setup.Read", false);
         subTree.put("Setup.Write", false);
         rightSet.put("Office", subTree);
         subTree.clear();        
+        
         subTree.put("Read", false);
         subTree.put("Add", false);
         subTree.put("Write", false);
         rightSet.put("Payments", subTree);
+        
         subTree.clear();
         subTree.put("Setup.Read", false);
         subTree.put("Setup.Write", false);
@@ -209,6 +255,7 @@ public class Rights {
         subTree.put("ObserveUser", false);
         subTree.put("AdviseUser", false);
         subTree.put("MonitorUsers", false);
+        subTree.put("Login", false);
         rightSet.put("User", subTree);
         subTree.clear();        
         
@@ -240,8 +287,39 @@ public class Rights {
         subTree.clear();        
         
         subTree.put("Reinstate", false);     
+        subTree.put("Delete", false);
         rightSet.put("Account", subTree);
         subTree.clear();
+        
+        subTree.put("Print", false);
+        subTree.put("Reassign", false);
+        subTree.put("Backup", false);
+        subTree.put("Initialize", false);
+        subTree.put("Rollback", false);
+        subTree.put("Grant", false);
+        subTree.put("Revoke", false);
+        subTree.put("Pause", false);
+        subTree.put("Terminate", false);
+        rightSet.put("System", subTree);
+        subTree.clear();
+        
+        subTree.put("Send", false);
+        subTree.put("Broadcast", false);
+        subTree.put("Email.Send", false);
+        subTree.put("Email.Receive", false);
+        rightSet.put("Messages", subTree);
+        subTree.clear();
+        
+        subTree.put("View",false);
+        subTree.put("Start", false);
+        subTree.put("Stop", false);
+        rightSet.put("Logger", subTree);
+        subTree.clear();
+        
+        subTree.put("View", false);
+        subTree.put("Change", false);
+        rightSet.put("Statistics", subTree);
+        
 
 /* Old implementation        
         rightSet.put("Debtor.Merge", false);
@@ -342,14 +420,114 @@ public class Rights {
         // loginHours by default are cleared (no hours allowed
          // loginHours defaults to having 24 members (ie one element for each
          // hour of the day).
+         HashMap<String, Boolean> hourList = new HashMap<>();
+         hourList.put("00:00",false);
+         hourList.put("00:15",false);
+         hourList.put("00:30",false);
+         hourList.put("00:45",false);
+         hourList.put("01:00",false);
+         hourList.put("01:15",false);
+         hourList.put("01:30",false);
+         hourList.put("01:45",false);
+         hourList.put("02:00",false);
+         hourList.put("02:15",false);
+         hourList.put("02:30",false);
+         hourList.put("02:45",false);
+         hourList.put("03:00",false);
+         hourList.put("03:15",false);
+         hourList.put("03:30",false);
+         hourList.put("03:45",false);
+         hourList.put("04:00",false);
+         hourList.put("04:15",false);
+         hourList.put("04:30",false);
+         hourList.put("04:45",false);
+         hourList.put("05:00",false);
+         hourList.put("05:15",false);
+         hourList.put("05:30",false);
+         hourList.put("05:45",false);
+         hourList.put("06:00",false);
+         hourList.put("06:15",false);
+         hourList.put("06:30",false);
+         hourList.put("06:45",false);
+         hourList.put("07:00",false);
+         hourList.put("07:15",false);
+         hourList.put("07:30",false);
+         hourList.put("07:45",false);
+         hourList.put("08:00",false);
+         hourList.put("08:15",false);
+         hourList.put("08:30",false);
+         hourList.put("08:45",false);
+         hourList.put("09:00",false);
+         hourList.put("09:15",false);
+         hourList.put("09:30",false);
+         hourList.put("09:45",false);
+         hourList.put("10:00",false);
+         hourList.put("10:15",false);
+         hourList.put("10:30",false);
+         hourList.put("10:45",false);
+         hourList.put("11:00",false);
+         hourList.put("11:15",false);
+         hourList.put("11:30",false);
+         hourList.put("11:45",false);
+         hourList.put("12:00",false);
+         hourList.put("12:15",false);
+         hourList.put("12:30",false);
+         hourList.put("12:45",false);
+         hourList.put("13:00",false);
+         hourList.put("13:15",false);
+         hourList.put("13:30",false);
+         hourList.put("13:45",false);
+         hourList.put("14:00",false);
+         hourList.put("14:15",false);
+         hourList.put("14:30",false);
+         hourList.put("14:45",false);
+         hourList.put("15:00",false);
+         hourList.put("15:15",false);
+         hourList.put("15:30",false);
+         hourList.put("15:45",false);
+         hourList.put("16:00",false);
+         hourList.put("16:15",false);
+         hourList.put("16:30",false);
+         hourList.put("16:45",false);
+         hourList.put("17:00",false);
+         hourList.put("17:15",false);
+         hourList.put("17:30",false);
+         hourList.put("17:45",false);
+         hourList.put("18:00",false);
+         hourList.put("18:15",false);
+         hourList.put("18:30",false);
+         hourList.put("18:45",false);
+         hourList.put("19:00",false);
+         hourList.put("19:15",false);
+         hourList.put("19:30",false);
+         hourList.put("19:45",false);
+         hourList.put("20:00",false);
+         hourList.put("20:15",false);
+         hourList.put("20:30",false);
+         hourList.put("20:45",false);
+         hourList.put("21:00",false);
+         hourList.put("21:15",false);
+         hourList.put("21:30",false);
+         hourList.put("21:45",false);
+         hourList.put("22:00",false);
+         hourList.put("22:15",false);
+         hourList.put("22:30",false);
+         hourList.put("22:45",false);
+         hourList.put("23:00",false);
+         hourList.put("23:15",false);
+         hourList.put("23:30",false);
+         hourList.put("23:45",false);
+         
+         HashMap<String, Boolean> hours2;
+         hours2 = (HashMap<String, Boolean>)hourList.clone();
          loginHours = new HashMap<>();
-         loginHours.put("Sun", 0);
-         loginHours.put("Mon", 0);
-         loginHours.put("Tue", 0);
-         loginHours.put("Wed", 0);
-         loginHours.put("Thu", 0);
-         loginHours.put("Fri", 0);
-         loginHours.put("Sat", 0);
+         loginHours.put("Sun", (HashMap<String,Boolean>)hourList.clone());
+         loginHours.put("Mon", (HashMap<String,Boolean>)hourList.clone());
+         loginHours.put("Tue", (HashMap<String,Boolean>)hourList.clone());
+         loginHours.put("Wed", (HashMap<String,Boolean>)hourList.clone());
+         loginHours.put("Thu", (HashMap<String,Boolean>)hourList.clone());
+         loginHours.put("Fri", (HashMap<String,Boolean>)hourList.clone());
+         loginHours.put("Sat", (HashMap<String,Boolean>)hourList.clone());
     }
 
     /**
@@ -388,7 +566,7 @@ public class Rights {
      * @param rightNames
      * @param lastPosition 
      */
-    public Rights(boolean localLogin, boolean backup, boolean remoteLogin, boolean shutdown, boolean monitor, boolean grantAccess, boolean revokeAccess, boolean takeOwnership, boolean startServices, boolean stopServices, boolean createUsers, boolean deleteUsers, boolean registerModules, boolean unregisterModules, boolean print, boolean documentRequest, boolean eventListener, boolean reassignThreads, boolean impersonateUser, boolean viewPHI, boolean updatePHI, boolean addSupplementalCategory, boolean deleteSupplementalCategory, boolean alterSupplementalCategory, Map<String, Map<String,Boolean>> rightSet, Long rightSet1, Long rightSet2, Long rightSet3, Long rightSet4, Map<String, Integer> loginHours, Map<String, Integer> rightNames, int lastPosition) {
+    public Rights(boolean localLogin, boolean backup, boolean remoteLogin, boolean shutdown, boolean monitor, boolean grantAccess, boolean revokeAccess, boolean takeOwnership, boolean startServices, boolean stopServices, boolean createUsers, boolean deleteUsers, boolean registerModules, boolean unregisterModules, boolean print, boolean documentRequest, boolean eventListener, boolean reassignThreads, boolean impersonateUser, boolean viewPHI, boolean updatePHI, boolean addSupplementalCategory, boolean deleteSupplementalCategory, boolean alterSupplementalCategory, Map<String, Map<String,Boolean>> rightSet, Long rightSet1, Long rightSet2, Long rightSet3, Long rightSet4, Map<String, Map<String,Boolean>> loginHours, Map<String, Integer> rightNames, int lastPosition) {
         this.localLogin = localLogin;
         this.backup = backup;
         this.remoteLogin = remoteLogin;
@@ -568,7 +746,7 @@ public class Rights {
      * @param day
      * @return
      */
-    public Integer getHours(String day){
+    public Map<String,Boolean> getHours(String day){
          return loginHours.get(day);
      }
 
@@ -577,7 +755,7 @@ public class Rights {
      * @param day
      * @param hours
      */
-    public void setHours(String day, Integer hours){
+    public void setHours(String day, Map<String,Boolean> hours){
          loginHours.put(day, hours);
      }
 
@@ -586,7 +764,7 @@ public class Rights {
      * @param day
      */
     public void clearHours(String day){
-         loginHours.put(day,0);
+         
      }
 
     /**
