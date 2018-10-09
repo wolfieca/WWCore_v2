@@ -160,7 +160,8 @@ public class User  extends Actor implements Reportable, Securable{
      * @return
      */
     public int getWorkHours() {
-        return this.getUserRights().getHours(userID);
+        return 0;
+        //return this.getUserRights().getHours(userID);
     }
 
 
@@ -293,6 +294,7 @@ public class User  extends Actor implements Reportable, Securable{
      * @return
      */
     public Boolean hasRight(String rightName){
-        return userRights.hasRight(rightName);
+        return false;
+        //return userRights.hasRight(rightName);
     }
 }
