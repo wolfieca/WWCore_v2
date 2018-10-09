@@ -17,6 +17,7 @@
 package Core;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -38,6 +39,16 @@ public class System implements Runnable, Securable{
     private Boolean sysIsLaunched;
     private Boolean sysIsShutdown;
     private final MessageQueue sysMessageQueue;
+    /**
+     * The priorities of the alternate collector queues. This is used by the
+     * system to determine what happens to queue messages when the primary 
+     * collector queue gets full. It is also used to determine where messages
+     * are pulled from if the primary queue is empty. Queues at priority 0 are
+     * not included in this. They can only be populated by having messages sent
+     * directly to them (for example a "Letters" queue which contains letters the
+     * collector has requested).
+     */
+    private Map<String,Integer> validCollectorQueues;
     private ThreadPoolExecutor sysThreadPool;
     private ScheduledExecutorService sysScheduledThreads;
     
@@ -49,7 +60,7 @@ public class System implements Runnable, Securable{
     
 
     /**
-     *
+     * The system build number
      */
     public static String BUILD="0.01";
     

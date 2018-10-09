@@ -34,6 +34,10 @@ public class CollectorQueue extends MessageQueue implements Reportable, Securabl
         
     }
     
+    @Override
+    public Message dequeue(){
+        return null;
+    }
     /**
      *
      */

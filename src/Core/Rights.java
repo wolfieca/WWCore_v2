@@ -54,12 +54,12 @@ public class Rights {
     private boolean alterSupplementalCategory;
     private Map<String,Map<String,Boolean>> rightSet;
    
-    private Long rightSet1;
-    private Long rightSet2;
-    private Long rightSet3;
-    private Long rightSet4;
-    private final Map<String,Map<String,Boolean>> loginHours;
-    private final Map<String,Integer> rightNames;
+    //private Long rightSet1;
+    //private Long rightSet2;
+    //private Long rightSet3;
+    //private Long rightSet4;
+    private Map<String,Map<String,Boolean>> loginHours;
+    private Map<String,Integer> rightNames;
     private int lastPosition;
 
     /**
@@ -592,10 +592,10 @@ public class Rights {
         this.deleteSupplementalCategory = deleteSupplementalCategory;
         this.alterSupplementalCategory = alterSupplementalCategory;
         this.rightSet = rightSet;
-        this.rightSet1 = rightSet1;
-        this.rightSet2 = rightSet2;
-        this.rightSet3 = rightSet3;
-        this.rightSet4 = rightSet4;
+//        this.rightSet1 = rightSet1;
+//        this.rightSet2 = rightSet2;
+//        this.rightSet3 = rightSet3;
+//        this.rightSet4 = rightSet4;
         this.loginHours = loginHours;
         this.rightNames = rightNames;
         this.lastPosition = lastPosition;
@@ -708,7 +708,7 @@ public class Rights {
      * @param module
      * @param right
      */
-    public void allow(String module, String right){
+/*    public void allow(String module, String right){
          if ( rightNames.get(module+"."+right) != null ){
              if(rightNames.get(module+"."+right) <= 63)
                 rightSet1 |= 1 << (rightNames.get(module+"."+right));
@@ -720,13 +720,13 @@ public class Rights {
                  rightSet4 |= 1 << (rightNames.get(module+"."+right));
          }
      }
-
+*/
     /**
      *
      * @param module
      * @param right
      */
-    public void deny(String module, String right){
+/*    public void deny(String module, String right){
          if ( rightNames.get(module+"."+right) != null ){
              if(rightNames.get(module+"."+right) <= 63)
                 rightSet1 &= 0 << (rightNames.get(module+"."+right));
@@ -738,7 +738,7 @@ public class Rights {
                  rightSet4 &= 0 << (rightNames.get(module+"."+right));
          }
      }
-
+*/
 
     
     /**

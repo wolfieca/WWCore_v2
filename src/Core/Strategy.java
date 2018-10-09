@@ -25,5 +25,6 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Strategy  implements Reportable{
+    private MessageQueue strategyQueue;
     
 }
