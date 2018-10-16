@@ -34,7 +34,9 @@ import java.util.Set;
 public class User  extends Actor implements Reportable, Securable{
     private String userName;
     private String userID;
+    //A list of groups this user belongs to
     private Set<Group> supplementaryGroups;
+    // The rights this user has.
     private Rights userRights;   
     private User effUser;   // Used by System Administrators to act as if they
                             // were another user. Programs may choose to ignore
@@ -43,10 +45,15 @@ public class User  extends Actor implements Reportable, Securable{
 
     private boolean canWorkOffHours;
     private Long lastMessageID;
+    // What modules is this user allowed to access?
     private HashMap<String, Boolean> moduleAccess; 
+    // Active sessions that belong to this user.
     private HashMap<String, Session> sessions;
+    // The user's history on the system. 
     private History activity;
+    // The user's primary message queue.
     private MessageQueue userMessageQueue;
+    // Supplemental message queue the user can access.
     private Set<String> supplementalMessageQueues;
 
     /**

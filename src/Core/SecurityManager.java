@@ -24,6 +24,8 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class SecurityManager {
+    private MessageQueue securityMessageQueue;
+    
     private boolean canAccess(Securable target, Actor actor, Permission request){
         return false;
     }
@@ -75,4 +77,5 @@ public class SecurityManager {
     public boolean requestWrite(Securable target, Actor user){
         return false;
     }
+    
 }

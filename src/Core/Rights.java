@@ -18,15 +18,16 @@ package Core;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * The Rights class enumerates rights that an Actor is granted to the
  * system and specified subsystems (run-time modules, for example). Note that
  * Rights are a configurable specification mechanism, there is not enforcement
- * of the rights here. Enforcement is up to individual modules.
+ * of the rights here. Enforcement is up to individual modules. 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Rights {
+public class Rights implements AccessRights{
     //System rights    
     private boolean localLogin;
     private boolean backup;
@@ -102,6 +103,12 @@ public class Rights {
         //rightSet.put("Debtor",)
         HashMap<String,Boolean> subTree = new HashMap();  
         
+        
+        /**
+         * System Rights. These rights allow the user to interact with the system
+         * itself in controlled ways.
+         */
+        subTree.put("LocalLogin", false);
         /**
          * PHI Rights. What interaction with PHI is the user allowed?
          */
@@ -154,7 +161,7 @@ public class Rights {
         subTree.put("Update.DLC", false);
         subTree.put("Update.DLP", false);
         subTree.put("Update.FeeSched", false);
-        subTree.put("Update.CredirBureauFields", false);
+        subTree.put("Update.CreditBureauFields", false);
         subTree.put("Update.ReturnStatus", false);
         subTree.put("Update.Client", false);
         subTree.put("Update.Comments", false);
@@ -670,6 +677,7 @@ public class Rights {
      * @param right
      * @return
      */
+    @Override
     public boolean addRight(String module, String right) {
          String rightName = module+"."+right;
          if ( rightNames.containsKey(rightName))
@@ -702,6 +710,42 @@ public class Rights {
          }
          //return rightNames.putIfAbsent(module+"."+right, position) != null;
      }
+    
+    @Override
+    public boolean removeRight(String module, String right){
+        return false;
+    }
+
+    @Override
+    public boolean hasRight(String module, String right) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void allow(String module, String right) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deny(String module, String right) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Set<String> listModules() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Set<String> listRights(String module) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Set<String> listRights() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
     /**
      *
