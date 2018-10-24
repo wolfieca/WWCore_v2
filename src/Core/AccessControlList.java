@@ -64,7 +64,7 @@ public class AccessControlList {
      * requested access is not explicitly granted or denied, even at the World 
      * level, access is generally denied.
      */
-    private HashMap<Actor, Permission> acl;
+    private HashMap<Actor, Permission> allowed;
     private HashMap<Actor, Permission> denied;
     
     /**
@@ -73,7 +73,7 @@ public class AccessControlList {
     public AccessControlList(){
         owner = null;
         administrator = null;
-        acl = new HashMap<>();
+        allowed = new HashMap<>();
     }
     
     /**
@@ -81,12 +81,24 @@ public class AccessControlList {
      * @param owner the owner of the protected object
      * @param administrator designated administrator of the protected object
      * @param acl ACL assigned to the protected object
+     * @param deny specified acl is for denied permissions.
      */
     public AccessControlList(Actor owner, Actor administrator, 
-            HashMap<Actor,Permission> acl){
+            HashMap<Actor,Permission> acl, Boolean deny){
         this.owner = owner;
         this.administrator = administrator;
-        this.acl = acl;
+        if (deny)
+            this.denied = acl;
+        else
+            this.allowed = acl;
+    }
+    
+    public AccessControlList(Actor owner, Actor administrator,
+            HashMap<Actor,Permission> allow, HashMap<Actor,Permission> deny){
+        this.owner = owner;
+        this.administrator = administrator;
+        this.allowed = allow;
+        this.denied = deny;
     }
     
     /**
@@ -152,7 +164,7 @@ public class AccessControlList {
      * requirements as above. The specified permissions must already be possessed
      * by the user or this fails. 
      * @param requestor The user requesting the removal
-     * @param user The user whole ACE is to be altered
+     * @param user The user whose ACE is to be altered
      * @param permission The permissions to be removed
      * @return True if the operation was allowed and succeeded
      */
