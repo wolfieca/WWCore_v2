@@ -31,7 +31,7 @@ package Core;
  * Note that impersonations are always logged by the system
  * @author Robert Serrano (wolfieca.rs at gmail.com).
  */
-public class Session implements Runnable, Securable{
+public class Session extends WWObject implements Runnable{
     private User sessionOwner;
     private User sessionUser;
     
@@ -41,6 +41,7 @@ public class Session implements Runnable, Securable{
         
     }
 
+    
     
     
     /**

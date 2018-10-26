@@ -102,6 +102,16 @@ public class AccessControlList {
     }
     
     /**
+     * In all cases of requesting a specific type of access to a particular 
+     * object, a message is sent to the server requesting the access be granted,
+     * and the local request will only be honored when the acknowledgment is 
+     * received from the server. Read requests only fail if permissions are not
+     * sufficient. Write requests only fail if another session is already using
+     * the object for writing, and the request is made to not wait. Otherwise,
+     * the thread will wait for a notification that the write lock has been 
+     * provided.
+     */
+    /**
      * checks whether or not requester has the required permissions on the
      * protected object to claim the specified access
      * @param requestor the requesting Actor
@@ -125,6 +135,21 @@ public class AccessControlList {
         return checkAccess(requestor,requested);
     }
     
+    /**
+     * Request a specific access to the protected object. The requester will be
+     * inferred from the current thread's security context (user and session info).
+     * If the requester can't be determined, this will check against the World
+     * group alone.
+     * @param requested
+     * @return 
+     */
+    public boolean requestAccess(Permission requested){
+        return false;
+    }
+    
+    public boolean validateSession(Session checkSession){
+        return false;
+    }
     /*
      * In order to change an ACL, the requesting user must be the Owner, the 
      * Administrator, or have the Alter Permission permission. In any event,
