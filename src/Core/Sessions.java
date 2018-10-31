@@ -27,4 +27,34 @@ import java.util.HashMap;
  */
 public class Sessions implements Reportable, Securable {
     private HashMap<Actor,HashMap<String,Session>> systemSessions;
+    
+    public Session getCurrentSession(){
+        return null;
+    }
+    
+    public boolean addSession (Session newSesion){
+        return false;
+    }
+    
+    public boolean createSession (Actor user,String sessionName){
+        return false;
+    }
+    public boolean createSession (Actor user){
+        return false;
+    }
+    
+    public boolean endSession (Actor user, String sessionName){
+        return false;
+    }
+    public boolean endSession (Actor user){
+        return false;
+    }
+    
+    public boolean terminateSession(Actor actor, String sessionName ){
+        return false;
+    }
+    public boolean terminateSession(Actor actor){
+        return false;
+    }
+    
 }

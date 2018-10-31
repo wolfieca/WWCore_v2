@@ -68,6 +68,9 @@ public class System implements Runnable, Securable{
      * The run method of System. This initializes everything, creates the thread 
      * pools, and gets everything rolling. If this is a Node process, connect
      * to any other Nodes that allow it. If a Client process, connect to a Node.
+     * Once all the initialization is complete, the System object actually does
+     * very little, serving messages sent to it, but basically staying out of the 
+     * way otherwise. 
      */
     @Override
     public void run(){
@@ -180,5 +183,8 @@ public class System implements Runnable, Securable{
         sysMessageQueue = messageQueue;        
     }
     
+    public Session getSession (String name){
+        return null;
+    }
     
 }

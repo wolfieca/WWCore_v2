@@ -30,20 +30,109 @@ import java.time.LocalDateTime;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Message implements Securable, Serializable{
+
+    /**
+     * Valid message statuses
+     */
+    public enum Statuses {
+
+        /**
+         * Message has been created and is waiting to send.
+         */
+        SEND,
+
+        /**
+         * Message has been sent (not necessarily delivered)
+         */
+        SENT,
+
+        /**
+         * Message has arrived in the targeted MessageQueue and is waiting to
+         * be read.
+         */
+        UNREAD,
+
+        /**
+         * Message has been read by the recipient.
+         */
+        READ,
+
+        /**
+         * Recipient is replying to the message.
+         */
+        REPLY,
+
+        /**
+         * Reply has been sent to the original sender.
+         */
+        REPLIED,
+
+        /**
+         * Recipient has requested the message be forwarded to another user or
+         * users.
+         */
+        FORWARD,
+
+        /**
+         * Message has been forwarded to other users.
+         */
+        FORWARDED,
+
+        /**
+         * Recipient has rejected the message and a rejection message is waiting
+         * to be sent (message is produced automatically by the system).
+         */
+        REJECT,
+
+        /**
+         * Recipient has rejected the message and either suppressed the rejection
+         * message or the message has been delivered to the original sender.
+         */
+        REJECTED,
+
+        /**
+         * Message has aged out and is waiting to be disposed of (removed from
+         * the active message queues and stored in the history.
+         */
+        INTER,
+
+        /**
+         * Message has been interred. Interred messages are removed from the 
+         * message queues and are placed in the user's History (the portion of the
+         * History file that reflects only actions taken by the user).
+         */
+        INTERRED,
+
+        /**
+         * Message has been aged out and has been marked as a disposable Message,
+         * so the system is waiting to dispose of it. A discarded message is 
+         * removed from the user's Queues and History and is placed in the System
+         * History for auditing purposes.
+         */
+        DISCARD,
+
+        /**
+         * Message has been discarded.
+         */
+        DISCARDED
+    }
     private String messageID;
     private Session waitingSession;
     private User sender;
     private User recipient;
     private MessageQueue target;
     private LocalDateTime created;
-    private LocalDateTime send;
+    private Statuses currentStatus;
     private LocalDateTime sent;
-    private LocalDateTime received;
-    private LocalDateTime replied;
-    private LocalDateTime forwarded;
-    private LocalDateTime rejected;
-    private LocalDateTime interred;
-    private LocalDateTime discarded;
+    private LocalDateTime delivered;
+//    private LocalDateTime send;
+//    private LocalDateTime sent;
+//    private LocalDateTime received;
+//    private LocalDateTime replied;
+//    private LocalDateTime forwarded;
+//    private LocalDateTime rejected;
+//    private LocalDateTime interred;
+//    private LocalDateTime discarded;
     private String message;
     
     /**
@@ -68,7 +157,6 @@ public class Message implements Securable, Serializable{
         this.recipient = recipient;
         this.target = null;
         this.created = LocalDateTime.now();
-        this.send = send;
         this.message = msg;
     }
 
@@ -88,7 +176,6 @@ public class Message implements Securable, Serializable{
         this.recipient = null;
         this.target = msgQueue;
         this.created = LocalDateTime.now();
-        this.send = send;
         this.message = msg;
     }
 
@@ -149,5 +236,13 @@ public class Message implements Securable, Serializable{
      */
     public void inter(){
         
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public String read(){
+        return message;
     }
 }

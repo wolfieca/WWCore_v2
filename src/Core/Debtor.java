@@ -99,6 +99,12 @@ public class Debtor extends WWObject implements Reportable, Securable{
     private Status currentStatus;
     private Set<User> readers;
     private User writer;
+
+    @Override
+    public WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     //Constructors
 

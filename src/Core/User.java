@@ -48,7 +48,7 @@ public class User  extends Actor implements Reportable, Securable{
     // What modules is this user allowed to access?
     private HashMap<String, Boolean> moduleAccess; 
     // Active sessions that belong to this user.
-    private HashMap<String, Session> sessions;
+    private Sessions sessions;
     // The user's history on the system. 
     private History activity;
     // The user's primary message queue.

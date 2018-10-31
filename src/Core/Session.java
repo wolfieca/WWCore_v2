@@ -32,13 +32,21 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com).
  */
 public class Session extends WWObject implements Runnable{
+    private System owningSystem;
     private User sessionOwner;
     private User sessionUser;
+    private MessageQueue sessionMessageQueue;
+    
     
     
     @Override
     public void run(){
         
+    }
+
+    @Override
+    public WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

@@ -24,7 +24,8 @@ package Core;
  * a collector if appropriate, and with a user, at the same time), and they can 
  * be filtered and arranged on those same criteria for reporting or auditing 
  * purposes. HistoryItem, is a separate class, and controls the mapping of 
- * entities to individual items.
+ * entities to individual items. Internally, History is a sorted list of items
+ * (akin to a tree), and is primarily sorted chronologically.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class History implements Reportable{

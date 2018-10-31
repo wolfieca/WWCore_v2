@@ -23,10 +23,35 @@ package Core;
  */
 public abstract class WWObject implements Securable{
     private AccessControlList acl;
+    private Sessions readers;
+    private Session writer;
     
     protected boolean requestAccess(Permission requested) 
             throws InvalidPermissionsException{
         return this.acl.requestAccess(requested);
     }
-    public abstract WWObject init();
+    
+    /**
+     * Try to determine which session is seeking access to this object.
+     * @return 
+     */
+    protected Session getSession(){
+        return null;
+    }
+    
+    protected boolean requestRead(){
+        if(this.acl.requestAccess(new Permission(false,Permission.READ))) {
+            
+        }
+        return false;
+    }
+    
+    protected boolean requestWrite(){
+        return this.acl.requestAccess(new Permission(false,Permission.WRITE_ACCESS));
+    }
+    
+    protected WWObject(){
+        
+    }
+    protected abstract WWObject init();
 }
