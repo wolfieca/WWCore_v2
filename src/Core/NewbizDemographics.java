@@ -20,6 +20,6 @@ package Core;
  *
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class NewbizDemographics {
+public class NewbizDemographics extends Demographics{
     
 }

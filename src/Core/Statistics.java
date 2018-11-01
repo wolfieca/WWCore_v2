@@ -16,6 +16,9 @@
  */
 package Core;
 
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Statistical data. This is a largely free-form dataset defined by whatever is
  * using it. The base Statistics object is temporally tied, with statistics 
@@ -28,6 +31,15 @@ package Core;
  * up the parameters for the statistical collection.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Statistics {
+public abstract class Statistics {
+    private Set<String> statisticNames;
+    private Map<String, StatisticalData> statistics;
     
+    public Long value(String stat){
+        return statistics.get(stat).value();
+    }
+    
+    public boolean add (String stat, Long value){
+        return false;
+    }
 }
