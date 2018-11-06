@@ -21,6 +21,6 @@ package Core;
  * number of PIF accounts by month, etc.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class CollectorStatistics implements Reportable, Securable{
+public class CollectorStatistics extends Statistics implements Reportable, Securable{
     
 }

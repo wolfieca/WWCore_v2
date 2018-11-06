@@ -32,14 +32,18 @@ import java.util.Set;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public abstract class Statistics {
-    private Set<String> statisticNames;
+    //private Set<String> statisticNames;
     private Map<String, StatisticalData> statistics;
     
     public Long value(String stat){
         return statistics.get(stat).value();
     }
     
-    public boolean add (String stat, Long value){
-        return false;
+    
+    public synchronized boolean add (String stat, Long value){
+        if ( statistics.containsKey(stat) ) {
+            return statistics.get(stat).increase(value);
+        } else
+            return false;
     }
 }
