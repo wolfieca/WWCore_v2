@@ -31,5 +31,5 @@ public class Debt implements Reportable, Securable{
     private History debtHistory;
     private DemographicField<String> forWhat;
     private SupplementalData Notes;
-    private Payments debtPayments;
+    private PaymentHistory debtPayments;
 }

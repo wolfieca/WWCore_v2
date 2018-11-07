@@ -19,7 +19,7 @@ package Core;
 import java.util.HashMap;
 
 /**
- * Nodes is a list of peer systems that have been discovered or registered with
+ * Cluster is a list of peer systems that have been discovered or registered with
  * this one. Each peer is a separate unit capable of performing operations on the
  * Wolffe system data. They maintain a certain amount of state data (such as the
  * local DebtorCache), and can distribute work based on latency, current work load
@@ -29,7 +29,7 @@ import java.util.HashMap;
  * preference that should be given to it in determining what should be sent to it.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Nodes implements Securable{
+public class Cluster implements Securable{
     private HashMap<String, Node> nodeList;
     
     

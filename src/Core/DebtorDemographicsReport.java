@@ -17,13 +17,10 @@
 package Core;
 
 /**
- * SkipTracedData is just what it's name implies: Data that has been gleaned via
- * the skip-tracing process. It's placed here until it is committed so that 
- * someone on the system (usually a collector) can verify that the new data is
- * correct.
+ * A Report of demographic information changes in debtor histories for a
+ * specified time frame and for a particular client.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class SkipTracedData {
-    private DemographicData stDemographics;
-    private SupplementalData stSupplemental;
+public class DebtorDemographicsReport extends Report{
+    
 }

@@ -84,14 +84,14 @@ public class Debtor extends WWObject implements Reportable, Securable{
     // Locked debtors can't be changed outside of those changes needed for
     // payment processing.
     private Boolean locked;
-    private Demographics demographics;
+    private DemographicData demographics;
     private SupplementalData supplementalData;
     
     // Begin working data fields
     //private HashMap<String,SupplementalData> ancil;
     private Debts debts;
     private History history;
-    private Payments payments;
+    private PaymentHistory payments;
     private Promise promise;
     private LegalActions legal;
     private MessageQueue activity;

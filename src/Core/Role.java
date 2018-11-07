@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * users, allowing for a set of default permissions, groups, rights, etc to be 
  * assigned at one time. A user's role is also a part of their security context
  * and can be used to allow extra activities under certain circumstances or just
- * to all for a user's permissions to be reset according to their role.
+ * to allow for a user's permissions to be reset according to their role.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Role {

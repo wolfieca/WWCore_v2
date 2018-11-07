@@ -16,35 +16,11 @@
  */
 package Core;
 
-import java.util.HashMap;
-
 /**
- * ActivityQueues is a manager object for the System Message Queues.
+ * A container for payments. Payments objects are attached to Debtors, Clients, 
+ * Debts, etc to allow for specific payments to be referenced.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class ActivityQueues implements Reportable, Securable {
-    private OldAccessControlList ACL;
-    private HashMap<String,MessageQueue> queues;
+public class PaymentHistory implements Reportable{
     
-    /**
-     *
-     */
-    public ActivityQueues(){
-        
-    }
-    
-    /**
-     *
-     */
-    public static void initialize(){
-        
-    }
-    
-    /**
-     *
-     * @param queueName
-     */
-    public void initQueue(String queueName){
-        
-    }
 }

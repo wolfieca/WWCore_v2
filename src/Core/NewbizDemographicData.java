@@ -17,11 +17,9 @@
 package Core;
 
 /**
- * Documents is a collection of related Document Objects. Documents objects can
- * be attached to most Object types (ie a Debtor for correspondence to/from/
- * regarding the debtor, Client for correspondence and Contracts).
+ *
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Documents {
+public class NewbizDemographicData extends DemographicData{
     
 }

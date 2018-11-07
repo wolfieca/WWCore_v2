@@ -17,13 +17,9 @@
 package Core;
 
 /**
- * Policies is a set of Policy objects. Policies can be attached to Client,
- * Company, Office and System objects and can various aspects of system operation
- * (i.e. minimum age for Medical accounts before they report to a credit bureau).
- * Policies load via the ModuleLoader mechanism and can be replaced on the fly as
- * the system is operating
+ * SystemFormList is a collection of Form objects
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Policies {
+public class SystemFormList {
     
 }

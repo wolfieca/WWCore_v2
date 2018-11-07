@@ -16,11 +16,35 @@
  */
 package Core;
 
+import java.util.HashMap;
+
 /**
- * A container for payments. Payments objects are attached to Debtors, Clients, 
- * Debts, etc to allow for specific payments to be referenced.
+ * QueueList is a manager object for the System Message Queues.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Payments implements Reportable{
+public class QueueList implements Reportable, Securable {
+    private OldAccessControlList ACL;
+    private HashMap<String,MessageQueue> queues;
     
+    /**
+     *
+     */
+    public QueueList(){
+        
+    }
+    
+    /**
+     *
+     */
+    public static void initialize(){
+        
+    }
+    
+    /**
+     *
+     * @param queueName
+     */
+    public void initQueue(String queueName){
+        
+    }
 }
