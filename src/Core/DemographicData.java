@@ -34,6 +34,12 @@ import java.util.HashMap;
  * handled automatically by the system
  * @author Robert
  */
-public class DemographicData implements Reportable, Securable{
+public class DemographicData extends WWObject implements Reportable{
     HashMap <String, HashMap<String,DemographicField>> fields;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

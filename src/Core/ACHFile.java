@@ -30,6 +30,11 @@ package Core;
  * closed, at which it produces the appropriate file and sends it out.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class ACHFile implements Reportable, Securable{
+public class ACHFile extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

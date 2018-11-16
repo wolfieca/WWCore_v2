@@ -23,8 +23,13 @@ import java.util.HashMap;
  * to query a Debtor's debts.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Debts implements Reportable, Securable{
+public class Debts extends WWObject implements Reportable{
     private HashMap<Integer, Client> debts;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     /**
      *

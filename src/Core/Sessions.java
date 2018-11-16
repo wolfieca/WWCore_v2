@@ -25,7 +25,12 @@ import java.util.HashMap;
  * that is the client-side of the communication process. 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Sessions implements Reportable, Securable {
+public class Sessions extends WWObject implements Reportable {
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private HashMap<Actor,HashMap<String,Session>> systemSessions;
     
     public Session getCurrentSession(){

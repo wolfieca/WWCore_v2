@@ -28,6 +28,11 @@ package Core;
  * other support objects 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class WWDocument {
+public class WWDocument extends WWObject{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

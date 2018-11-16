@@ -22,6 +22,11 @@ package Core;
  * updated by Client. 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class ClientStatististics extends Statistics implements Reportable, Securable{
+public class ClientStatististics extends Statistics implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

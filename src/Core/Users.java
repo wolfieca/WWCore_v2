@@ -21,6 +21,11 @@ package Core;
  * logged out, on break, etc).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Users implements Reportable, Securable{
+public class Users extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

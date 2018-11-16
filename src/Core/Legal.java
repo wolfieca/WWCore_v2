@@ -27,6 +27,12 @@ import java.util.HashMap;
  * LegalAction.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Legal implements Reportable, Securable{
+public class Legal extends WWObject implements Reportable{
     private HashMap<String,HashMap<String,LegalData>> legalData;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

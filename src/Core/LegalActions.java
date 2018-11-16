@@ -23,6 +23,11 @@ package Core;
  * worked by the Company)
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalActions implements Reportable, Securable{
+public class LegalActions extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

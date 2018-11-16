@@ -27,6 +27,6 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class NewbizProcessor extends DataImporter 
-        implements Reportable, Securable{
+        implements Reportable{
     
 }

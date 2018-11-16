@@ -27,7 +27,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * instance's communication channels), and various other aspects of the system.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class System implements Runnable, Securable{
+public class System extends WWObject implements Runnable{
     private WWCommChannel commChannel;
     private HashMap<String, Node> peerList;
     private Company company;
@@ -181,6 +181,11 @@ public class System implements Runnable, Securable{
         sysIsLaunched = false;
         sysIsShutdown = false;
         sysMessageQueue = messageQueue;        
+    }
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public Session getSession (String name){

@@ -23,6 +23,11 @@ import java.io.Serializable;
  * opposed to via a queue.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class MailBox implements Reportable, Securable, Serializable{
+public class MailBox extends WWObject implements Reportable, Serializable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

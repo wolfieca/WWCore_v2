@@ -21,6 +21,11 @@ package Core;
  * in some way (ie mail or phone campaign).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Campaign implements Reportable, Securable{
+public class Campaign extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

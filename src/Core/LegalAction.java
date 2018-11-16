@@ -22,9 +22,15 @@ import java.util.Set;
  * A single Legal Action in the system, and the related Legal data.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class LegalAction implements Reportable, Securable{
+public class LegalAction extends WWObject implements Reportable{
     private int action;
     private String caseNumber;
     private Set<Integer> debtsIncluded;
     private Legal legalInformation;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

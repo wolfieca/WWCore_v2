@@ -22,7 +22,12 @@ import java.util.HashMap;
  * QueueList is a manager object for the System Message Queues.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class QueueList implements Reportable, Securable {
+public class QueueList extends WWObject implements Reportable {
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private OldAccessControlList ACL;
     private HashMap<String,MessageQueue> queues;
     

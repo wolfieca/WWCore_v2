@@ -21,5 +21,6 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class DebtorStatistics extends Statistics implements Reportable{
-    
+
+
 }

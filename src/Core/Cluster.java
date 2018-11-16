@@ -29,8 +29,13 @@ import java.util.HashMap;
  * preference that should be given to it in determining what should be sent to it.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Cluster implements Securable{
+public class Cluster extends WWObject{
     private HashMap<String, Node> nodeList;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     /**

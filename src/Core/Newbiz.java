@@ -25,7 +25,12 @@ import java.util.Set;
  * so that new business can both be imported and manipulated by users.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Newbiz implements Reportable, Securable{
+public class Newbiz extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private Set<NewbizProcessor> processors;
     private HashMap<String,NewbizBatch> batches;
     

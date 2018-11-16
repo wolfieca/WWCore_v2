@@ -24,6 +24,11 @@ package Core;
  * the means of registering so that they can be loaded and properly restricted).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Module implements Securable{
+public class Module extends WWObject{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

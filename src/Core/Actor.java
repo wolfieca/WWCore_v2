@@ -22,9 +22,14 @@ package Core;
  * are User and Group
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Actor {
+public class Actor extends WWObject{
     private long id;    
     private Rights rights;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      *

@@ -24,6 +24,11 @@ package Core;
  * transactions occur.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Accounting implements Reportable, Securable{
+public class Accounting extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

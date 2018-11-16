@@ -26,7 +26,7 @@ import java.util.Set;
  * single CollectionUnit.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class CollectionUnit implements Reportable, Securable{
+public class CollectionUnit extends WWObject implements Reportable{
     private CollectorQueue queue;
     private String dunningName;
     private Set<Office> office;
@@ -49,5 +49,10 @@ public class CollectionUnit implements Reportable, Securable{
     private HashMap<GregorianCalendar,Long> queueWorked;
     private Long maxLetters;
     private Integer reevalAge;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -29,7 +29,7 @@ import java.util.TreeSet;
  * Needs to be revised.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Company implements Reportable, Securable{
+public class Company extends WWObject implements Reportable{
     private String companyName;
     private Set<Office> offices;
     
@@ -60,6 +60,7 @@ public class Company implements Reportable, Securable{
          */
         EITHER
     }
+    
     private HashMap<String,Interest> accrueInterest;
     //private HashMap<String,Boolean> compoundInterest;
     private int collectionCharge;
@@ -184,6 +185,11 @@ public class Company implements Reportable, Securable{
         this.restrictedStates = restrictedStates;
         this.statements = statements;
         this.invoices = invoices;
+    }
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

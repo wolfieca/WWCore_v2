@@ -31,12 +31,17 @@ import java.util.Set;
  * up the parameters for the statistical collection.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public abstract class Statistics {
+public abstract class Statistics extends WWObject {
     //private Set<String> statisticNames;
     private Map<String, StatisticalData> statistics;
     
     public Long value(String stat){
         return statistics.get(stat).value();
+    }
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

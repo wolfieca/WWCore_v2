@@ -26,7 +26,7 @@ public abstract class WWObject implements Securable{
     private Sessions readers;
     private Session writer;
     
-    protected boolean requestAccess(Permission requested) 
+    public boolean requestAccess(Permission requested) 
             throws InvalidPermissionsException{
         return this.acl.requestAccess(requested);
     }
@@ -39,16 +39,22 @@ public abstract class WWObject implements Securable{
         return null;
     }
     
-    protected boolean requestRead(){
+    @Override
+    public boolean requestRead(){
         if(this.acl.requestAccess(new Permission(false,Permission.READ))) {
             
         }
         return false;
     }
     
-    protected boolean requestWrite(){
+    @Override
+    public boolean requestWrite(){
         return this.acl.requestAccess(new Permission(false,Permission.WRITE_ACCESS));
     }
+    
+    //public boolean requestAccess(Permission requested){
+    //    return this.acl.requestAccess(requested);
+    //}
     
     protected WWObject(){
         

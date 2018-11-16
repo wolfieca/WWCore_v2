@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
  * special data attached to it.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Message implements Securable, Serializable{
+public class Message extends WWObject implements Serializable{
 
     /**
      * Valid message statuses
@@ -200,6 +200,11 @@ public class Message implements Securable, Serializable{
      */
     public void send(){
         
+    }
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**

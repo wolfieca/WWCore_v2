@@ -23,7 +23,7 @@ package Core;
  * allowed to merge together). Credit Reporting is controlled on a Debt basis
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Debt implements Reportable, Securable{
+public class Debt extends WWObject implements Reportable{
     private Debtor debtor;
     private Client debtClient;
     private DemographicField<String> cliRefNumber;
@@ -32,4 +32,10 @@ public class Debt implements Reportable, Securable{
     private DemographicField<String> forWhat;
     private SupplementalData Notes;
     private PaymentHistory debtPayments;
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

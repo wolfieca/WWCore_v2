@@ -22,5 +22,9 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public interface Securable {
+    public boolean requestRead();
+    public boolean requestWrite();
+    public boolean requestAccess(Permission requested) 
+            throws InvalidPermissionsException;
     
 }

@@ -25,6 +25,11 @@ package Core;
  * etc), for Companies dealing with medical records.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class SupplementalData implements Reportable, Securable{
-    SupplementalDataItem<String> i;
+public class SupplementalData extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

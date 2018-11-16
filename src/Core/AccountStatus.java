@@ -21,7 +21,7 @@ package Core;
  * accounts that are set to this status.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class AccountStatus implements Securable{
+public class AccountStatus extends WWObject{
     private String status;
     private String description;
     private AccountStatusType type;
@@ -57,6 +57,12 @@ public class AccountStatus implements Securable{
     private AccountStatus statusChangeTarget;
     private Strategy strategyChangeTarget;
 
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     /**
      * @return the status
      */

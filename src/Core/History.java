@@ -28,6 +28,11 @@ package Core;
  * (akin to a tree), and is primarily sorted chronologically.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class History implements Reportable{
+public class History extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

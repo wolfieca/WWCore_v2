@@ -42,7 +42,7 @@ import java.util.TreeMap;
  * System. 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class MessageQueue implements Reportable, Securable, Serializable{
+public class MessageQueue extends WWObject implements Reportable, Serializable{
     private String queueName;
     private LocalDateTime nextActivity;
     private PriorityQueue<Message> messageQueue;
@@ -56,6 +56,11 @@ public class MessageQueue implements Reportable, Securable, Serializable{
      *
      */
     public MessageQueue(){
+    }
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**

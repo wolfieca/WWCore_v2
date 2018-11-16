@@ -3,38 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/RequestMessage.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Policy.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Actor.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ClassOfBusiness.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWObject.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Status.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Bankruptcy.java</file>
             <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Securable.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/OldAccessControlList.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Rights.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/AccessControlList.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/SystemRights.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWServer.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Strategies.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/System.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWClient.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Sessions.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Client.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/EmailMessage.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CollectionUnit.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/User.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/AccessRights.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/PostingPriority.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/wolffewarecore_v2/WolffeWareCore_v2.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/MessageQueue.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WorkOrder.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ClientGroup.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Server.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/SecurityManager.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/CollectorQueue.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Debtor.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Strategy.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Permission.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WizardImporter.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ScheduleMessage.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ClientDataSource.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/BankruptcyClaim.java</file>
         </group>
     </open-files>
 </project-private>

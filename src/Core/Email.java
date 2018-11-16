@@ -17,7 +17,7 @@
 package Core;
 
 /**
- * Interface for messages that packaged in email.
+ * Interface for messages that are packaged in email.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public interface Email {

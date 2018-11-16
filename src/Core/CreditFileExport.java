@@ -26,6 +26,11 @@ package Core;
  * how.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class CreditFileExport implements Securable{
+public class CreditFileExport extends WWObject {
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

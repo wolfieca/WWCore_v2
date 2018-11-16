@@ -22,6 +22,6 @@ package Core;
  * payments received from debtors just count as Payments.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Check extends WWDocument implements Securable{
+public class Check extends WWDocument {
     
 }

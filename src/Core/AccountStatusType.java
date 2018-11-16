@@ -21,6 +21,11 @@ package Core;
  * that are shared among the statuses of the same type).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class AccountStatusType implements Securable{
+public class AccountStatusType extends WWObject{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

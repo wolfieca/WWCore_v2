@@ -23,6 +23,9 @@ package Core;
  * Reports, what collectors will work them, etc.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class ClassOfBusiness implements Reportable, Securable{
-    
+public class ClassOfBusiness extends WWObject implements Reportable{
+    @Override
+    public ClassOfBusiness init(){
+        return null;
+    }
 }

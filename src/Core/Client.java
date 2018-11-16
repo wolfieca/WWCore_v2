@@ -20,6 +20,11 @@ package Core;
  * Client is, obviously, a client, someone who we provide services to.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class Client implements Reportable, Securable{
+public class Client extends WWObject implements Reportable{
+
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
