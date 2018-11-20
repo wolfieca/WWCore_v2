@@ -20,6 +20,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.TreeMap;
@@ -58,8 +59,42 @@ public class MessageQueue extends WWObject implements Reportable, Serializable{
     public MessageQueue(){
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
@@ -145,6 +180,9 @@ public class MessageQueue extends WWObject implements Reportable, Serializable{
         return null;
     }
     
+    /**
+     *
+     */
     public void alert(){
         
     }

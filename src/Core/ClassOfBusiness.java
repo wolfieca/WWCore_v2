@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * ClassOfBusiness represent a class of clients and the characteristics that are
  * common among them. Examples would be Medical, which would cover all Medical
@@ -24,8 +26,44 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class ClassOfBusiness extends WWObject implements Reportable{
+
+    /**
+     *
+     * @return
+     */
     @Override
     public ClassOfBusiness init(){
         return null;
     }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

@@ -17,6 +17,7 @@
 package Core;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Sessions is a list of all the currently active Session objects on the system.
@@ -27,37 +28,116 @@ import java.util.HashMap;
  */
 public class Sessions extends WWObject implements Reportable {
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    private HashMap<Actor,HashMap<String,Session>> systemSessions;
+    private Map<Actor,Map<String,Session>> systemSessions;
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
+    /**
+     *
+     * @return
+     */
     public Session getCurrentSession(){
         return null;
     }
     
+    /**
+     *
+     * @param newSesion
+     * @return
+     */
     public boolean addSession (Session newSesion){
         return false;
     }
     
+    /**
+     *
+     * @param user
+     * @param sessionName
+     * @return
+     */
     public boolean createSession (Actor user,String sessionName){
         return false;
     }
+
+    /**
+     *
+     * @param user
+     * @return
+     */
     public boolean createSession (Actor user){
         return false;
     }
     
+    /**
+     *
+     * @param user
+     * @param sessionName
+     * @return
+     */
     public boolean endSession (Actor user, String sessionName){
         return false;
     }
+
+    /**
+     *
+     * @param user
+     * @return
+     */
     public boolean endSession (Actor user){
         return false;
     }
     
+    /**
+     *
+     * @param actor
+     * @param sessionName
+     * @return
+     */
     public boolean terminateSession(Actor actor, String sessionName ){
         return false;
     }
+
+    /**
+     *
+     * @param actor
+     * @return
+     */
     public boolean terminateSession(Actor actor){
         return false;
     }

@@ -17,11 +17,15 @@
 package Core;
 
 /**
- * Report is a base-class for most of the system-generated reports.
+ * Report is a base-class for most of the system-generated reports. 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Report extends WWObject implements iReport {
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -28,6 +28,9 @@ public class StateRights extends WWObject{
     private HashMap<String,Boolean> rights;
     private Set<String> validRights;
     
+    /**
+     *
+     */
     public StateRights(){
         rights = new HashMap<>();
         rights.put("Restricted State", false);
@@ -35,12 +38,20 @@ public class StateRights extends WWObject{
         validRights.add("Restricted State");
     }
     
+    /**
+     *
+     * @param rightsMap
+     */
     protected void setRights(HashMap<String,Boolean> rightsMap){
         validRights = rightsMap.keySet();
         
         rights = rightsMap;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

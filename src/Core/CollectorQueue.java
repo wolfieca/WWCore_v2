@@ -52,4 +52,26 @@ public class CollectorQueue extends MessageQueue implements Reportable, Securabl
     public void reevaluate(String queueID){
         
     }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

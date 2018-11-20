@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * An ACHFile contains a batch of ACH objects (individual transactions). ACHFile
  * provides the means to examine individual transactions, to delete selected ACH
@@ -32,8 +34,42 @@ package Core;
  */
 public class ACHFile extends WWObject implements Reportable{
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

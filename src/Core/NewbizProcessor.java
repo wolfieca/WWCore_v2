@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * A module designed to translate a supplied data file into one or more NewbizBatch
  * objects. Each NewbizProcessor has zero or more clients that it can be explicitly
@@ -28,5 +30,15 @@ package Core;
  */
 public class NewbizProcessor extends DataImporter 
         implements Reportable{
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

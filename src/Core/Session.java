@@ -16,6 +16,9 @@
  */
 package Core;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * A single user session. Classes use this to get information about the 
  * user requesting service. Instances of this object are created on user login 
@@ -32,10 +35,13 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com).
  */
 public class Session extends WWObject implements Runnable{
+    private String sessionName;
     private System owningSystem;
     private User sessionOwner;
     private User sessionUser;
-    private MessageQueue sessionMessageQueue;
+    private Set<WWObject> readLocks;
+    private Set<WWObject> writeLocks;
+    private transient MessageQueue sessionMessageQueue;
     
     
     
@@ -44,13 +50,39 @@ public class Session extends WWObject implements Runnable{
         
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param name
+     * @param ownerSys
+     * @param owner
+     * @param user
+     */
+    protected void init(String name, System ownerSys, User owner, User user){
+        sessionName = name;
+        owningSystem = ownerSys;
+        sessionOwner = owner;
+        sessionUser = user;
+        readLocks = new HashSet<>();
+        writeLocks = new HashSet<>();
+        sessionMessageQueue = new MessageQueue();
+    }
     
-    
+    /**
+     *
+     * @return
+     */
+    public String sessName(){
+        return sessionName;
+    }
     
     /**
      * Destroy this session.
@@ -58,4 +90,5 @@ public class Session extends WWObject implements Runnable{
     public void destroy(){
         
     }
+    
 }

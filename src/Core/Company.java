@@ -16,8 +16,10 @@
  */
 package Core;
 
+import java.time.LocalDateTime;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -68,7 +70,7 @@ public class Company extends WWObject implements Reportable{
     private int billableCourtCosts;
     private long internalCourtCosts;
     private boolean closedAccountInterest;
-    private GregorianCalendar fiscalMonth;
+    private LocalDateTime fiscalMonth;
     private long lastDebtorNumber;
     private long lastInvoiceNumber;
     private long lastInternalBatchNumber;
@@ -159,7 +161,7 @@ public class Company extends WWObject implements Reportable{
             simpleInterest, HashMap<String, Boolean> compoundInterest, 
             int collectionCharge, int accumulatedInterest, int billableCourtCosts, 
             int internalCourtCosts, boolean closedAccountInterest, 
-            GregorianCalendar fiscalMonth, Long lastDebtorNumber, 
+            LocalDateTime fiscalMonth, Long lastDebtorNumber, 
             Long lastInvoiceNumber, Long lastInternalBatchNumber, 
             String validInvoiceCycles, QuotaBase collectorQuotaBase, 
             boolean reorderDebtsOnMerge, int keptMinPerc, boolean inhibitMultiRoll, 
@@ -187,8 +189,42 @@ public class Company extends WWObject implements Reportable{
         this.invoices = invoices;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -242,8 +278,8 @@ public class Company extends WWObject implements Reportable{
     /**
      * @return the fiscalMonth
      */
-    public GregorianCalendar getFiscalMonth() {
-        return (GregorianCalendar)fiscalMonth.clone();
+    public LocalDateTime getFiscalMonth() {
+        return fiscalMonth;
     }
 
     /**
@@ -383,7 +419,7 @@ public class Company extends WWObject implements Reportable{
     /**
      * @param fiscalMonth the fiscalMonth to set
      */
-    protected void setFiscalMonth(GregorianCalendar fiscalMonth) {
+    protected void setFiscalMonth(LocalDateTime fiscalMonth) {
         this.fiscalMonth = fiscalMonth;
     }
 

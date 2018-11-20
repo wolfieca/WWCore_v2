@@ -16,10 +16,22 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * A LetterCampaign is a Campaign for letters. (see Campaign).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class LetterCampaign extends Campaign implements Reportable{
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

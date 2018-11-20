@@ -23,12 +23,61 @@ import java.util.Set;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public interface AccessRights {
+
+    /**
+     *
+     * @param module
+     * @param right
+     * @return
+     */
     public boolean addRight(String module, String right);
+
+    /**
+     *
+     * @param module
+     * @param right
+     * @return
+     */
     public boolean removeRight(String module, String right);
+
+    /**
+     *
+     * @param module
+     * @param right
+     * @return
+     */
     public boolean hasRight(String module, String right);
+
+    /**
+     *
+     * @param module
+     * @param right
+     */
     public void allow(String module, String right);
+
+    /**
+     *
+     * @param module
+     * @param right
+     */
     public void deny(String module, String right);
+
+    /**
+     *
+     * @return
+     */
     public Set<String> listModules();
+
+    /**
+     *
+     * @param module
+     * @return
+     */
     public Set<String> listRights(String module);
+
+    /**
+     *
+     * @return
+     */
     public Set<String> listRights();
 }

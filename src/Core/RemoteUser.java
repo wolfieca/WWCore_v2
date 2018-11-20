@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * A RemoteUser refers to a user that is allowed limited
  * access to the Company's system. Typically, this will be a user working for a
@@ -28,6 +30,37 @@ package Core;
  * location has been attested to.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class RemoteUser extends Actor implements Reportable, Securable{
+public class RemoteUser extends Actor implements Reportable{
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
  
 }

@@ -22,9 +22,55 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public interface Securable {
-    public boolean requestRead();
-    public boolean requestWrite();
-    public boolean requestAccess(Permission requested) 
+    //Request read access to the object
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    public boolean requestRead(Session requester);
+    //Request write access to the object
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    public boolean requestWrite(Session requester);
+    //Request access to the object
+
+    /**
+     *
+     * @param requester
+     * @param requested
+     * @return
+     * @throws InvalidPermissionsException
+     */
+    public boolean requestAccess(Session requester, Permission requested) 
             throws InvalidPermissionsException;
+    //Relinquish access to the object.
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    public boolean relinquishRead(Session requester);
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    public boolean relinquishWrite(Session requester);
+    //Relinquish all access to the object.
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    public boolean relinquishAccess(Session requester);
     
 }

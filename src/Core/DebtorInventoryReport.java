@@ -25,6 +25,6 @@ package Core;
  * the user is not authorized to see it.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class DebtorInventory extends Report{
+public class DebtorInventoryReport extends Report{
     
 }

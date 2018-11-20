@@ -19,6 +19,7 @@ package Core;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Map;
 
 /**
  * An individual Item in the System History. History operates as a sort of log
@@ -37,6 +38,36 @@ public class HistoryItem implements Reportable{
     private final WWObject target;
     private final LocalDateTime created;
     private final Message message;
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     /**
      * Constructor. HistoryItem objects are intended to be immutable. Once they've
@@ -52,18 +83,42 @@ public class HistoryItem implements Reportable{
         created = LocalDateTime.now();
     }
     
+    /**
+     *
+     * @return
+     */
     public String createdBy(){
         return originator.UserName();
     }
+
+    /**
+     *
+     * @return
+     */
     public User auditUser(){
         return originator;
     }
+
+    /**
+     *
+     * @return
+     */
     public WWObject checkTarget(){
         return target;
     }
+
+    /**
+     *
+     * @return
+     */
     public String readMessage(){
         return message.read();
     }
+
+    /**
+     *
+     * @return
+     */
     public String timeCreated(){
         return created.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG, FormatStyle.MEDIUM));
     }    

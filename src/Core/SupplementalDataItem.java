@@ -19,6 +19,7 @@ package Core;
 /**
  * An individual SupplementalData Item.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
+ * @param <T>
  */
 public class SupplementalDataItem<T> extends DemographicField{
     

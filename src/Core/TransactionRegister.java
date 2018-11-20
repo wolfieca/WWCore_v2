@@ -18,14 +18,58 @@ package Core;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A TransactionRegister is a list of transactions that have been recorded for 
  * a given period of time (usually a single billing cycle).
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class TransactionRegister implements Reportable{
+public class TransactionRegister extends WWObject implements Reportable{
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     private LocalDate periodBeginning;
     private LocalDate periodEnding;
     private List<Transaction> register;
+    
+    
 }

@@ -17,7 +17,9 @@
 package Core;
 
 /**
- *
+ * The data source for this particular instance (client or server). Typically,
+ * the clients are using the servers as their data source and the server processes
+ * are using the backing database as their data source. 
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class DataSource {

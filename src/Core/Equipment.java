@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * Equipment represents physical assets owned by the company. As such it entails
  * a purchase price, an estimated depreciation rate, initial and current
@@ -23,5 +25,15 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Equipment extends Asset implements Reportable{
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

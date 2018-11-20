@@ -24,6 +24,10 @@ package Core;
 public class SocialSecurityNumber {
     private Integer ssn;
     
+    /**
+     *
+     * @param ssn
+     */
     public SocialSecurityNumber(int ssn) {
         this.ssn = ssn;
     }

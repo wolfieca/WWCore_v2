@@ -35,16 +35,30 @@ public abstract class Statistics extends WWObject {
     //private Set<String> statisticNames;
     private Map<String, StatisticalData> statistics;
     
+    /**
+     *
+     * @param stat
+     * @return
+     */
     public Long value(String stat){
         return statistics.get(stat).value();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
+    /**
+     *
+     * @param stat
+     * @param value
+     * @return
+     */
     public synchronized boolean add (String stat, Long value){
         if ( statistics.containsKey(stat) ) {
             return statistics.get(stat).increase(value);

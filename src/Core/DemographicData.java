@@ -17,6 +17,7 @@
 package Core;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Demographic Data for a debtor. This is intended for core demographic fields,
@@ -37,8 +38,42 @@ import java.util.HashMap;
 public class DemographicData extends WWObject implements Reportable{
     HashMap <String, HashMap<String,DemographicField>> fields;
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(Session caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    @Override
+    public Report produceReportFor(User caller) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Map<String, Object> reportParameters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reportParameters(Map<String, Object> parameters) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

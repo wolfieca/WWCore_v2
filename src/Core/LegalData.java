@@ -17,9 +17,10 @@
 package Core;
 
 /**
- * Legal Data. Like DemographicField, this is simply a single field of Legal
- * data for a debtor.
+ * Legal Data.Like DemographicField, this is simply a single field of Legal
+ data for a debtor.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
+ * @param <T>
  */
 public class LegalData<T> extends DemographicField{
     

@@ -26,7 +26,15 @@ public abstract class WWObject implements Securable{
     private Sessions readers;
     private Session writer;
     
-    public boolean requestAccess(Permission requested) 
+    /**
+     *
+     * @param requester
+     * @param requested
+     * @return
+     * @throws InvalidPermissionsException
+     */
+    @Override
+    public boolean requestAccess(Session requester, Permission requested) 
             throws InvalidPermissionsException{
         return this.acl.requestAccess(requested);
     }
@@ -39,25 +47,86 @@ public abstract class WWObject implements Securable{
         return null;
     }
     
+    /**
+     *
+     * @param requester
+     * @return
+     */
     @Override
-    public boolean requestRead(){
+    public boolean requestRead(Session requester){
         if(this.acl.requestAccess(new Permission(false,Permission.READ))) {
-            
+            readers.addSession(requester);
         }
         return false;
     }
     
+    /**
+     *
+     * @param requester
+     * @return
+     */
     @Override
-    public boolean requestWrite(){
+    public synchronized boolean requestWrite(Session requester){
+        if ( writer == null && acl.requestAccess(
+                new Permission(false,Permission.WRITE_ACCESS))){            
+                writer = requester;
+                return true;
+        }
         return this.acl.requestAccess(new Permission(false,Permission.WRITE_ACCESS));
     }
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    @Override
+    public boolean relinquishRead(Session requester) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    @Override
+    public synchronized boolean relinquishWrite(Session requester) {
+        if ( writer == requester && writer != null ){
+            writer = null;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     * @param requester
+     * @return
+     */
+    @Override
+    public synchronized boolean relinquishAccess(Session requester) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     //public boolean requestAccess(Permission requested){
     //    return this.acl.requestAccess(requested);
     //}
+
+    /**
+     *
+     */
     
     protected WWObject(){
         
     }
+
+    /**
+     *
+     * @return
+     */
     protected abstract WWObject init();
 }

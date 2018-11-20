@@ -183,11 +183,20 @@ public class System extends WWObject implements Runnable{
         sysMessageQueue = messageQueue;        
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    /**
+     *
+     * @param name
+     * @return
+     */
     public Session getSession (String name){
         return null;
     }

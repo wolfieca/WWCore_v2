@@ -16,6 +16,8 @@
  */
 package Core;
 
+import java.util.Map;
+
 /**
  * Classes implementing the Reportable interface can export their data in a 
  * report format to either a printed document (straight text output) or an XML
@@ -29,9 +31,30 @@ package Core;
  * classes as far as what data is exported and, for the pure text export, the
  * layout of the text. The XML export is basically unformatted, with all layout
  * decisions being left up to the Report class (or other implementer of the 
- * iReport interface).
+ * iReport interface). The reportParameters methods allow the implementing class 
+ * to specify the parameters that it will accept along with any default values, 
+ * and to allow calling classes to specify parameters for the implementing class.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public interface Reportable {
+    //Produce a report. The implementing classes.
+    
+    public Map<String, Object> reportParameters();
+
+    public void reportParameters (Map<String, Object> parameters);
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    public Report produceReportFor(Session caller);
+
+    /**
+     *
+     * @param caller
+     * @return
+     */
+    public Report produceReportFor(User caller);
+    
     
 }

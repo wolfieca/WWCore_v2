@@ -711,36 +711,71 @@ public class Rights implements AccessRights{
          //return rightNames.putIfAbsent(module+"."+right, position) != null;
      }
     
+    /**
+     *
+     * @param module
+     * @param right
+     * @return
+     */
     @Override
     public boolean removeRight(String module, String right){
         return false;
     }
 
+    /**
+     *
+     * @param module
+     * @param right
+     * @return
+     */
     @Override
     public boolean hasRight(String module, String right) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param module
+     * @param right
+     */
     @Override
     public void allow(String module, String right) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param module
+     * @param right
+     */
     @Override
     public void deny(String module, String right) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Set<String> listModules() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param module
+     * @return
+     */
     @Override
     public Set<String> listRights(String module) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Set<String> listRights() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

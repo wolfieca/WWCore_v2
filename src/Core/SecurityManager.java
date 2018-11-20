@@ -34,46 +34,142 @@ public class SecurityManager {
         return false;
     }
     
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canRead (Securable target, Actor user){
         return canAccess(target, user, Permission.READ);
     } 
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canWrite (Securable target, Actor user){
         return canAccess(target, user, Permission.WRITE);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canLock (Securable target, Actor user){
         return canAccess(target, user, Permission.LOCK);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canDelete (Securable target, Actor user){
         return canAccess(target, user, Permission.DELETE);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canExecute (Securable target, Actor user){
         return canAccess(target, user, Permission.EXECUTE);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canAlterPermissions (Securable target, Actor user){
         return canAccess(target, user, Permission.ALTER_PERMISSIONS);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canTakeOwnership (Securable target, Actor user){
         return canAccess(target, user, Permission.TAKE_OWNERSHIP);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canSendMessage (Securable target, Actor user){
         return canAccess(target, user, Permission.SEND_MESSAGE);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean canImpersonate (Securable target, Actor user){
         return canAccess(target, user, Permission.IMPERSONATE);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean isOwner (Securable target, Actor user){
         return canAccess(target, user, Permission.OWNER);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean isAdministrator (Securable target, Actor user){
         return canAccess(target, user, Permission.ADMINISTRATOR);
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean isAudited (Securable target, Actor user){
         return canAccess(target, user, Permission.AUDIT);
     }
     
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean requestRead(Securable target, Actor user){
         return false;
     }
+
+    /**
+     *
+     * @param target
+     * @param user
+     * @return
+     */
     public boolean requestWrite(Securable target, Actor user){
         return false;
     }

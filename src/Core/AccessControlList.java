@@ -93,6 +93,13 @@ public class AccessControlList {
             this.allowed = acl;
     }
     
+    /**
+     *
+     * @param owner
+     * @param administrator
+     * @param allow
+     * @param deny
+     */
     public AccessControlList(Actor owner, Actor administrator,
             HashMap<Actor,Permission> allow, HashMap<Actor,Permission> deny){
         this.owner = owner;
@@ -147,6 +154,11 @@ public class AccessControlList {
         return false;
     }
     
+    /**
+     *
+     * @param checkSession
+     * @return
+     */
     public boolean validateSession(Session checkSession){
         return false;
     }
