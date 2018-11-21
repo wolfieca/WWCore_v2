@@ -85,11 +85,11 @@ public class Node {
      * notification that it was Stopping).
      * It can be Recovering (Crashed, but is currently in the process of recovery
      * from the crash so it can rejoin the network).
-     * It can be waiting to Join a cluster.
-     * It can be attempting to join a cluster.
-     * It can be Joined to a cluster.
-     * It can be operating as a solo Node.
-     * It can be operating as the master node for its cluster.
+     * It can be waiting to Join a pack.
+     * It can be attempting to join a pack.
+     * It can be Joined to a pack.
+     * It can be operating as a lone wolf.
+     * It can be operating as the master node for its pack.
      * A node that is Starting is implicitly Down (transitioning to be Up)
      * A node that is Stopping is implicitly Up (transitioning to being Down)
      * A node that is Crashed is implicitly Down (awaiting potential transition
