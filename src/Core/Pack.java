@@ -31,6 +31,7 @@ import java.util.HashMap;
  */
 public class Pack extends WWObject{
     private HashMap<String, Node> nodeList;
+    private String alphaNode;
 
     /**
      *
@@ -89,5 +90,8 @@ public class Pack extends WWObject{
         return 0;
     }
     
+    private void findAlpha(){
+        
+    }
     
 }
