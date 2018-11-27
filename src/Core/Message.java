@@ -26,7 +26,10 @@ import java.time.LocalDateTime;
  * atomic. The message is either entirely loaded, or it's not loaded at all. A 
  * partial message will not be touched by other parts of the system, until it is
  * complete. The basic Message object is just a human readable message with no
- * special data attached to it.
+ * special data attached to it. 
+ * Concept change: Message and it's descendants are relatively passive entities.
+ * The MessageQueues and Sessions actually send them back and forth and process
+ * them.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Message extends WWObject implements Serializable{
@@ -133,6 +136,10 @@ public class Message extends WWObject implements Serializable{
 //    private LocalDateTime rejected;
 //    private LocalDateTime interred;
 //    private LocalDateTime discarded;
+    /**
+     * The base message type is a simple string. The message field is also
+     * an optional component of child Message classes, obviously.
+     */
     private String message;
     
     /**
@@ -151,7 +158,7 @@ public class Message extends WWObject implements Serializable{
      * @param send the time the message is to be sent.
      * @param msg The message being sent.
      */
-    public Message (User sender, User recipient, LocalDateTime send, String msg){
+    private Message (User sender, User recipient, LocalDateTime send, String msg){
         messageID = sender.getMessageID();
         this.sender = sender;
         this.recipient = recipient;
@@ -169,7 +176,7 @@ public class Message extends WWObject implements Serializable{
      * @param send
      * @param msg
      */
-    public Message (User sender, MessageQueue msgQueue, LocalDateTime send, 
+    private Message (User sender, MessageQueue msgQueue, LocalDateTime send, 
             String msg){
         this.messageID = sender.getMessageID();    
         this.sender = sender;
@@ -185,7 +192,7 @@ public class Message extends WWObject implements Serializable{
      * @param recipient
      * @param msg
      */
-    public Message (User sender, User recipient, String msg){
+    private Message (User sender, User recipient, String msg){
         messageID = sender.getMessageID();
 
         this.sender = sender;
@@ -195,13 +202,11 @@ public class Message extends WWObject implements Serializable{
         this.message = msg;
     }
     
-    /**
-     *
-     */
-    public void send(){
-        
+    public static Message create(){
+        return new Message();
     }
-
+ 
+    
     /**
      *
      * @return

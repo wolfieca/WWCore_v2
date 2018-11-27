@@ -24,6 +24,12 @@ import java.util.Map;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class Ticket extends Message implements Reportable{
+    
+    
+    private Ticket(){
+        super();
+        
+    }
 
     /**
      *

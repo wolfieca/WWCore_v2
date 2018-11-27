@@ -75,7 +75,7 @@ public class Node {
     private int localEventClock;
 
     /**
-     * A single nodes can be in one of several states:
+     * A single node can be in one of several states:
      * It can be Down (not responsive to node requests)
      * It can be Up (responsive to node requests)
      * It can be Starting (initializing in preparation of entering the Up state)
