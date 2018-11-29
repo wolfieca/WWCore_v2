@@ -48,6 +48,11 @@ public class AccessControlList {
 
     private Set<Session> viewers;
     
+    protected enum PermissionTypes{
+        ALLOWED,
+        DENIED
+    }
+    
     /**
      * The ACLs for the protected object. Entries within the ACL must exist for
      * the owner and administrator with the appropriate Owner and Administrator
@@ -63,49 +68,19 @@ public class AccessControlList {
      * access is explicitly granted or denied, the evaluation stops. If the 
      * requested access is not explicitly granted or denied, even at the World 
      * level, access is generally denied.
+     * Ponder: Do I really need to have both denied and allowed implemented as 
+     * separate lists?
      */
-    private HashMap<Actor, Permission> allowed;
-    private HashMap<Actor, Permission> denied;
+    private HashMap<Actor, WWPermission> allowed;
+    private HashMap<Actor, WWPermission> denied;
+    private HashMap<PermissionTypes, HashMap<Actor, WWPermission>> entries;
+    private WWPermission worldPermissions;
     
-    /**
-     * Create an empty AccessControlList.
-     */
-    public AccessControlList(){
-        owner = null;
-        administrator = null;
-        allowed = new HashMap<>();
-    }
-    
-    /**
-     * Create an AccessControlList with the given characteristics.
-     * @param owner the owner of the protected object
-     * @param administrator designated administrator of the protected object
-     * @param acl ACL assigned to the protected object
-     * @param deny specified acl is for denied permissions.
-     */
-    public AccessControlList(Actor owner, Actor administrator, 
-            HashMap<Actor,Permission> acl, Boolean deny){
-        this.owner = owner;
-        this.administrator = administrator;
-        if (deny)
-            this.denied = acl;
-        else
-            this.allowed = acl;
-    }
-    
-    /**
-     *
-     * @param owner
-     * @param administrator
-     * @param allow
-     * @param deny
-     */
-    public AccessControlList(Actor owner, Actor administrator,
-            HashMap<Actor,Permission> allow, HashMap<Actor,Permission> deny){
-        this.owner = owner;
-        this.administrator = administrator;
-        this.allowed = allow;
-        this.denied = deny;
+    private AccessControlList(){
+        entries = new HashMap<>();
+        entries.put(PermissionTypes.DENIED, new HashMap<>());
+        entries.put(PermissionTypes.ALLOWED, new HashMap<>());
+        worldPermissions = WWPermission.init(WWPermission.NONE);
     }
     
     /**
@@ -125,8 +100,18 @@ public class AccessControlList {
      * @param requested the requested permissions
      * @return True if requested access is allowed
      */
-    private boolean checkAccess(Actor requestor, Permission requested){
-        return false;
+    private synchronized boolean checkAccess(User requestor, WWPermission requested){
+        //First, check the denied permissions
+        WWPermission testee = entries.get(PermissionTypes.DENIED).get(requestor);
+        if (testee != null){
+            if (testee.requestAccess(requested))
+                return false;
+        }
+        testee = entries.get(PermissionTypes.ALLOWED).get(requestor);
+        if ( testee!= null){
+            return (testee.requestAccess(requested));
+        }
+        return worldPermissions.requestAccess(requested);
     }
 
     /**
@@ -138,7 +123,7 @@ public class AccessControlList {
      * (generally true if read access, false if write access was requested and
      * the object was already locked).
      */
-    public boolean requestAccess(Actor requestor, Permission requested){
+    public boolean requestAccess(User requestor, WWPermission requested){
         return checkAccess(requestor,requested);
     }
     
@@ -150,7 +135,7 @@ public class AccessControlList {
      * @param requested
      * @return 
      */
-    public boolean requestAccess(Permission requested){
+    public boolean requestAccess(WWPermission requested){
         return false;
     }
     
@@ -164,7 +149,7 @@ public class AccessControlList {
     }
     /*
      * In order to change an ACL, the requesting user must be the Owner, the 
-     * Administrator, or have the Alter Permission permission. In any event,
+     * Administrator, or have the Alter WWPermission permission. In any event,
      * changing the ACL on an object is subject to several consistency checks
      * before it will be allowed.
      */
@@ -181,7 +166,7 @@ public class AccessControlList {
      * @param permission the permissions the user is to have
      * @return True if the operation was allowed and succeeded.
      */
-    protected boolean add(Actor requestor, Actor user, Permission permission){
+    protected boolean add(Actor requestor, Actor user, WWPermission permission){
         return false;
     }
 
@@ -193,7 +178,7 @@ public class AccessControlList {
      * @param permission
      * @return 
      */
-    protected boolean deny(Actor requestor, Actor user, Permission permission){
+    protected boolean deny(Actor requestor, Actor user, WWPermission permission){
         return false;
     }
     /**
@@ -205,7 +190,7 @@ public class AccessControlList {
      * @param permission The permissions to be removed
      * @return True if the operation was allowed and succeeded
      */
-    protected boolean remove(Actor requestor, Actor user, Permission permission){
+    protected boolean remove(Actor requestor, Actor user, WWPermission permission){
         return false;
     }
 
@@ -219,7 +204,7 @@ public class AccessControlList {
      * @param permission The new permission set
      * @return True if allowed and successful
      */
-    protected boolean modify(Actor requestor, Actor user, Permission permission){
+    protected boolean modify(Actor requestor, Actor user, WWPermission permission){
         return false;
     }
 
