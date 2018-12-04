@@ -35,7 +35,8 @@ import java.util.Set;
 public class User  extends Actor implements Reportable, Securable{
     private String userName;
     private String userID;
-    //A list of groups this user belongs to
+    //A list of groups this user belongs to. Groups are basically users, except 
+    //they do not have sessions (they are not active parts of the system).
     private Set<Group> supplementaryGroups;
     // The rights this user has.
     private Rights userRights;   

@@ -47,7 +47,7 @@ public interface Securable {
      * @return
      * @throws InvalidPermissionsException
      */
-    public boolean requestAccess(Session requester, Permission requested) 
+    public boolean requestAccess(Session requester, WWPermission requested) 
             throws InvalidPermissionsException;
     //Relinquish access to the object.
 

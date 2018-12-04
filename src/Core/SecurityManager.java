@@ -26,7 +26,7 @@ package Core;
 public class SecurityManager {
     private MessageQueue securityMessageQueue;
     
-    private boolean canAccess(Securable target, Actor actor, Permission request){
+    private boolean canAccess(Securable target, Actor actor, WWPermission request){
         return false;
     }
     
@@ -41,7 +41,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canRead (Securable target, Actor user){
-        return canAccess(target, user, Permission.READ);
+        return canAccess(target, user, WWPermission.READ);
     } 
 
     /**
@@ -51,7 +51,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canWrite (Securable target, Actor user){
-        return canAccess(target, user, Permission.WRITE);
+        return canAccess(target, user, WWPermission.WRITE);
     }
 
     /**
@@ -61,7 +61,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canLock (Securable target, Actor user){
-        return canAccess(target, user, Permission.LOCK);
+        return canAccess(target, user, WWPermission.LOCK);
     }
 
     /**
@@ -71,7 +71,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canDelete (Securable target, Actor user){
-        return canAccess(target, user, Permission.DELETE);
+        return canAccess(target, user, WWPermission.DELETE);
     }
 
     /**
@@ -81,7 +81,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canExecute (Securable target, Actor user){
-        return canAccess(target, user, Permission.EXECUTE);
+        return canAccess(target, user, WWPermission.EXECUTE);
     }
 
     /**
@@ -91,7 +91,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canAlterPermissions (Securable target, Actor user){
-        return canAccess(target, user, Permission.ALTER_PERMISSIONS);
+        return canAccess(target, user, WWPermission.ALTER_PERMISSIONS);
     }
 
     /**
@@ -101,7 +101,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canTakeOwnership (Securable target, Actor user){
-        return canAccess(target, user, Permission.TAKE_OWNERSHIP);
+        return canAccess(target, user, WWPermission.TAKE_OWNERSHIP);
     }
 
     /**
@@ -111,7 +111,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canSendMessage (Securable target, Actor user){
-        return canAccess(target, user, Permission.SEND_MESSAGE);
+        return canAccess(target, user, WWPermission.SEND_MESSAGE);
     }
 
     /**
@@ -121,7 +121,7 @@ public class SecurityManager {
      * @return
      */
     public boolean canImpersonate (Securable target, Actor user){
-        return canAccess(target, user, Permission.IMPERSONATE);
+        return canAccess(target, user, WWPermission.IMPERSONATE);
     }
 
     /**
@@ -131,7 +131,7 @@ public class SecurityManager {
      * @return
      */
     public boolean isOwner (Securable target, Actor user){
-        return canAccess(target, user, Permission.OWNER);
+        return canAccess(target, user, WWPermission.OWNER);
     }
 
     /**
@@ -141,7 +141,7 @@ public class SecurityManager {
      * @return
      */
     public boolean isAdministrator (Securable target, Actor user){
-        return canAccess(target, user, Permission.ADMINISTRATOR);
+        return canAccess(target, user, WWPermission.ADMINISTRATOR);
     }
 
     /**
@@ -151,7 +151,7 @@ public class SecurityManager {
      * @return
      */
     public boolean isAudited (Securable target, Actor user){
-        return canAccess(target, user, Permission.AUDIT);
+        return canAccess(target, user, WWPermission.AUDIT);
     }
     
     /**

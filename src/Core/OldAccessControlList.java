@@ -31,28 +31,28 @@ public class OldAccessControlList {
      * object is capable of reassigning ownership of the object.
      */
     private Actor admin; 
-    private Permission adminPerms; 
+    private WWPermission adminPerms; 
     /**
      * The owner object owns the object protected by this ACL. By default,
      * the owner is allowed to do most anything with their objects, though 
      * system policy may prevent things such as deletion.
      */
     private Actor owner;
-    private Permission ownerPerms;
+    private WWPermission ownerPerms;
     /**
      * The group object is the system group (or other object) in charge of this
      * object. If the group is an actual system group, then members of that 
      * group are allowed the specified access to the protected object
      */
     private Actor  group;
-    private Permission groupPerms;
+    private WWPermission groupPerms;
     /**
      * World permissions apply to anyone not an admin, owner or owning group,
      * This permission set is the default access to this object, before getting 
      * to the ACL
      */
-    private Permission worldPerms;
-    private Dictionary<Actor,Permission> ACL;
+    private WWPermission worldPerms;
+    private Dictionary<Actor,WWPermission> ACL;
     
     /**
      * requests some form of access to this object
@@ -80,6 +80,7 @@ public class OldAccessControlList {
      */
 
     public boolean requestAccess(Actor requestor, int request){
+        /*
         if ( requestor.equals(admin) ) {
             return adminPerms.checkAccess(request) == request;
         } else if ( requestor.equals(owner) ) {
@@ -92,10 +93,13 @@ public class OldAccessControlList {
             } else {
             }
         }*/
+        /*
         if ( ACL.get(requestor) != null )
             return ACL.get(requestor).checkAccess(request) == request;
         else
             return worldPerms.checkAccess(request) == request;
+        */
+        return false;
     }
     
     /**
@@ -103,7 +107,7 @@ public class OldAccessControlList {
      * @param requestor
      * @param permissionList
      */
-    protected void addAccess(Actor requestor, Permission permissionList){
+    protected void addAccess(Actor requestor, WWPermission permissionList){
         
     }
 
@@ -127,7 +131,7 @@ public class OldAccessControlList {
      * What permissions does the Admin user have?
      * @return
      */
-    public Permission getAdminPerms() {
+    public WWPermission getAdminPerms() {
         return adminPerms;
     }
 
@@ -135,7 +139,7 @@ public class OldAccessControlList {
      * Set/Change the Admin user's permissions.
      * @param adminPerms
      */
-    public void setAdminPerms(Permission adminPerms) {
+    public void setAdminPerms(WWPermission adminPerms) {
         this.adminPerms = adminPerms;
     }
 
@@ -159,7 +163,7 @@ public class OldAccessControlList {
      * What are the owners permissions?
      * @return
      */
-    public Permission getOwnerPerms() {
+    public WWPermission getOwnerPerms() {
         return ownerPerms;
     }
 
@@ -167,7 +171,7 @@ public class OldAccessControlList {
      * Set the owner's permissions.
      * @param ownerPerms
      */
-    public void setOwnerPerms(Permission ownerPerms) {
+    public void setOwnerPerms(WWPermission ownerPerms) {
         this.ownerPerms = ownerPerms;
     }
 
@@ -191,7 +195,7 @@ public class OldAccessControlList {
      * Get the owning group's permissions.
      * @return
      */
-    public Permission getGroupPerms() {
+    public WWPermission getGroupPerms() {
         return groupPerms;
     }
 
@@ -199,7 +203,7 @@ public class OldAccessControlList {
      * Set the owning group's permissions.
      * @param groupPerms
      */
-    public void setGroupPerms(Permission groupPerms) {
+    public void setGroupPerms(WWPermission groupPerms) {
         this.groupPerms = groupPerms;
     }
 
@@ -207,7 +211,7 @@ public class OldAccessControlList {
      * Get world (default) permissions.
      * @return
      */
-    public Permission getWorldPerms() {
+    public WWPermission getWorldPerms() {
         return worldPerms;
     }
 
@@ -215,7 +219,7 @@ public class OldAccessControlList {
      * Set/Change world (default) permissions.
      * @param worldPerms
      */
-    public void setWorldPerms(Permission worldPerms) {
+    public void setWorldPerms(WWPermission worldPerms) {
         this.worldPerms = worldPerms;
     }
 
@@ -223,7 +227,7 @@ public class OldAccessControlList {
      * Get the ACL for this object.
      * @return
      */
-    public Dictionary<Actor, Permission> getACL() {
+    public Dictionary<Actor, WWPermission> getACL() {
         return ACL;
     }
 
@@ -231,7 +235,7 @@ public class OldAccessControlList {
      * Change the ACL or this object (restricted).
      * @param ACL
      */
-    public void setACL(Dictionary<Actor, Permission> ACL) {
+    public void setACL(Dictionary<Actor, WWPermission> ACL) {
         this.ACL = ACL;
     }
 

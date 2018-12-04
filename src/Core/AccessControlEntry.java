@@ -30,7 +30,7 @@ package Core;
  */
 public class AccessControlEntry {
     private final Actor refActor;
-    private final Permission permissions;
+    private final WWPermission permissions;
     
     /**
      *
@@ -45,7 +45,7 @@ public class AccessControlEntry {
      * @param actor The User requesting the access
      * @param permissions The access being requested
      */
-    public AccessControlEntry(Actor actor, Permission permissions){
+    public AccessControlEntry(Actor actor, WWPermission permissions){
         refActor = actor;
         this.permissions = permissions;
     }
@@ -60,6 +60,6 @@ public class AccessControlEntry {
         if ( refActor != this.refActor )
             return false;
         else
-            return (permissions.checkAccess(requested) == requested);
+            return permissions.requestAccess(WWPermission.init(requested));
     }
 }
