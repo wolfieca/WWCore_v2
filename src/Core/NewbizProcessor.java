@@ -31,11 +31,19 @@ import java.util.Map;
 public class NewbizProcessor extends DataImporter 
         implements Reportable{
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Map<String, Object> reportParameters() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param parameters
+     */
     @Override
     public void reportParameters(Map<String, Object> parameters) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

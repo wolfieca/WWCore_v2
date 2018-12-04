@@ -48,8 +48,19 @@ public class AccessControlList {
 
     private Set<Session> viewers;
     
+    /**
+     *
+     */
     protected enum PermissionTypes{
+
+        /**
+         *
+         */
         ALLOWED,
+
+        /**
+         *
+         */
         DENIED
     }
     

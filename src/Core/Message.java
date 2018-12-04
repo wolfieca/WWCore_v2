@@ -202,6 +202,10 @@ public class Message extends WWObject implements Serializable{
         this.message = msg;
     }
     
+    /**
+     *
+     * @return
+     */
     public static Message create(){
         return new Message();
     }

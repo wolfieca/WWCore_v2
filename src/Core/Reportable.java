@@ -38,9 +38,18 @@ import java.util.Map;
  */
 public interface Reportable {
     //Produce a report. The implementing classes.
+
+    /**
+     *
+     * @return
+     */
     
     public Map<String, Object> reportParameters();
 
+    /**
+     *
+     * @param parameters
+     */
     public void reportParameters (Map<String, Object> parameters);
     /**
      *

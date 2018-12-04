@@ -75,6 +75,12 @@ public class WWPermission {
             permissions = newMask;
         
     }
+
+    /**
+     *
+     * @param createdMask
+     * @return
+     */
     public static WWPermission init(int createdMask){
         return new WWPermission(createdMask);
     }
@@ -93,6 +99,10 @@ public class WWPermission {
         return (tester.bitMask() & testee.bitMask()) | (permissions & DENY);
     }
 
+    /**
+     *
+     * @return
+     */
     protected int bitMask () {
         return permissions;
     }
@@ -112,15 +122,27 @@ public class WWPermission {
         return comparePermissions(this, requestedPermissions);
     }
     
+    /**
+     *
+     * @param requested
+     * @return
+     */
     public boolean requestAccess(WWPermission requested){
         return (checkAccess(requested) == requested.bitMask());
     }
     
+    /**
+     *
+     * @return
+     */
     public boolean isDeny(){
         return (permissions & DENY) != 0;
     }
 
-    
+    /**
+     *
+     * @return
+     */
     public Set<String> interpret() {
         Set<String> translations = new HashSet<>();
         if ( permissions == NONE)
