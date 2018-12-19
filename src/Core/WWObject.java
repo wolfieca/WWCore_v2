@@ -22,6 +22,7 @@ package Core;
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public abstract class WWObject implements Securable{
+    private WWSystem system;
     private AccessControlList acl;
     private Sessions readers;
     private Session writer;

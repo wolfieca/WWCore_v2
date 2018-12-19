@@ -16,6 +16,7 @@
  */
 package Core;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,7 +37,7 @@ import java.util.Set;
  */
 public class Session extends WWObject implements Runnable{
     private String sessionName;
-    private System owningSystem;
+    private WWSystem owningSystem;
     private User sessionOwner;
     private User sessionUser;
     private Set<WWObject> readLocks;
@@ -66,7 +67,7 @@ public class Session extends WWObject implements Runnable{
      * @param owner
      * @param user
      */
-    protected void init(String name, System ownerSys, User owner, User user){
+    protected void init(String name, WWSystem ownerSys, User owner, User user){
         sessionName = name;
         owningSystem = ownerSys;
         sessionOwner = owner;
@@ -76,11 +77,20 @@ public class Session extends WWObject implements Runnable{
         sessionMessageQueue = new MessageQueue();
     }
     
+    protected void init(User owner, User user, WWSystem ownerSys){
+        
+    }
+    
+    private String genSessionName(User owner, User user){
+        return owner.getUserName()+":"+user.getUserName()+":Session-"+
+                LocalDateTime.now();
+    }
+    
     /**
      *
      * @return
      */
-    public String sessName(){
+    public String sessionName(){
         return sessionName;
     }
     

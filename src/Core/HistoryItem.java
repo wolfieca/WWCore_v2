@@ -30,6 +30,8 @@ import java.util.Map;
  * actually done, and a variety of basic bookkeeping information. Note that the
  * HistoryItem is ultimately where most messages end up once they've served their
  * purpose.
+ * Note that HistoryItem is not protected by an ACL. Only Administrator users
+ * can directly manipulate HistoryItem instances
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
 public class HistoryItem implements Reportable{

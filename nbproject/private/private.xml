@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/ClassOfBusiness.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWObject.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Status.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Bankruptcy.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/Securable.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/BankruptcyClaim.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/HistoryItem.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWSecurityManager.java</file>
+            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWPermission.java</file>
         </group>
     </open-files>
 </project-private>

@@ -23,7 +23,7 @@ package Core;
  * system to allow or disallow access to various pieces of system functionality.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */
-public class SecurityManager {
+public class WWSecurityManager extends SecurityManager{
     private MessageQueue securityMessageQueue;
     
     private boolean canAccess(Securable target, Actor actor, WWPermission request){
