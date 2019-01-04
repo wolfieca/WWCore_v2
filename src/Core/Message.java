@@ -136,6 +136,7 @@ public class Message extends WWObject implements Serializable{
 //    private LocalDateTime rejected;
 //    private LocalDateTime interred;
 //    private LocalDateTime discarded;
+    private MessageEnvelope envelope;
     /**
      * The base message type is a simple string. The message field is also
      * an optional component of child Message classes, obviously.

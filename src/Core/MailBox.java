@@ -20,7 +20,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * A MailBox is a repository for message that can be accessed randomlt, as 
+ * A MailBox is a repository for message that can be accessed randomly, as 
  * opposed to via a queue.
  * @author Robert Serrano (wolfieca.rs at gmail.com)
  */

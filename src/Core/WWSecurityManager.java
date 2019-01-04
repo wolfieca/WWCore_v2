@@ -60,9 +60,9 @@ public class WWSecurityManager extends SecurityManager{
      * @param user
      * @return
      */
-    public boolean canLock (Securable target, Actor user){
+    /*public boolean canLock (Securable target, Actor user){
         return canAccess(target, user, WWPermission.LOCK);
-    }
+    }*/
 
     /**
      *
@@ -80,9 +80,9 @@ public class WWSecurityManager extends SecurityManager{
      * @param user
      * @return
      */
-    public boolean canExecute (Securable target, Actor user){
+    /*public boolean canExecute (Securable target, Actor user){
         return canAccess(target, user, WWPermission.EXECUTE);
-    }
+    }*/
 
     /**
      *
@@ -120,9 +120,9 @@ public class WWSecurityManager extends SecurityManager{
      * @param user
      * @return
      */
-    public boolean canImpersonate (Securable target, Actor user){
+    /*public boolean canImpersonate (Securable target, Actor user){
         return canAccess(target, user, WWPermission.IMPERSONATE);
-    }
+    }*/
 
     /**
      *

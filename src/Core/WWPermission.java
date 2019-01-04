@@ -215,8 +215,8 @@ public class WWPermission {
             translations.add("Read");
         if ( (permissions & WRITE) != 0 )
             translations.add("Write");
-        if ( (permissions & LOCK) != 0 )
-            translations.add("Lock Object");
+        /*if ( (permissions & LOCK) != 0 )
+            translations.add("Lock Object");*/
         if ( (permissions & MODIFY) != 0 )
             translations.add("Modify");
         if ( (permissions & DELETE) != 0 )
