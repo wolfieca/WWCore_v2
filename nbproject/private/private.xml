@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/HistoryItem.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWSecurityManager.java</file>
-            <file>file:/Users/rserrano/NetBeansProjects/WWCore_v2/src/Core/WWPermission.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/Session.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/WWCommChannel.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/Sessions.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/WWSystem.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/Server.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/Debtor.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/Users.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/ACH.java</file>
+            <file>file:/C:/Users/wolfi/Documents/NetBeansProjects/WWCore_v2/src/Core/WWServer.java</file>
         </group>
     </open-files>
 </project-private>
