@@ -29,17 +29,17 @@ import java.util.Map;
 public class Sessions extends WWObject implements Reportable {
 
     /**
-     *
+     * Default init me
      * @return
      */
     @Override
     protected WWObject init() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    private Map<Actor,Map<String,Session>> systemSessions;
+    private Map<Actor,Map<Actor,Session>> systemSessions;
 
     /**
-     *
+     * Produce report for the calling Session.
      * @param caller
      * @return
      */
@@ -49,7 +49,7 @@ public class Sessions extends WWObject implements Reportable {
     }
 
     /**
-     *
+     * Produce a report on behalf of the calling User.
      * @param caller
      * @return
      */
@@ -59,7 +59,7 @@ public class Sessions extends WWObject implements Reportable {
     }
 
     /**
-     *
+     * Get the current report parameters.
      * @return
      */
     @Override
@@ -68,7 +68,8 @@ public class Sessions extends WWObject implements Reportable {
     }
 
     /**
-     *
+     * Set the parameters for reports (i.e. page size, DPI, color support,
+     * etc). This affects reports produced on behalf of this Session.
      * @param parameters
      */
     @Override
@@ -77,7 +78,7 @@ public class Sessions extends WWObject implements Reportable {
     }
     
     /**
-     *
+     * Return the current Session (the Session controlling the current thread.
      * @return
      */
     public Session getCurrentSession(){
@@ -85,16 +86,16 @@ public class Sessions extends WWObject implements Reportable {
     }
     
     /**
-     *
-     * @param newSesion
+     * Add an existing Session to this Sessions object
+     * @param newSession
      * @return
      */
-    public boolean addSession (Session newSesion){
+    public boolean addSession (Session newSession){
         return false;
     }
     
     /**
-     *
+     * Create a Session with the specified name
      * @param user
      * @param sessionName
      * @return
@@ -104,7 +105,7 @@ public class Sessions extends WWObject implements Reportable {
     }
 
     /**
-     *
+     * Create a default Session for the user.
      * @param user
      * @return
      */
@@ -113,7 +114,9 @@ public class Sessions extends WWObject implements Reportable {
     }
     
     /**
-     *
+     * Destroy the specified session, freeing up all the held locks, closing
+     * any open objects, and giving the user the opportunity to  update any 
+     * objects that have been changed.
      * @param user
      * @param sessionName
      * @return
@@ -123,7 +126,10 @@ public class Sessions extends WWObject implements Reportable {
     }
 
     /**
-     *
+     * Destroys the specified User's sessions, freeing up all held locks and,
+     * ultimately, destroying the security context for the user (i.e. log the
+     * User out of the system). This is a graceful Session Termination, allowing
+     * the User to save any changes to objects that are currently held.
      * @param user
      * @return
      */
@@ -132,7 +138,11 @@ public class Sessions extends WWObject implements Reportable {
     }
     
     /**
-     *
+     * Terminates the specified Session. This is a more aggressive process than
+     * endSession. While it still unlocks held objects (decreasing reference
+     * counts, etc), it will automatically revert any uncommitted database
+     * changes and will not bother asking the user to save any changes. This
+     * is, obviously, designed as a last-ditch measure
      * @param actor
      * @param sessionName
      * @return
@@ -142,7 +152,7 @@ public class Sessions extends WWObject implements Reportable {
     }
 
     /**
-     *
+     * Terminates all a User's Sessions. See above for more details.
      * @param actor
      * @return
      */

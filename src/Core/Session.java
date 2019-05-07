@@ -38,10 +38,10 @@ import java.util.Set;
 public class Session extends WWObject implements Runnable{
     private String sessionName;
     private WWSystem owningSystem;
-    private User sessionOwner;
-    private User sessionUser;
-    private Set<WWObject> readLocks;
-    private Set<WWObject> writeLocks;
+    private User sessionOwner;          //Owner of this session
+    private User sessionUser;           //User the session is running as
+    private Set<WWObject> readLocks;    //Currently held Read Locks
+    private Set<WWObject> writeLocks;   //Currently held Write Locks
     private transient MessageQueue sessionMessageQueue;
     
     
@@ -52,7 +52,7 @@ public class Session extends WWObject implements Runnable{
     }
 
     /**
-     *
+     * The bare init method returns a null session
      * @return
      */
     @Override
@@ -61,7 +61,7 @@ public class Session extends WWObject implements Runnable{
     }
 
     /**
-     *
+     * Initializes a sessions with the given name, owner and user information
      * @param name
      * @param ownerSys
      * @param owner
@@ -77,17 +77,30 @@ public class Session extends WWObject implements Runnable{
         sessionMessageQueue = new MessageQueue();
     }
     
+    /**
+     *
+     * @param owner
+     * @param user
+     * @param ownerSys
+     */
     protected void init(User owner, User user, WWSystem ownerSys){
         
     }
     
+    /**
+     * Generate a default SessionName. This will be of the form 
+     * owner:user:Session-{time}.
+     * @param owner The user that owns this session
+     * @param user The user this session is running as
+     * @return 
+     */
     private String genSessionName(User owner, User user){
         return owner.getUserName()+":"+user.getUserName()+":Session-"+
                 LocalDateTime.now();
     }
     
     /**
-     *
+     * Get the Session's name
      * @return
      */
     public String sessionName(){
@@ -95,10 +108,15 @@ public class Session extends WWObject implements Runnable{
     }
     
     /**
-     * Destroy this session.
+     * Destroy this session. This frees all locks held by the session.
      */
     public void destroy(){
-        
+        for ( WWObject i: readLocks){
+            i.relinquishRead(this);
+            i.relinquishWrite(this);
+            i.relinquishAccess(this);
+        }
     }
     
 }
+
